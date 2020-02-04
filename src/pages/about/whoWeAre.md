@@ -1,6 +1,6 @@
 ---
 templateKey: 'about-page'
-path: /whoweare
+path: /whoWeAre
 title: Who We are
 ---
 ### [Stephen Drollinger](https://github.com/)
