@@ -1,11 +1,11 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
+title: Your DevOps, Done!
 image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+heading: Your DevOps, Done!
+subheading: Your partners in the journey to sustainable DevOps
 mainpitch:
-  title: Why Kaldi
+  title: Why DoneOps
   description: >
     Kaldi is the coffee store for everyone who believes that great coffee
     shouldn't just taste good, it should do good too. We source all of our beans
