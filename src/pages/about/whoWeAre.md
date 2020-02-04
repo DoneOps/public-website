@@ -11,7 +11,8 @@ Coffee is a small tree or shrub that grows in the forest understory in its wild 
 
 ### Jonathan Meyers
 [GitHub](https://github.com/jmymy)
-![alt text](https://raw.githubusercontent.com/DoneOps/public-website/master/src/img/github-icon.svg "GitHub")
+![GitHub](/img/github.svg)
+
 Jonathan Meyers is the Head of Infrastructure at Cybrary where he is responsible for designing, maintaining, and securing all corporate infrastructure including their Security Enablement platform supporting over 200 companies and 2.5 million users worldwide. He previously worked as a Senior DevOps and Senior Operations Engineer at Forcepoint (formally RedOwl Analytics prior to their acquisition) where he oversaw the operations and deployment of their hosted and on-prem UEBA/E-Surveillance product. Jonathan holds an Information Technology degree from the West Point.
 
 ### Wayne Pascoe
