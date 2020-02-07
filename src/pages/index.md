@@ -1,8 +1,8 @@
 ---
 templateKey: index-page
-title: Your DevOps, Done!
+title: Your DevOps? Done!
 image: /img/home-jumbotron.jpg
-heading: Your DevOps, Done!
+heading: Your DevOps? Done!
 subheading: Your partners in the journey to sustainable DevOps
 mainpitch:
   title: Why DoneOps

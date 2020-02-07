@@ -17,7 +17,11 @@ Jonathan Meyers is the Head of Infrastructure at Cybrary where he is responsible
 
 ### [Wayne Pascoe](https://github.com/WTPascoe)
 
+Wayne Pascoe is the head of DevOps for an external customer facing product team at J.P. Morgan responsible for modernising the platform and processes to deliver a SaaS product. He is also responsible for developing the support operating model for a number of institutional clients external to the company.
 
+Before this, Wayne worked as a Senior Engineer and Head of DevOps at Beacon Platform and was responsible for client deployments and support in both cloud and on-premises environments. He was also a key part of the team that implemented processes, controls, and reporting to achieve SOC 1 and SOC 2 attestation.
+
+Wayne brings a wealth of knowledge and experience from working in some of the world’s largest banks and exciting start-ups.
 
 ### [James Collins](https://github.com/jracollins)
 

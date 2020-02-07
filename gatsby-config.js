@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'DoneOps. Your Ops, Done!',
     description:
-      'DoneOps. Your Ops, Done. Your DevOps, Done. Your DevSecOps, Done',
+      'Your Ops? Done. Your DevOps? Done. Your DevSecOps? Done.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
