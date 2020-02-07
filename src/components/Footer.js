@@ -76,21 +76,27 @@ const Footer = class extends React.Component {
                 </section>
               </div>
               <div className="column is-4 social">
-              <a title="GitHub" href="https://github.com/DoneOps">
+                <a title="GitHub" href="https://github.com/DoneOps">
                   <img
                     src={github}
                     alt="GitHub"
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>
-                <a title="LinkedIn" href="https://linkedin.com/DoneOps">
+                <a
+                  title="LinkedIn"
+                  href="https://www.linkedin.com/company/doneops"
+                >
                   <img
                     src={linkedin}
                     alt="LinkedIn"
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>
-                <a title="YouTube" href="https://youtube.com/DoneOps">
+                <a
+                  title="YouTube"
+                  href="https://www.youtube.com/channel/UC0sAsIUdK5fsHnNQlKhLzWQ"
+                >
                   <img
                     src={youtube}
                     alt="YouTube"
@@ -112,7 +118,7 @@ const Footer = class extends React.Component {
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>
-                <a title="instagram" href="https://instagram.com/doneops">
+                <a title="instagram" href="https://instagram.com/">
                   <img
                     src={instagram}
                     alt="Instagram"
