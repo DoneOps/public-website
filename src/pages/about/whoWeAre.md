@@ -1,15 +1,12 @@
 ---
-templateKey: 'about-page'
+templateKey: "about-page"
 path: /whoWeAre
 title: Who We are
 ---
+
 ### [Stephen Drollinger](https://github.com/)
 
-
-
 ### [John Favorite](https://github.com/OldCrowEW)
-
-
 
 ### [Jonathan Meyers](https://github.com/jmymy)
 
@@ -24,5 +21,3 @@ Before this, Wayne worked as a Senior Engineer and Head of DevOps at Beacon Plat
 Wayne brings a wealth of knowledge and experience from working in some of the world’s largest banks and exciting start-ups.
 
 ### [James Collins](https://github.com/jracollins)
-
-
