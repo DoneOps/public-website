@@ -6,7 +6,7 @@
   "dependencies": {
     "bulma": "^0.8.0",
     "gatsby": "^2.19.10",
-    "gatsby-image": "^2.0.23",
+    "gatsby-image": "^2.2.41",
     "gatsby-plugin-netlify": "^2.0.6",
     "gatsby-plugin-netlify-cms": "^4.1.6",
     "gatsby-plugin-purgecss": "^4.0.0",
