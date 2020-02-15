@@ -3,7 +3,11 @@ import Card from './Card'
 
 const teamMemberCard = ({ teamMember }) => (
   <Card className="mb-8">
-    <p className="text-xl font-semibold"><a href={teamMember.github} target="new">{teamMember.title}</a></p>
+    <p className="text-xl font-semibold">
+      <a href={teamMember.github} target="new">
+        {teamMember.title}
+      </a>
+    </p>
     <p className="mt-6">{teamMember.content}</p>
     <div className="flex items-center mt-8">
       <img
