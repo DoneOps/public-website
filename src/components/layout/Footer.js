@@ -30,19 +30,27 @@ const Footer = () => (
         <ul className="mt-4 leading-loose">
           <li>
             <img src={linkedin} alt="LinkedIn" style={{ width: '2em', height: '2em' }} />
-            <a title="LinkedIn" href="https://www.linkedin.com/company/doneops">LinkedIn</a>
+            <a title="LinkedIn" href="https://www.linkedin.com/company/doneops">
+              LinkedIn
+            </a>
           </li>
           <li>
             <img src={youtube} alt="YouTube" style={{ width: '2em', height: '2em' }} />
-            <a title="YouTube" href="https://www.youtube.com/channel/UC0sAsIUdK5fsHnNQlKhLzWQ">YouTube</a>
+            <a title="YouTube" href="https://www.youtube.com/channel/UC0sAsIUdK5fsHnNQlKhLzWQ">
+              YouTube
+            </a>
           </li>
           <li>
             <img src={github} alt="GitHub" style={{ width: '2em', height: '2em' }} />
-            <a title="GitHub" href="https://github.com/doneops">GitHub</a>
+            <a title="GitHub" href="https://github.com/doneops">
+              GitHub
+            </a>
           </li>
           <li>
             <img src={twitter} alt="Twitter" style={{ width: '2em', height: '2em' }} />
-            <a title="Twitter" href="https://twitter.com/doneops">Twitter</a>
+            <a title="Twitter" href="https://twitter.com/doneops">
+              Twitter
+            </a>
           </li>
           {/* <li>
             <img src={instagram} alt="Instagram" style={{ width: '1em', height: '1em' }} />
