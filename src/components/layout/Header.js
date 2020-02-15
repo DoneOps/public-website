@@ -50,4 +50,4 @@ const SubHeader = () => (
   </header>
 )
 
-export default SubHeader
+// export default SubHeader
