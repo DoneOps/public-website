@@ -10,10 +10,15 @@ const Header = () => (
         <div className="w-12 mr-3">
           <LogoIcon />
         </div>
-        Lander
+        DoneOps
       </div>
       <div className="flex mt-4 sm:mt-0">
-        <AnchorLink className="px-4" href="#theteam">
+        <AnchorLink className="px-4" href="#features">
+          Features
+        </AnchorLink>
+      </div>
+      <div className="flex mt-4 sm:mt-0">
+        <AnchorLink className="px-4" href="#yourteam">
           Meet Your Team
         </AnchorLink>
       </div>

@@ -22,13 +22,10 @@ const Footer = () => (
         <h2 className="text-lg font-semibold">Social Media</h2>
         <ul className="mt-4 leading-loose">
           <li>
-            <a href="https://dev.to/changoman">Dev.to</a>
+            <a href="https://twitter.com/doneops" target="_new">Twitter</a>
           </li>
           <li>
-            <a href="https://twitter.com/doneops">Twitter</a>
-          </li>
-          <li>
-            <a href="https://github.com/doneops">GitHub</a>
+            <a href="https://github.com/doneops" target="_new">GitHub</a>
           </li>
         </ul>
       </div>
