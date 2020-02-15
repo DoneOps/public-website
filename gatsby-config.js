@@ -8,6 +8,12 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-netlify-cache',
     {
+      resolve: `gatsby-theme-codebushi`,
+      options: {
+        tailwindConfig: `tailwind.config.js`
+      }
+    },
+    {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {
