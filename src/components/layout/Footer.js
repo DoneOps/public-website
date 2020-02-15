@@ -29,28 +29,48 @@ const Footer = () => (
         <h2 className="text-lg font-semibold">Social Media</h2>
         <ul className="mt-4 leading-loose">
           <li>
-            <img src={linkedin} alt="LinkedIn" style={{ width: '2em', height: '2em' }} />
-            <a title="LinkedIn" href="https://www.linkedin.com/company/doneops">
-              LinkedIn
-            </a>
+            <div style={{float:'left', width: '20%'}}>
+              <img src={linkedin} alt="LinkedIn" style={{ width: '2em', height: '2em' }} />
+            </div>
+            <div style={{float:'right', width: '80%'}}>
+              <a title="LinkedIn" href="https://www.linkedin.com/company/doneops">
+                LinkedIn
+              </a>
+            </div>
+            <div style={{clear:'both'}}></div>
           </li>
           <li>
-            <img src={youtube} alt="YouTube" style={{ width: '2em', height: '2em' }} />
-            <a title="YouTube" href="https://www.youtube.com/channel/UC0sAsIUdK5fsHnNQlKhLzWQ">
-              YouTube
-            </a>
+            <div style={{float:'left', width: '20%'}}>
+              <img src={youtube} alt="YouTube" style={{ width: '2em', height: '2em' }} />
+            </div>
+            <div style={{float:'right', width: '80%'}}>
+              <a title="YouTube" href="https://www.youtube.com/channel/UC0sAsIUdK5fsHnNQlKhLzWQ">
+                YouTube
+              </a>
+            </div>
+            <div style={{clear:'both'}}></div>
           </li>
           <li>
-            <img src={github} alt="GitHub" style={{ width: '2em', height: '2em' }} />
-            <a title="GitHub" href="https://github.com/doneops">
-              GitHub
-            </a>
+            <div style={{float:'left', width: '20%'}}>
+              <img src={github} alt="GitHub" style={{ width: '2em', height: '2em' }} />
+            </div>
+            <div style={{float:'right', width: '80%'}}>
+              <a title="GitHub" href="https://github.com/doneops">
+                GitHub
+              </a>
+            </div>
+            <div style={{clear:'both'}}></div>
           </li>
           <li>
-            <img src={twitter} alt="Twitter" style={{ width: '2em', height: '2em' }} />
-            <a title="Twitter" href="https://twitter.com/doneops">
-              Twitter
-            </a>
+            <div style={{float:'left', width: '20%'}}>
+              <img src={twitter} alt="Twitter" style={{ width: '2em', height: '2em' }} />
+            </div>
+            <div style={{float:'right', width: '80%'}}>
+              <a title="Twitter" href="https://twitter.com/doneops">
+                Twitter
+              </a>
+            </div>
+            <div style={{clear:'both'}}></div>
           </li>
           {/* <li>
             <img src={instagram} alt="Instagram" style={{ width: '1em', height: '1em' }} />
