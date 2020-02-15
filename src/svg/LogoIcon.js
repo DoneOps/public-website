@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const LogoIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
@@ -12,6 +12,6 @@ const LogoIcon = () => (
       d="M36,22l-1-6l-18,7l17,7l-2-5l-8-2h12V22z M27.661,21l5.771-2.244L33.806,21H27.661z"
     />
   </svg>
-);
+)
 
-export default LogoIcon;
+export default LogoIcon

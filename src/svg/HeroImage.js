@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const HeroImage = () => (
   <svg
@@ -478,6 +478,6 @@ const HeroImage = () => (
       opacity=".1"
     />
   </svg>
-);
+)
 
-export default HeroImage;
+export default HeroImage
