@@ -25,10 +25,10 @@ const Footer = () => (
             <a href="https://dev.to/changoman">Dev.to</a>
           </li>
           <li>
-            <a href="https://twitter.com/HuntaroSan">Twitter</a>
+            <a href="https://twitter.com/doneops">Twitter</a>
           </li>
           <li>
-            <a href="https://github.com/codebushi/gatsby-starter-lander">GitHub</a>
+            <a href="https://github.com/doneops">GitHub</a>
           </li>
         </ul>
       </div>
