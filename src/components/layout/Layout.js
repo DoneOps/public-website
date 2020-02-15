@@ -55,7 +55,7 @@ const Layout = ({ children }) => {
 
 export default Layout
 
-const SubLayout = ({ children }) => {
+export const SubLayout = ({ children }) => {
   const { title, description } = useSiteMetadata()
   return (
     <div>
@@ -101,4 +101,4 @@ const SubLayout = ({ children }) => {
   )
 }
 
-// export default SubLayout
+// export const SubLayout

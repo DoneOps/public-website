@@ -34,7 +34,7 @@ const Header = () => (
 
 export default Header
 
-const SubHeader = () => (
+export const SubHeader = () => (
   <header className="sticky top-0 bg-white shadow">
     <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8">
       <div className="flex items-center text-2xl">
@@ -56,4 +56,4 @@ const SubHeader = () => (
   </header>
 )
 
-// export default SubHeader
+// export const SubHeader
