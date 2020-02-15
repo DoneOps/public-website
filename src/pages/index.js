@@ -16,14 +16,13 @@ export default () => (
       <div className="container mx-auto px-8 lg:flex">
         <div className="text-center lg:text-left lg:w-1/2">
           <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none">
-            Main title of your landing page
+            Your DevOps? Done!
           </h1>
           <p className="text-xl lg:text-2xl mt-6 font-light">
-            Free landing page template to promote your business startup and generate leads for the
-            offered services
+            Your partners in the journey to sustainable DevOps
           </p>
           <p className="mt-8 md:mt-12">
-            <Button size="lg">Get Started</Button>
+            <Button size="lg">Contact Us</Button>
           </p>
           <p className="mt-4 text-gray-600">Sed fermentum felis ut cursu</p>
         </div>
@@ -124,9 +123,9 @@ export default () => (
         </div>
       </div>
     </section>
-    <section id="testimonials" className="py-20 lg:py-40">
+    <section id="theteam" className="py-20 lg:py-40">
       <div className="container mx-auto">
-        <LabelText className="mb-8 text-gray-600 text-center">What customers are saying</LabelText>
+        <LabelText className="mb-8 text-gray-600 text-center">Meet Your Team</LabelText>
         <div className="flex flex-col md:flex-row md:-mx-3">
           {customerData.map(customer => (
             <div key={customer.customerName} className="flex-1 px-3">
@@ -137,9 +136,9 @@ export default () => (
       </div>
     </section>
     <section className="container mx-auto my-20 py-24 bg-gray-200 rounded-lg text-center">
-      <h3 className="text-5xl font-semibold">Ready to grow your business?</h3>
+      <h3 className="text-5xl font-semibold">Ready to be done?</h3>
       <p className="mt-8 text-xl font-light">
-        Quis lectus nulla at volutpat diam ut. Enim lobortis scelerisque fermentum dui faucibus in.
+        Contact form goes here
       </p>
       <p className="mt-8">
         <Button size="xl">Get Started Now</Button>
