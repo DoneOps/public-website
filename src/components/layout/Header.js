@@ -10,7 +10,9 @@ const Header = () => (
         <div className="w-12 mr-3">
           <img src={LogoIcon} alt="DoneOps" style={{ width: '2em', height: '2em' }} />
         </div>
-        <a href="/" style={{color: 'black'}}>DoneOps</a>
+        <a href="/" style={{ color: 'black' }}>
+          DoneOps
+        </a>
       </div>
       <div className="flex mt-4 sm:mt-0">
         <AnchorLink className="px-4" href="#features">
@@ -40,7 +42,9 @@ export const SubHeader = () => (
         <div className="w-12 mr-3">
           <img src={LogoIcon} alt="DoneOps" style={{ width: '2em', height: '2em' }} />
         </div>
-        <a href="/" style={{color: 'black'}}>DoneOps</a>
+        <a href="/" style={{ color: 'black' }}>
+          DoneOps
+        </a>
       </div>
       <div className="flex mt-4 sm:mt-0">
         <a href="/">Home</a>
