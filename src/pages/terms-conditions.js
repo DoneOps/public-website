@@ -1,5 +1,5 @@
 import React from 'react'
-import SubLayout from '../components/layout/Layout'
+import {SubLayout} from '../components/layout/Layout'
 
 const TermsConditionsPage = () => (
   <SubLayout>
