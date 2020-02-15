@@ -2,13 +2,13 @@ import React from 'react'
 import Button from '../components/Button'
 import Card from '../components/Card'
 import TeamCard from '../components/TeamCard'
-import LabelText from '../components/LabelText'
+// import LabelText from '../components/LabelText'
 import Layout from '../components/layout/Layout'
-import SplitSection from '../components/SplitSection'
-import StatsBox from '../components/StatsBox'
+// import SplitSection from '../components/SplitSection'
+// import StatsBox from '../components/StatsBox'
 import teamData from '../data/team-data'
 import HeroImage from '../svg/HeroImage'
-import SvgCharts from '../svg/SvgCharts'
+// import SvgCharts from '../svg/SvgCharts'
 
 export default () => (
   <Layout>
@@ -68,7 +68,7 @@ export default () => (
 
     <section id="yourteam" className="py-20 lg:pb-40 lg:pt-48">
       <div className="container mx-auto text-center">
-      <h2 className="text-3xl lg:text-5xl font-semibold">Meet Your Team</h2>
+        <h2 className="text-3xl lg:text-5xl font-semibold">Meet Your Team</h2>
         <div className="flex flex-col md:flex-row md:-mx-3">
           {teamData.map(teamMember => (
             <div key={teamMember.teamMemberName} className="flex-1 px-3">
