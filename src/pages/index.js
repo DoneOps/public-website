@@ -68,7 +68,9 @@ export default () => (
 
     <section id="yourteam" className="py-20 lg:py-40">
       <div className="container mx-auto">
-        <LabelText className="text-3xl lg:text-5xl font-semibold text-center">Meet Your Team</LabelText>
+        <LabelText className="text-3xl lg:text-5xl font-semibold text-center">
+          Meet Your Team
+        </LabelText>
         <div className="flex flex-col md:flex-row md:-mx-3">
           {teamData.map(teamMember => (
             <div key={teamMember.teamMemberName} className="flex-1 px-3">

@@ -2,8 +2,7 @@ export default [
   {
     title: 'John Favorite',
     github: 'https://github.com/OldCrowEW',
-    content:
-      'John Favourite is the ...'
+    content: 'John Favourite is the ...',
   },
   {
     title: 'Jonathan Meyers',
@@ -15,8 +14,7 @@ export default [
   {
     title: 'James Collins',
     github: 'https://github.com/jracollins',
-    content:
-      'James Collins is the ...'
+    content: 'James Collins is the ...',
   },
   {
     title: 'Wayne Pascoe',
@@ -27,7 +25,6 @@ export default [
   },
   {
     title: 'Stephen Drollinger',
-    content:
-      'Stephen Drollinger is the ...'
+    content: 'Stephen Drollinger is the ...',
   },
 ]
