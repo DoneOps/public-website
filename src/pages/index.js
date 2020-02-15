@@ -1,12 +1,12 @@
 import React from 'react'
 import Button from '../components/Button'
 import Card from '../components/Card'
-import CustomerCard from '../components/CustomerCard'
+import TeamCard from '../components/TeamCard'
 import LabelText from '../components/LabelText'
 import Layout from '../components/layout/Layout'
 import SplitSection from '../components/SplitSection'
 import StatsBox from '../components/StatsBox'
-import customerData from '../data/customer-data'
+import teamData from '../data/team-data'
 import HeroImage from '../svg/HeroImage'
 import SvgCharts from '../svg/SvgCharts'
 
@@ -24,7 +24,7 @@ export default () => (
           <p className="mt-8 md:mt-12">
             <Button size="lg">Contact Us</Button>
           </p>
-          <p className="mt-4 text-gray-600">Sed fermentum felis ut cursu</p>
+          <p className="mt-4 text-gray-600">Placeholder for main entry text</p>
         </div>
         <div className="lg:w-1/2">
           <HeroImage />
@@ -68,11 +68,11 @@ export default () => (
 
     <section id="yourteam" className="py-20 lg:py-40">
       <div className="container mx-auto">
-        <LabelText className="mb-8 text-gray-600 text-center">Meet Your Team</LabelText>
+        <LabelText className="text-3xl lg:text-5xl font-semibold text-center">Meet Your Team</LabelText>
         <div className="flex flex-col md:flex-row md:-mx-3">
-          {customerData.map(customer => (
-            <div key={customer.customerName} className="flex-1 px-3">
-              <CustomerCard customer={customer} />
+          {teamData.map(teamMember => (
+            <div key={teamMember.teamMemberName} className="flex-1 px-3">
+              <TeamCard teamMember={teamMember} />
             </div>
           ))}
         </div>
