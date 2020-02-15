@@ -13,9 +13,7 @@ const Header = () => (
         DoneOps
       </div>
       <div className="flex mt-4 sm:mt-0">
-        <a href="/">
-          Home
-        </a>
+        <a href="/">Home</a>
       </div>
       <div className="hidden md:block">
         <Button className="text-sm">Contact Us</Button>
