@@ -22,6 +22,9 @@ const Header = () => (
           Meet Your Team
         </AnchorLink>
       </div>
+      <div className="flex mt-4 sm:mt-0">
+        <a href="/blog">Blog</a>
+      </div>
       <div className="hidden md:block">
         <Button className="text-sm">Contact Us</Button>
       </div>
@@ -42,6 +45,9 @@ const SubHeader = () => (
       </div>
       <div className="flex mt-4 sm:mt-0">
         <a href="/">Home</a>
+      </div>
+      <div className="flex mt-4 sm:mt-0">
+        <a href="/blog">Blog</a>
       </div>
       <div className="hidden md:block">
         <Button className="text-sm">Contact Us</Button>
