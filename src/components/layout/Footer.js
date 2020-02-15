@@ -28,23 +28,21 @@ const Footer = () => (
       <div className="flex-1 px-3">
         <h2 className="text-lg font-semibold">Social Media</h2>
         <ul className="mt-4 leading-loose">
-        <li>
-            <img
-                src={linkedin}
-                alt="LinkedIn"
-                style={{ width: '1em', height: '1em' }}
-              />
-            <a
-              title="LinkedIn"
-              href="https://www.linkedin.com/company/doneops"
-            >LinkedIn
+          <li>
+            <img src={linkedin} alt="LinkedIn" style={{ width: '1em', height: '1em' }} />
+            <a title="LinkedIn" href="https://www.linkedin.com/company/doneops">
+              LinkedIn
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/doneops" target="_new">Twitter</a>
+            <a href="https://twitter.com/doneops" target="_new">
+              Twitter
+            </a>
           </li>
           <li>
-            <a href="https://github.com/doneops" target="_new">GitHub</a>
+            <a href="https://github.com/doneops" target="_new">
+              GitHub
+            </a>
           </li>
         </ul>
       </div>
