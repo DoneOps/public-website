@@ -88,37 +88,6 @@ export default () => (
       className="container mx-auto my-20 py-20 bg-gray-200 rounded-lg text-center"
     >
       <h3 className="text-5xl font-semibold">Ready to be done?</h3>
-      {/* <p className="mt-8 text-xl font-light">Contact form goes here</p> */}
-      {/* <p className="mt-2">
-        <form
-          name="contact"
-          method="post"
-          action="/success"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          data-netlify-recaptcha="true"
-        >
-          <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" value="contact" />
-          <div className="field half first font-semibold">
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" />
-          </div>
-          <div className="field half font-semibold">
-            <label htmlFor="email">Email</label>
-            <input type="text" name="email" id="email" />
-          </div>
-          <div className="field font-semibold">
-            <label htmlFor="message">Message</label>
-            <textarea name="message" id="message" rows="6" />
-          </div>
-          <ul className="actions">
-            <li>
-              <input type="submit" value="Send Message" className="button" />
-            </li>
-          </ul>
-        </form>
-      </p> */}
       <Contact />
     </section>
   </Layout>

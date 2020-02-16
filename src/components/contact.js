@@ -1,7 +1,7 @@
 import React from 'react'
 import { navigate } from 'gatsby'
 import Recaptcha from 'react-google-recaptcha'
-import Layout from './layout/layout'
+// import Layout from './layout/Layout'
 
 const RECAPTCHA_KEY = process.env.GATSBY_APP_SITE_RECAPTCHA_KEY
 // if (typeof RECAPTCHA_KEY === 'undefined') {
@@ -45,46 +45,43 @@ export default function Contact() {
   }
 
   return (
-    <Layout>
-      <h1>reCAPTCHA 2</h1>
-      <form
-        name="contact-recaptcha"
-        method="post"
-        action="/success"
-        data-netlify="true"
-        data-netlify-recaptcha="true"
-        data-netlify-honeypot="bot-field"
-        onSubmit={handleSubmit}
-      >
-        <noscript>
-          <p>This form won’t work with Javascript disabled</p>
-        </noscript>
-        <p>
-          <label>
-            Your name:
-            <br />
-            <input type="text" name="name" onChange={handleChange} />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your email:
-            <br />
-            <input type="email" name="email" onChange={handleChange} />
-          </label>
-        </p>
-        <p>
-          <label>
-            Message:
-            <br />
-            <textarea name="message" onChange={handleChange} />
-          </label>
-        </p>
-        <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
-    </Layout>
+    <form
+      name="contact-recaptcha"
+      method="post"
+      action="/success"
+      data-netlify="true"
+      data-netlify-recaptcha="true"
+      data-netlify-honeypot="bot-field"
+      onSubmit={handleSubmit}
+    >
+      <noscript>
+        <p>This form won’t work with Javascript disabled</p>
+      </noscript>
+      <p>
+        <label>
+          Your name:
+          <br />
+          <input type="text" name="name" onChange={handleChange} />
+        </label>
+      </p>
+      <p>
+        <label>
+          Your email:
+          <br />
+          <input type="email" name="email" onChange={handleChange} />
+        </label>
+      </p>
+      <p>
+        <label>
+          Message:
+          <br />
+          <textarea name="message" onChange={handleChange} />
+        </label>
+      </p>
+      <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form>
   )
 }
