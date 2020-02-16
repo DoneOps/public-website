@@ -47,7 +47,10 @@ export const SubHeader = () => (
         </a>
       </div>
       <div className="flex mt-4 sm:mt-0">
-        <a href="/">Home</a>
+        <a href="/#features">Features</a>
+      </div>
+      <div className="flex mt-4 sm:mt-0">
+        <a href="/#yourteam">Meet Your Team</a>
       </div>
       <div className="flex mt-4 sm:mt-0">
         <a href="/blog">Blog</a>
