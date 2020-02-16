@@ -68,9 +68,12 @@ export default () => (
     <section id="yourteam" className="py-20 lg:pb-40 lg:pt-48">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl lg:text-5xl font-semibold">Meet Your Team</h2>
-        <div className="flex flex-col md:flex-row md:-mx-3">
+        <div className="flex flex-row flex-wrap">
           {teamData.map(teamMember => (
-            <div key={teamMember.teamMemberName} className="flex-1 px-3">
+            <div
+              key={teamMember.teamMemberName}
+              className="flex-auto px-3 lg:w-1/2 md:w-full sm:w-full xs:w-full"
+            >
               <TeamCard teamMember={teamMember} />
             </div>
           ))}
