@@ -3,7 +3,7 @@ import { navigate } from 'gatsby'
 import Recaptcha from 'react-google-recaptcha'
 // import Layout from './layout/Layout'
 
-const RECAPTCHA_KEY = process.env.GATSBY_APP_SITE_RECAPTCHA_KEY
+const RECAPTCHA_KEY = '6LdFXNkUAAAAAETK8WJo2LBk8t974hRunbG-lkyR'
 // if (typeof RECAPTCHA_KEY === 'undefined') {
 //   throw new Error(`
 //   Env var GATSBY_APP_SITE_RECAPTCHA_KEY is undefined!
@@ -78,7 +78,7 @@ export default function Contact() {
           <textarea name="message" onChange={handleChange} />
         </label>
       </p>
-      <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
+      <Recaptcha theme="light" ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
       <p>
         <button type="submit">Send</button>
       </p>
