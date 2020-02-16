@@ -1,7 +1,7 @@
 import React from 'react'
 // import logo from '../img/logo.svg'
-// import facebook from '../img/social/facebook.svg'
-// import instagram from '../img/social/instagram.svg'
+import facebook from '../../img/social/facebook.svg'
+import instagram from '../../img/social/instagram.svg'
 import twitter from '../../img/social/twitter.svg'
 import youtube from '../../img/social/youtube.svg'
 import github from '../../img/github-icon.svg'
@@ -72,14 +72,28 @@ const Footer = () => (
             </div>
             <div style={{ clear: 'both' }}></div>
           </li>
-          {/* <li>
-            <img src={instagram} alt="Instagram" style={{ width: '1em', height: '1em' }} />
-            <a title="Instagram" href="https://instagram.com/doneops">Instagram</a>
+          <li>
+            <div style={{ float: 'left', width: '10%' }}>
+              <img src={instagram} alt="Instagram" style={{ width: '2em', height: '2em' }} />
+            </div>
+            <div style={{ float: 'right', width: '90%' }}>
+              <a title="Instagram" href="https://instagram.com/doneopstv">
+                Instagram
+              </a>
+            </div>
+            <div style={{ clear: 'both' }}></div>
           </li>
           <li>
-            <img src={facebook} alt="Facebook" style={{ width: '1em', height: '1em' }} />
-            <a title="Facebook" href="https://facebook.com/doneops">Facebook</a>
-          </li> */}
+            <div style={{ float: 'left', width: '10%' }}>
+              <img src={facebook} alt="Facebook" style={{ width: '2em', height: '2em' }} />
+            </div>
+            <div style={{ float: 'right', width: '90%' }}>
+              <a title="Facebook" href="https://fb.me/doneopstv">
+                Facebook
+              </a>
+            </div>
+            <div style={{ clear: 'both' }}></div>
+          </li>
         </ul>
       </div>
     </div>
