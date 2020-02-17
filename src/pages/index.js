@@ -1,6 +1,8 @@
 import React from 'react'
 import Button from '../components/Button'
 import Card from '../components/Card'
+import Contact from '../components/contact'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 import TeamCard from '../components/teamMemberCard'
 // import LabelText from '../components/LabelText'
 import Layout from '../components/layout/Layout'
@@ -22,7 +24,11 @@ export default () => (
             Your partners in the journey to sustainable DevOps
           </p>
           <p className="mt-8 md:mt-12">
-            <Button size="lg">Contact Us</Button>
+            <Button size="lg">
+              <AnchorLink href="#contactus">
+                <a style={{ color: 'white' }}>Contact Us</a>
+              </AnchorLink>
+            </Button>
           </p>
           <p className="mt-4 text-gray-600">Placeholder for main entry text</p>
         </div>
@@ -77,12 +83,12 @@ export default () => (
         </div>
       </div>
     </section>
-    <section className="container mx-auto my-20 py-24 bg-gray-200 rounded-lg text-center">
+    <section
+      id="contactus"
+      className="container mx-auto my-20 py-20 bg-gray-200 rounded-lg text-center"
+    >
       <h3 className="text-5xl font-semibold">Ready to be done?</h3>
-      <p className="mt-8 text-xl font-light">Contact form goes here</p>
-      <p className="mt-8">
-        <Button size="xl">Get Started Now</Button>
-      </p>
+      <Contact />
     </section>
   </Layout>
 )
