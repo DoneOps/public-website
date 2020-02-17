@@ -2,8 +2,8 @@ export default [
   {
     title: 'John Favorite',
     github: 'https://github.com/OldCrowEW',
-    summary: 'John Favourite is ...',
-    content: 'John Favourite is ...',
+    summary: 'John Favorite is a Sr DevOps Engineer at ActionIQ where he leads a team of DevOps Engineers delivering tools such as configuration management and CI/CD pipelines.',
+    content: 'John Favorite is a Sr DevOps Engineer at ActionIQ where he leads a team of DevOps Engineers delivering tools such as configuration management, CI/CD pipelines and glue code to improve Dev experience. He previously lead the DevOps Team at Forcepoint (formally RedOwl Analytics prior to their acquisition) where he oversaw the complete SDLC lifecyle and deployment of their hosted and on-prem UEBA/E-Surveillance product. As a government contractor he oversaw and maintained all apects of a Computer Network Operations Training Lab',
   },
   {
     title: 'Jonathan Meyers',
