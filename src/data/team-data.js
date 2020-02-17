@@ -2,13 +2,14 @@ export default [
   {
     title: 'John Favorite',
     github: 'https://github.com/OldCrowEW',
-    summary: 'John Favourite is the ...',
-    content: 'John Favourite is the ...',
+    summary: 'John Favourite is ...',
+    content: 'John Favourite is ...',
   },
   {
     title: 'Jonathan Meyers',
     github: 'https://github.com/jmymy',
-    summary: 'Jonathan Meyers is the Head of Infrastructure at Cybrary',
+    summary:
+      'Jonathan Meyers is the Head of Infrastructure at Cybrary where he is responsible for designing, maintaining, and securing all corporate infrastructure including their Security Enablement platform.',
     content:
       'Jonathan Meyers is the Head of Infrastructure at Cybrary where he is responsible for designing, maintaining, and securing all corporate infrastructure including their Security Enablement platform supporting over 200 companies and 2.5 million users worldwide. He previously worked as a Senior DevOps and Senior Operations Engineer at Forcepoint (formally RedOwl Analytics prior to their acquisition) where he oversaw the operations and deployment of their hosted and on-prem UEBA/E-Surveillance product. Jonathan holds an Information Technology degree from The United States Military Academy at West Point.',
     teamMemberImage: 'https://placeimg.com/150/150/people',
@@ -16,8 +17,8 @@ export default [
   {
     title: 'James Collins',
     github: 'https://github.com/jracollins',
-    summary: 'James Collins is the ...',
-    content: 'James Collins is the ...',
+    summary: 'James Collins is ...',
+    content: 'James Collins is ...',
   },
   {
     title: 'Wayne Pascoe',
@@ -30,7 +31,7 @@ export default [
   },
   {
     title: 'Stephen Drollinger',
-    summary: 'Stephen Drollinger is the ...',
-    content: 'Stephen Drollinger is the ...',
+    summary: 'Stephen Drollinger is ...',
+    content: 'Stephen Drollinger is ...',
   },
 ]
