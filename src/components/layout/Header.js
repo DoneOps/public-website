@@ -28,7 +28,11 @@ const Header = () => (
         <a href="/blog">Blog</a>
       </div>
       <div className="hidden md:block">
-        <Button className="text-sm">Contact Us</Button>
+        <Button className="text-sm">
+          <AnchorLink href="#contactus">
+            <a style={{ color: 'white' }}>Contact Us</a>
+          </AnchorLink>
+        </Button>
       </div>
     </div>
   </header>
