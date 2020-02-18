@@ -19,7 +19,7 @@
     "gatsby-remark-relative-images": "^0.2.1",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-theme-codebushi": "1.0.0",
-    "gatsby-transformer-remark": "^2.6.51",
+    "gatsby-transformer-remark": "^2.6.52",
     "gatsby-transformer-sharp": "^2.1.9",
     "lodash": "^4.17.15",
     "lodash-webpack-plugin": "^0.11.4",
