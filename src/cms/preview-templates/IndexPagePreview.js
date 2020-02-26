@@ -17,9 +17,8 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         mainpitch={data.mainpitch || {}}
       />
     )
-  } else {
-    return <div>Loading...</div>
   }
+  return <div>Loading...</div>
 }
 
 IndexPagePreview.propTypes = {

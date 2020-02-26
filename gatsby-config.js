@@ -8,9 +8,9 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-netlify-cache',
     {
-      resolve: `gatsby-theme-codebushi`,
+      resolve: 'gatsby-theme-codebushi',
       options: {
-        tailwindConfig: `tailwind.config.js`,
+        tailwindConfig: 'tailwind.config.js',
       },
     },
     {

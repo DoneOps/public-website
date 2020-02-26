@@ -22,15 +22,17 @@ export const BlogPostTemplate = ({
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">{title}</h1>
+            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+              {title}
+            </h1>
             <p>{description}</p>
             <PostContent content={content} />
             {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
+              <div style={{ marginTop: '4rem' }}>
                 <h4>Tags</h4>
                 <ul className="taglist">
                   {tags.map(tag => (
-                    <li key={tag + `tag`}>
+                    <li key={`${tag}tag`}>
                       <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                     </li>
                   ))}
@@ -64,7 +66,10 @@ const BlogPost = ({ data }) => {
         helmet={
           <Helmet titleTemplate="%s | DoneOps Blog">
             <title>{`${post.frontmatter.title}`}</title>
-            <meta name="description" content={`${post.frontmatter.description}`} />
+            <meta
+              name="description"
+              content={`${post.frontmatter.description}`}
+            />
           </Helmet>
         }
         tags={post.frontmatter.tags}

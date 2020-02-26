@@ -3,9 +3,12 @@ plugins:
   - react
   - jsx-a11y
   - import
+  - prettier
 extends:
 - airbnb
 - plugin:react/recommended
+- prettier/react
+- plugin:prettier/recommended
 ignorePatterns:
 - "public/*"
 env:
@@ -27,6 +30,17 @@ rules:
   arrow-parens: 0
   jsx-a11y/href-no-hash: 0
   react/jsx-filename-extension: 0
+  # Ratchet these down over time
+  react/prop-types: 1
+  no-unused-vars: 1
+  react/destructuring-assignment: 1
+  react/require-default-props: 1
+  jsx-a11y/anchor-is-valid: 1
+  import/no-named-as-default: 1
+  react/prefer-stateless-function: 1
+  react/forbid-prop-types: 1
+  react/display-name: 1
+  consistent-return: 1
 settings:
   react:
     pragma: React
