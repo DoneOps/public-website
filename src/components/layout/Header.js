@@ -8,7 +8,11 @@ const Header = () => (
     <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8">
       <div className="flex items-center text-2xl">
         <div className="w-12 mr-3">
-          <img src={LogoIcon} alt="DoneOps" style={{ width: '2em', height: '2em' }} />
+          <img
+            src={LogoIcon}
+            alt="DoneOps"
+            style={{ width: '2em', height: '2em' }}
+          />
         </div>
         <a href="/" style={{ color: 'black' }}>
           DoneOps
@@ -44,7 +48,11 @@ export const SubHeader = () => (
     <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8">
       <div className="flex items-center text-2xl">
         <div className="w-12 mr-3">
-          <img src={LogoIcon} alt="DoneOps" style={{ width: '2em', height: '2em' }} />
+          <img
+            src={LogoIcon}
+            alt="DoneOps"
+            style={{ width: '2em', height: '2em' }}
+          />
         </div>
         <a href="/" style={{ color: 'black' }}>
           DoneOps

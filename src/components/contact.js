@@ -15,7 +15,7 @@ const RECAPTCHA_KEY = '6LdFXNkUAAAAAETK8WJo2LBk8t974hRunbG-lkyR'
 
 function encode(data) {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join('&')
 }
 
@@ -58,21 +58,21 @@ export default function Contact() {
         <p>This form won’t work with Javascript disabled</p>
       </noscript>
       <p>
-        <label>
+        <label htmlFor="name">
           Your name:
           <br />
           <input type="text" name="name" onChange={handleChange} />
         </label>
       </p>
       <p>
-        <label>
+        <label htmlFor="email">
           Your email:
           <br />
           <input type="email" name="email" onChange={handleChange} />
         </label>
       </p>
       <p>
-        <label>
+        <label htmlFor="message">
           Message:
           <br />
           <textarea name="message" onChange={handleChange} />
