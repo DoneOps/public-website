@@ -5,7 +5,7 @@
   "author": "DoneOps",
   "dependencies": {
     "bulma": "^0.8.0",
-    "gatsby": "^2.19.21",
+    "gatsby": "^2.19.22",
     "gatsby-image": "^2.2.41",
     "gatsby-plugin-netlify": "^2.0.6",
     "gatsby-plugin-netlify-cache": "^1.2.0",
