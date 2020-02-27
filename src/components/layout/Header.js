@@ -4,7 +4,7 @@ import LogoIcon from '../../../static/img/logo-cloud.svg'
 import Button from '../Button'
 
 const Header = () => (
-  <header className="sticky top-0 bg-white shadow">
+  <header className="sticky top-0 bg-white shadow" style={{ zIndex: '50' }}>
     <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8">
       <div className="flex items-center text-2xl">
         <div className="w-12 mr-3">
@@ -44,7 +44,7 @@ const Header = () => (
 export default Header
 
 export const SubHeader = () => (
-  <header className="sticky top-0 bg-white shadow">
+  <header className="sticky top-0 bg-white shadow" style={{ zIndex: '50' }}>
     <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8">
       <div className="flex items-center text-2xl">
         <div className="w-12 mr-3">

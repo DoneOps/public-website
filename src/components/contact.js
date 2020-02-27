@@ -80,7 +80,18 @@ export default function Contact() {
       </p>
       <Recaptcha theme="light" ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
       <p>
-        <button type="submit">Send</button>
+        <button
+          type="submit"
+          className={`
+            py-4 px-12
+            bg-primary
+            hover:bg-primary-darker
+            rounded
+            text-white
+        `}
+        >
+          Send
+        </button>
       </p>
     </form>
   )
