@@ -31,7 +31,8 @@ export default [
   },
   {
     title: 'Stephen Drollinger',
-    summary: 'Stephen Drollinger is ...',
-    content: 'Stephen Drollinger is ...',
+    github: 'https://github.com/Valimere',
+    summary: 'Stephen Drollinger is a software engineer at Ironnet Cybersecurity working on the Detection Development turning new analytics into production code. ',
+    content: 'Stephen Drollinger started at Ironnet Cybersecurity in a DevOps role supporting a product made up of many microservices. Responsibilities included implementing and maintaining physical hardware, Openstack, customer deployments, CI/CD and more. He transitioned to a software engineer on completion of his degree in computer science. Now he works on the Detection Development team turning new analytics into production code. Stephen also has a Network Engineering background and recently completed the AWS certified developer associate',
   },
 ]
