@@ -1,8 +1,8 @@
 import React from 'react'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Button from '../components/Button'
 import Card from '../components/Card'
 import Contact from '../components/contact'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
 import TeamCard from '../components/teamMemberCard'
 // import LabelText from '../components/LabelText'
 import Layout from '../components/layout/Layout'
@@ -45,8 +45,8 @@ export default () => (
             <Card className="mb-8">
               <p className="font-semibold text-xl">Basic Service</p>
               <p className="mt-4">
-                An enim nullam tempor gravida donec enim ipsum blandit porta justo integer odio
-                velna vitae auctor integer.
+                An enim nullam tempor gravida donec enim ipsum blandit porta
+                justo integer odio velna vitae auctor integer.
               </p>
             </Card>
           </div>
@@ -54,8 +54,8 @@ export default () => (
             <Card className="mb-8">
               <p className="font-semibold text-xl">Premium Service</p>
               <p className="mt-4">
-                An enim nullam tempor gravida donec enim ipsum blandit porta justo integer odio
-                velna vitae auctor integer.
+                An enim nullam tempor gravida donec enim ipsum blandit porta
+                justo integer odio velna vitae auctor integer.
               </p>
             </Card>
           </div>
@@ -63,7 +63,8 @@ export default () => (
             <Card className="mb-8">
               <p className="font-semibold text-xl">Custom Solution</p>
               <p className="mt-4">
-                We will work with you to make a custom solution that fits your needs.
+                We will work with you to make a custom solution that fits your
+                needs.
               </p>
             </Card>
           </div>

@@ -10,3 +10,7 @@ a:hover {
 @tailwind components;
 
 @tailwind utilities;
+
+form[name='contact-recaptcha'] > div > div > div {
+  margin: auto;
+}

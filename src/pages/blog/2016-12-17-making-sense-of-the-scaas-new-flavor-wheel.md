@@ -1,13 +1,14 @@
 ---
 templateKey: blog-post
-title: Making sense of the SCAA’s new Flavor Wheel
-date: 2016-12-17T15:04:10.000Z
+title: Why we started DoneOps
+date: 2020-03-01T15:04:10.000Z
+description: What pain and experiences led us to start DoneOps
 featuredpost: false
 featuredimage: /img/flavor_wheel.jpg
-description: The Coffee Taster’s Flavor Wheel, the official resource used by coffee tasters, has been revised for the first time this year.
 tags:
-  - flavor
-  - tasting
+  - devops
+  - devsecops
+  - about us
 ---
 ![flavor wheel](/img/flavor_wheel.jpg)
 
