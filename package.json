@@ -33,7 +33,7 @@
     "react-dom": "^16.13.0",
     "react-google-recaptcha": "^2.0.1",
     "react-helmet": "^5.2.1",
-    "uuid": "^7.0.1"
+    "uuid": "^7.0.2"
   },
   "keywords": [
     "gatsby",
