@@ -17,12 +17,6 @@ export default [
     teamMemberImage: 'https://placeimg.com/150/150/people',
   },
   {
-    title: 'James Collins',
-    github: 'https://github.com/jracollins',
-    summary: 'James Collins is ...',
-    content: 'James Collins is ...',
-  },
-  {
     title: 'Wayne Pascoe',
     github: 'https://github.com/WTPascoe',
     summary:
@@ -33,7 +27,10 @@ export default [
   },
   {
     title: 'Stephen Drollinger',
-    summary: 'Stephen Drollinger is ...',
-    content: 'Stephen Drollinger is ...',
+    github: 'https://github.com/Valimere',
+    summary:
+      'Stephen Drollinger is a software engineer with a strong DevOps background. He currently works at IronNet Cybersecurity on Detection Development, turning new analytics into production code.',
+    content:
+      'Stephen Drollinger is a software engineer at IronNet Cybersecurity. He has held a number of DevOps roles, implemented and been responsible for physical hardware, Openstack, customer product deployments, CI/CD, and more. He recently transitioned to a software engineering role working on the Detection Development team, turning new analytics into production code.',
   },
 ]
