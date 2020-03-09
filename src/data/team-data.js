@@ -17,12 +17,6 @@ export default [
     teamMemberImage: 'https://placeimg.com/150/150/people',
   },
   {
-    title: 'James Collins',
-    github: 'https://github.com/jracollins',
-    summary: 'James Collins is ...',
-    content: 'James Collins is ...',
-  },
-  {
     title: 'Wayne Pascoe',
     github: 'https://github.com/WTPascoe',
     summary:
@@ -34,7 +28,9 @@ export default [
   {
     title: 'Stephen Drollinger',
     github: 'https://github.com/Valimere',
-    summary: 'Stephen Drollinger is a software engineer at Ironnet Cybersecurity working on the Detection Development turning new analytics into production code. ',
-    content: 'Stephen Drollinger started at Ironnet Cybersecurity in a DevOps role supporting a product made up of many microservices. Responsibilities included implementing and maintaining physical hardware, Openstack, customer deployments, CI/CD and more. He transitioned to a software engineer on completion of his degree in computer science. Now he works on the Detection Development team turning new analytics into production code. Stephen also has a Network Engineering background and recently completed the AWS certified developer associate',
+    summary:
+      'Stephen Drollinger is a software engineer with a strong DevOps background. He currently works at IronNet Cybersecurity on Detection Development, turning new analytics into production code.',
+    content:
+      'Stephen Drollinger is a software engineer at IronNet Cybersecurity. He has held a number of DevOps roles, implemented and been responsible for physical hardware, Openstack, customer product deployments, CI/CD, and more. He recently transitioned to a software engineering role working on the Detection Development team, turning new analytics into production code.',
   },
 ]
