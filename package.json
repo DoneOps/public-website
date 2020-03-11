@@ -15,7 +15,7 @@
     "gatsby-plugin-sass": "^2.1.30",
     "gatsby-plugin-sharp": "^2.4.8",
     "gatsby-remark-copy-linked-files": "^2.1.39",
-    "gatsby-remark-images": "^3.1.47",
+    "gatsby-remark-images": "^3.1.48",
     "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-source-filesystem": "^2.1.51",
     "gatsby-theme-codebushi": "1.0.0",
