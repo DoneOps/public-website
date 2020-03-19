@@ -1,13 +1,15 @@
 import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Button from '../components/Button'
-import Card from '../components/Card'
+// import Card from '../components/Card'
 import Contact from '../components/contact'
 import TeamCard from '../components/teamMemberCard'
+import FeatureCard from '../components/FeatureCard'
 // import LabelText from '../components/LabelText'
 import Layout from '../components/layout/Layout'
 // import SplitSection from '../components/SplitSection'
 // import StatsBox from '../components/StatsBox'
+import featureData from '../data/features-data'
 import teamData from '../data/team-data'
 import HeroImage from '../svg/HeroImage'
 // import SvgCharts from '../svg/SvgCharts'
@@ -30,7 +32,9 @@ export default () => (
               </AnchorLink>
             </Button>
           </p>
-          <p className="mt-4 text-gray-600">Placeholder for main entry text</p>
+          <p className="mt-4 text-gray-600">
+            We put the variable in your Dev&#123;&#123; var &#125;&#125;Ops
+          </p>
         </div>
         <div className="lg:w-1/2">
           <HeroImage />
@@ -39,39 +43,19 @@ export default () => (
     </section>
     <section id="features" className="py-20 lg:pb-40 lg:pt-48">
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl lg:text-5xl font-semibold">Main Features</h2>
-        <div className="flex flex-col sm:flex-row sm:-mx-3 mt-12">
-          <div className="flex-1 px-3">
-            <Card className="mb-8">
-              <p className="font-semibold text-xl">Basic Service</p>
-              <p className="mt-4">
-                An enim nullam tempor gravida donec enim ipsum blandit porta
-                justo integer odio velna vitae auctor integer.
-              </p>
-            </Card>
-          </div>
-          <div className="flex-1 px-3">
-            <Card className="mb-8">
-              <p className="font-semibold text-xl">Premium Service</p>
-              <p className="mt-4">
-                An enim nullam tempor gravida donec enim ipsum blandit porta
-                justo integer odio velna vitae auctor integer.
-              </p>
-            </Card>
-          </div>
-          <div className="flex-1 px-3">
-            <Card className="mb-8">
-              <p className="font-semibold text-xl">Custom Solution</p>
-              <p className="mt-4">
-                We will work with you to make a custom solution that fits your
-                needs.
-              </p>
-            </Card>
-          </div>
+        <h2 className="text-3xl lg:text-5xl font-semibold">What We Do</h2>
+        <div className="flex flex-row flex-wrap">
+          {featureData.map(featureSection => (
+            <div
+              key={featureSection.sectionTitle}
+              className="flex-auto px-3 lg:w-1/2 md:w-full sm:w-full xs:w-full"
+            >
+              <FeatureCard featureSection={featureSection} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
-
     <section id="yourteam" className="py-20 lg:pb-40 lg:pt-48">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl lg:text-5xl font-semibold">Meet Your Team</h2>

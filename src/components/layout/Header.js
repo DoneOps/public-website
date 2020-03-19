@@ -20,16 +20,13 @@ const Header = () => (
       </div>
       <div className="flex mt-4 sm:mt-0">
         <AnchorLink className="px-4" href="#features">
-          Features
+          What We Do
         </AnchorLink>
       </div>
       <div className="flex mt-4 sm:mt-0">
         <AnchorLink className="px-4" href="#yourteam">
           Meet Your Team
         </AnchorLink>
-      </div>
-      <div className="flex mt-4 sm:mt-0">
-        <a href="/blog">Blog</a>
       </div>
       <div className="hidden md:block">
         <Button className="text-sm">
@@ -59,13 +56,10 @@ export const SubHeader = () => (
         </a>
       </div>
       <div className="flex mt-4 sm:mt-0">
-        <a href="/#features">Features</a>
+        <a href="/#features">What We Do</a>
       </div>
       <div className="flex mt-4 sm:mt-0">
         <a href="/#yourteam">Meet Your Team</a>
-      </div>
-      <div className="flex mt-4 sm:mt-0">
-        <a href="/blog">Blog</a>
       </div>
       <div className="hidden md:block">
         <Button className="text-sm">Contact Us</Button>
