@@ -29,11 +29,20 @@ const Header = () => (
         </AnchorLink>
       </div>
       <div className="hidden md:block">
-        <Button className="text-sm">
+        <button
+          type="button"
+          className={`
+            py-4 px-12
+            bg-primary
+            hover:bg-primary-darker
+            rounded
+            text-white
+        `}
+        >
           <AnchorLink href="#contactus">
             <a style={{ color: 'white' }}>Contact Us</a>
           </AnchorLink>
-        </Button>
+        </button>
       </div>
     </div>
   </header>
