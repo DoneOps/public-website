@@ -1,0 +1,16 @@
+@tailwind base;
+
+a {
+  @apply text-primary;
+}
+a:hover {
+  @apply text-primary-darker;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+form[name='contact-recaptcha'] > div > div > div {
+  margin: auto;
+}
