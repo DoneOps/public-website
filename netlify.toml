@@ -11,6 +11,12 @@
     Referrer-Policy = "strict-origin"
     Feature-Policy = "vibrate 'none'; microphone 'none'; camera 'none'; speaker 'none'; sync-xhr 'self'"
 
+[[redirects]]
+  from = "https://keen-montalcini-f453b2.netlify.com/*"
+  to = "https://www.doneops.com/:splat"
+  status = 301
+  force = true
+
 [build]
   publish = "public"
   command = "npm run build"
