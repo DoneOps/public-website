@@ -17,7 +17,7 @@ const Footer = () => (
         </p>
       </div>
       <div className="flex-1 px-3">
-        <h2 className="text-lg font-semibold">Important Links</h2>
+        {/* <h2 className="text-lg font-semibold">Important Links</h2>
         <ul className="mt-4 leading-loose">
           <li>
             <a href="/terms-conditions">Terms &amp; Conditions</a>
@@ -25,7 +25,7 @@ const Footer = () => (
           <li>
             <a href="/privacy-policy">Privacy Policy</a>
           </li>
-        </ul>
+        </ul> */}
       </div>
       <div className="flex-1 px-3">
         <h2 className="text-lg font-semibold">Social Media</h2>
