@@ -8,7 +8,7 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src https:; script-src 'self' d33wubrfki0l68.cloudfront.net gstatic.com www.google.com; connect-src 'self'; img-src 'self' avatars.githubusercontent.com www.gstatic.com data:; style-src 'self' 'unsafe-inline' www.gstatic.com; font-src 'self' fonts.gstatic.com data:; manifest-src 'self';form-action 'self';"
+    Content-Security-Policy = "default-src https:; script-src 'self' 'unsafe-inline' d33wubrfki0l68.cloudfront.net gstatic.com www.google.com; connect-src 'self'; img-src 'self' avatars.githubusercontent.com www.gstatic.com data:; style-src 'self' 'unsafe-inline' www.gstatic.com; font-src 'self' fonts.gstatic.com data:; manifest-src 'self';form-action 'self';"
     Referrer-Policy = "strict-origin"
     Feature-Policy = "vibrate 'none'; microphone 'none'; camera 'none'; speaker 'none';"
 
