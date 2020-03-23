@@ -8,7 +8,7 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src https:; script-src 'self' 'unsafe-inline' d33wubrfki0l68.cloudfront.net https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; connect-src 'self'; img-src 'self' avatars.githubusercontent.com https://www.gstatic.com data:; style-src 'self' 'unsafe-inline' https://www.gstatic.com; font-src 'self' https://fonts.gstatic.com data:; manifest-src 'self';form-action 'self';frame-src https://www.google.com/recaptcha/;object-src 'none'; base-uri 'none'"
+    Content-Security-Policy = "default-src https:; script-src https: 'unsafe-inline'; style-src https: 'unsafe-inline'"
     Referrer-Policy = "strict-origin"
     Feature-Policy = "vibrate 'none'; microphone 'none'; camera 'none'; speaker 'none';"
 
