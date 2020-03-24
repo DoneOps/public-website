@@ -47,7 +47,7 @@ export default function Contact() {
   return (
     <form
       name="contact-recaptcha"
-      method="post"
+      method="POST"
       action="/success"
       data-netlify="true"
       data-netlify-recaptcha="true"
@@ -57,6 +57,12 @@ export default function Contact() {
       <noscript>
         <p>This form won’t work with Javascript disabled</p>
       </noscript>
+      <p className="hidden">
+        <label htmlFor="bot">
+          Don’t fill this out if youre human:{' '}
+          <input type="text" name="bot-field" />
+        </label>
+      </p>
       <p>
         <label htmlFor="name">
           Your name:
@@ -78,6 +84,7 @@ export default function Contact() {
           <textarea name="message" onChange={handleChange} />
         </label>
       </p>
+      {/* <div data-netlify-recaptcha="true"></div> */}
       <Recaptcha theme="light" ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
       <p>
         <button
