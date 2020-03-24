@@ -1,3 +1,23 @@
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=360000"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Content-Security-Policy = "default-src https:; script-src https: 'unsafe-inline'; style-src https: 'unsafe-inline'; img-src https: data:;font-src https: data:;"
+    Referrer-Policy = "strict-origin"
+    Feature-Policy = "vibrate 'none'; microphone 'none'; camera 'none'; speaker 'none';"
+
+[[redirects]]
+  from = "https://keen-montalcini-f453b2.netlify.com/*"
+  to = "https://www.doneops.com/:splat"
+  status = 301
+  force = true
+
 [build]
   publish = "public"
   command = "npm run build"
