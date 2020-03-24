@@ -8,6 +8,7 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Content-Security-Policy = "default-src https:; script-src https: 'unsafe-inline'; style-src https: 'unsafe-inline'; img-src https: data:;font-src https: data:;"
     Referrer-Policy = "strict-origin"
     Feature-Policy = "vibrate 'none'; microphone 'none'; camera 'none'; speaker 'none';"
     Expect-CT = "max-age=0"
@@ -28,11 +29,11 @@
 [build.processing]
   skip_processing = false
 [build.processing.css]
-  bundle = true
-  minify = true
+  bundle = false
+  minify = false
 [build.processing.js]
-  bundle = true
-  minify = true
+  bundle = false
+  minify = false
 [build.processing.html]
   pretty_urls = true
 [build.processing.images]
