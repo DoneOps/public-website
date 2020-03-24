@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout/Layout'
 import Card from '../components/Card'
 
-const Success = props => (
+const Success = (props) => (
   <Layout>
     <Helmet>
       <title>Success Page</title>
@@ -18,7 +18,8 @@ const Success = props => (
           <div className="flex-1 px-3">
             <Card className="mb-8">
               <p className="font-semibold text-xl">
-                Someone will be in touch shortly
+                Someone will be in touch shortly. If you did not successfully
+                pass the reCAPTCHA, we did not get your message.
               </p>
             </Card>
           </div>
