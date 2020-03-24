@@ -15,7 +15,7 @@ const RECAPTCHA_KEY = '6LdFXNkUAAAAAETK8WJo2LBk8t974hRunbG-lkyR'
 
 function encode(data) {
   return Object.keys(data)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join('&')
 }
 
@@ -23,11 +23,11 @@ export default function Contact() {
   const [state, setState] = React.useState({})
   const recaptchaRef = React.createRef()
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     const form = e.target
     const recaptchaValue = recaptchaRef.current.getValue()
@@ -41,13 +41,13 @@ export default function Contact() {
       }),
     })
       .then(() => navigate(form.getAttribute('action')))
-      .catch(error => alert(error))
+      .catch((error) => alert(error))
   }
 
   return (
     <form
       name="contact-recaptcha"
-      method="POST"
+      method="post"
       action="/success"
       data-netlify="true"
       data-netlify-recaptcha="true"
@@ -84,13 +84,7 @@ export default function Contact() {
           <textarea name="message" onChange={handleChange} />
         </label>
       </p>
-      {/* <div data-netlify-recaptcha="true"></div> */}
-      <Recaptcha
-        theme="light"
-        ref={recaptchaRef}
-        sitekey={RECAPTCHA_KEY}
-        onChange={handleChange}
-      />
+      <Recaptcha theme="light" ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
       <p>
         <button
           type="submit"
