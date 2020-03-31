@@ -60,8 +60,8 @@
     "url": "https://github.com/DoneOps/public-website/issues"
   },
   "engines": {
-    "node": "^12.16.0",
-    "yarn": "^1.21.1"
+    "node": "^12.16.1",
+    "yarn": "^1.22.4"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
@@ -71,7 +71,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^2.5.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
     "gatsby-cli": "^2.11.1",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
