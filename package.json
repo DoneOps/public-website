@@ -32,7 +32,7 @@
     "react-dom": "^16.13.0",
     "react-google-recaptcha": "^2.0.1",
     "react-helmet": "^6.0.0",
-    "uuid": "^7.0.2"
+    "uuid": "^8.0.0"
   },
   "keywords": [
     "gatsby",
@@ -44,7 +44,7 @@
   "scripts": {
     "clean": "gatsby clean",
     "start": "npm run develop",
-    "build": "npm run clean && gatsby build",
+    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "develop": "npm run clean && gatsby develop",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
@@ -64,14 +64,14 @@
     "yarn": "^1.22.0"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
+    "eslint": "^7.0.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^3.0.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
     "gatsby-cli": "^2.11.1",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
