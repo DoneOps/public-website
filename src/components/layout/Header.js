@@ -73,6 +73,9 @@ export const SubHeader = () => (
       <div className="flex mt-4 sm:mt-0">
         <a href="/#yourteam">Meet Your Team</a>
       </div>
+      <div className="flex mt-4 sm:mt-0">
+        <a href="/blog">Blog</a>
+      </div>
       <div className="hidden md:block">
         <Button className="text-sm">Contact Us</Button>
       </div>
