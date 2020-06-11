@@ -28,6 +28,9 @@ const Header = () => (
           Meet Your Team
         </AnchorLink>
       </div>
+      <div className="flex mt-4 sm:mt-0">
+        <a href="/blog">Blog</a>
+      </div>
       <div className="hidden md:block">
         <button
           type="button"
