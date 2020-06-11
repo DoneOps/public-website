@@ -4,16 +4,16 @@ title: Our path to DoneOps
 date: 2020-06-10T15:04:10.000Z
 description: What pain and experiences led us to start DoneOps
 featuredpost: true
-featuredimage: /img/flavor_wheel.jpg
+featuredimage: /img/path.jpg
 tags:
   - devops
   - devsecops
   - about us
 ---
 
-![flavor wheel](/img/flavor_wheel.jpg)
+![](/img/path.jpg)
 
-## How did we get here.
+## How did we get here?
 
 Software should enable your business, but many companies today find themselves in the IT business regardless of what they started out trying to do - everyone from retail to training companies will need some development effort to make their product or services available to their target audience.
 
