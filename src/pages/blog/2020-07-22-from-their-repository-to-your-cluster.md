@@ -4,6 +4,7 @@ title: From their repository to your cluster
 date: 2020-07-20T15:04:10.000Z
 description: What, why and how to choose.
 featuredpost: false
+featuredimage: /img/options.jpg
 tags:
   - devops
   - devsecops
