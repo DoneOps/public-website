@@ -12,9 +12,9 @@ tags:
 
 ![](/img/options.jpg)
 
-### Where to start.
-
 This multipart series examines the options and process behind making software from third parties available in your Kubernetes cluster.
+
+## Where to start.
 
 Most developers are already familiar with using external libraries and frameworks within their end product, and the processes around managing these dependencies are increasingly mature. What’s less standardised is how to take full advantage of existing utilities instead of reinventing the wheel.
 
@@ -22,7 +22,7 @@ The example utility I’ll talk about here is somewhat contrived, but being smal
 
 The first question to answer when evaluating any new tool is what functionality you need from it. In this case, my requirement is pretty simple - a tool that, on a scheduled basis or when home internet public IP address changes, will update a DNS entry in Cloudflare. There are a plethora of tools on GitHub that will do this, so now that we know our requirement, what’s next?
 
-In my opinion, when choosing a tool, these factors are a must include:
+**In my opinion, when choosing a tool, these factors are a must include:**
 
 - How closely does the functionality match your requirements?
 - What are the system requirements?
@@ -48,24 +48,30 @@ Software licensing is a minefield that has tripped up many companies. It is vita
 
 So with that in mind, I’ve selected https://github.com/LINKIWI/cloudflare-ddns-client as the tool I’ll use to meet my requirement. Let us walk through the factors mentioned above with regard to the selected project.
 
-How closely does the functionality meet our requirements?
+#### How closely does the functionality meet our requirements?
+
 This utility is able to update a Cloudflare DNS entry on a schedule, but it doesn’t currently run on any part of my network stack that would allow it to receive a notification when the public IP address changes. Some changes will be needed to cache the Cloudflare IP address so that it can be run frequently without abusing the Cloudflare API, but the code is clear and this should be an easy change.
 
-What are the system requirements?
+#### What are the system requirements?
+
 The system requirements are relatively straightforward - a Unix host with Python 3 and cron is all you need to run it.
 
-Is the maintainer open to submissions?
+#### Is the maintainer open to submissions?
+
 The original project was only able to be run as a cronjob on a Unix host. This didn’t meet my requirements of being deployable to a Kubernetes cluster.
 
 The first step in packaging this in a more suitable format, I created a simple Dockerfile. The maintainer was very receptive and accepted the change.
 
-How is the utility packaged?
+#### How is the utility packaged?
+
 Now that the utility is packaged as a Docker file, I still needed to deploy it securely to a Kubernetes cluster. This was possible via a very lightweight docker file and a Kubernetes configmap configuration with a secret for the sensitive Cloudflare API token. Because the code is a one-shot currently, it is meant to be run as a Cronjob. It’s not suitable to be run as a deployment or StatefulSet.
 
-What license is the tool provided under?
+#### What license is the tool provided under?
+
 LINKIWI/cloudflare-ddns-client is licensed under the MIT License which means we can use it free of charge. It’s also a developer-friendly license that would allow us to include this component should we distribute our final product.
 
-Security Requirements.
+#### Security Requirements.
+
 For this example, we are not too concerned with the security requirements as it will not be going into any production environment, just a testing sandbox. However, we see the image is based on the official alpine python image which means it will be updated regularly with regards to CVEs and other updates. We will cover how to pull in these updates in another part.
 
 As you can see, there are lots of considerations to account for, but by breaking down the requirements and doing our homework now, we are setting ourselves up for success in the implementation phase and hopefully avoiding any complications that may cause us to scrap the selected tool later due to unforeseen requirements.
