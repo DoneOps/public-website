@@ -22,21 +22,22 @@ The example utility I’ll talk about here is somewhat contrived, but being smal
 The first question to answer when evaluating any new tool is what functionality you need from it. In this case, my requirement is pretty simple - a tool that, on a scheduled basis or when home internet public IP address changes, will update a DNS entry in Cloudflare. There are a plethora of tools on GitHub that will do this, so now that we know our requirement, what’s next?
 
 In my opinion, when choosing a tool, these factors are a must include:
-How closely does the functionality match your requirements?
-What are the system requirements?
-Do you require support for PodSecurityPolicies, Network Policies, Service Accounts / RBAC, etc
-Does a tool exist that is packaged in a compatible way with your existing environment?
-How is it packaged? Helm vs yml vs CRD/Operator, etc.
-Will it need special node types in Kubernetes?
-How actively maintained is the tool?
-Do major issues remain open for long periods of time?
-Is the utility maintainer open to external submissions?
-What license is the tool provided under?
-Security Requirements
-Will this be running in a production cluster with potential access to sensitive information?
-Where is the docker image hosted?
-How often is it updated to deal with CVEs and other security issues?
-What is the base image? Alpine vs distroless, etc
+
+- How closely does the functionality match your requirements?
+- What are the system requirements?
+  - Do you require support for PodSecurityPolicies, Network Policies, Service Accounts / RBAC, etc
+- Does a tool exist that is packaged in a compatible way with your existing environment?
+  - How is it packaged? Helm vs yml vs CRD/Operator, etc.
+  - Will it need special node types in Kubernetes?
+- How actively maintained is the tool?
+  - Do major issues remain open for long periods of time?
+- Is the utility maintainer open to external submissions?
+- What license is the tool provided under?
+- Security Requirements
+  - Will this be running in a production cluster with potential access to sensitive information?
+  - Where is the docker image hosted?
+  - How often is it updated to deal with CVEs and other security issues?
+  - What is the base image? Alpine vs distroless, etc
 
 Now comes the challenging part, and only experience will help you master the selection process. It is not a typical selection process where you pick the solution that meets most of your functionality requirements. For example, a tool that only matches 80% of your functionality requirement, but has a maintainer that is receptive to accepting changes and already packaged in a format that you are able to deploy into your existing environment is often a more suitable candidate than a tool that 100% matches your current environment, but where you would be responsible for all packaging and deployment. This is because upgrades and future versions of the tool may consume more resources to onboard than modifying the 80% matching tool once.
 
