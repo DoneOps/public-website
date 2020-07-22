@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: From their repository to your cluster
 date: 2020-07-20T15:04:10.000Z
-description: What, why and how to choose.
+description: What, why and how to choose
 featuredpost: true
 featuredimage: /img/options.jpg
 tags:
@@ -14,11 +14,11 @@ tags:
 
 This multipart series examines the options and process behind making software from third parties available in your Kubernetes cluster.
 
-## Where to start.
+## Where to start?
 
 Most developers are already familiar with using external libraries and frameworks within their end product, and the processes around managing these dependencies are increasingly mature. What’s less standardised is how to take full advantage of existing utilities instead of reinventing the wheel.
 
-The example utility I’ll talk about here is somewhat contrived, but being small and simple makes it easy to iterate on and use as an example. So let’s look at how we’d take a tool to update Cloudflare DNS on IP address change and make it a part of our cluster.
+The example utility we’ll talk about here is somewhat contrived, but being small and simple makes it easy to iterate on and use as an example. So let’s look at how we’d take a tool to update Cloudflare DNS on IP address change, and make it a part of our cluster.
 
 The first question to answer when evaluating any new tool is what functionality you need from it. In this case, my requirement is pretty simple - a tool that, on a scheduled basis or when home internet public IP address changes, will update a DNS entry in Cloudflare. There are a plethora of tools on GitHub that will do this, so now that we know our requirement, what’s next?
 
@@ -44,9 +44,9 @@ Now comes the challenging part, and only experience will help you master the sel
 
 Projects with active maintainers are often better choices because they enable you to reduce your technical debt by having the project own any changes in the future. It’s also important to remember that these developers don’t work for you; your goals and motivations may differ, and these engagements have to be approached with respect.
 
-Software licensing is a minefield that has tripped up many companies. It is vitally important to ensure that the tools and utilities you use do not expose you to legal risks or obligations that you are not prepared to comply with. Having a list of approved licenses for both 3rd party libraries and external tools that will be part of the deployment process or deployed product is something that will make selecting tools in the future simpler, and we strongly advise that this is done as early as possible.
+Software licensing is a minefield that has tripped up many companies. It is vitally important to ensure that the tools and utilities you use do not expose you to legal risks or obligations with which you are not prepared to comply. Having a list of approved licenses for both 3rd party libraries and external tools that will be part of the deployment process or deployed product is something that will make selecting tools in the future simpler, and we strongly advise that this is done as early as possible.
 
-So with that in mind, I’ve selected https://github.com/LINKIWI/cloudflare-ddns-client as the tool I’ll use to meet my requirement. Let us walk through the factors mentioned above with regard to the selected project.
+So with that in mind, we’ve selected https://github.com/LINKIWI/cloudflare-ddns-client as the tool we’ll use to meet our requirements. Let us walk through the factors mentioned above with regard to the selected project.
 
 #### How closely does the functionality meet our requirements?
 
@@ -60,17 +60,17 @@ The system requirements are relatively straightforward - a Unix host with Python
 
 The original project was only able to be run as a cronjob on a Unix host. This didn’t meet my requirements of being deployable to a Kubernetes cluster.
 
-The first step in packaging this in a more suitable format, I created a simple Dockerfile. The maintainer was very receptive and accepted the change.
+The first step in packaging this is a more suitable format, so we created a simple Dockerfile. The maintainer was very receptive and accepted the change.
 
 #### How is the utility packaged?
 
-Now that the utility is packaged as a Docker file, I still needed to deploy it securely to a Kubernetes cluster. This was possible via a very lightweight docker file and a Kubernetes configmap configuration with a secret for the sensitive Cloudflare API token. Because the code is a one-shot currently, it is meant to be run as a Cronjob. It’s not suitable to be run as a deployment or StatefulSet.
+Now that the utility is packaged as a Docker file, we still needed to deploy it securely to a Kubernetes cluster. This was possible via a very lightweight docker file and a Kubernetes configmap configuration with a secret for the sensitive Cloudflare API token. Because the code is a one-shot currently, it is meant to be run as a Cronjob. It’s not suitable to be run as a deployment or StatefulSet.
 
 #### What license is the tool provided under?
 
 LINKIWI/cloudflare-ddns-client is licensed under the MIT License which means we can use it free of charge. It’s also a developer-friendly license that would allow us to include this component should we distribute our final product.
 
-#### Security Requirements.
+#### Security Requirements
 
 For this example, we are not too concerned with the security requirements as it will not be going into any production environment, just a testing sandbox. However, we see the image is based on the official alpine python image which means it will be updated regularly with regards to CVEs and other updates. We will cover how to pull in these updates in another part.
 
@@ -79,5 +79,7 @@ As you can see, there are lots of considerations to account for, but by breaking
 In future parts of this series, we will discuss what we needed to change, how we automated our builds of the Docker image, and the toolset we chose and how this will be deployed to our cluster.
 
 We’ll also talk about different versioning options, and why we chose one of the other.
+
+#### Credits
 
 <span>Photo by <a href="https://unsplash.com/@victoriano?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Victoriano Izquierdo</a> on <a href="https://unsplash.com/s/photos/options?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
