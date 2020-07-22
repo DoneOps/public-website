@@ -78,7 +78,7 @@ As you can see, there are lots of considerations to account for, but by breaking
 
 In future parts of this series, we will discuss what we needed to change, how we automated our builds of the Docker image, and the toolset we chose and how this will be deployed to our cluster.
 
-We’ll also talk about different versioning options, and why we chose one of the other.
+We’ll also talk about different versioning options, and why we chose one over another.
 
 #### Credits
 
