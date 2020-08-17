@@ -10,6 +10,8 @@ tags:
   - devsecops
 ---
 
+![](/img/building.jpg)
+
 In the [first installment](/blog/2020-07-22-from-their-repository-to-your-cluster/), we discussed how to select a tool and what considerations to take into account when choosing a tool. Now it’s time to get to work and make it happen.
 
 # Image creation and collaboration
