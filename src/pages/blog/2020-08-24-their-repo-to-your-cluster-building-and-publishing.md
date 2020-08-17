@@ -131,3 +131,7 @@ After choosing a project in [part 1](/blog/2020-07-22-from-their-repository-to-y
 In part 3, we’ll deploy this to a Kubernetes cluster, so stay tuned!
 
 [1]: <https://pythonspeed.com/articles/alpine-docker-python/ > 'Alpine Docker Python'
+
+## Credits
+
+<span>Photo by <a href="https://unsplash.com/@danist07?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">贝莉儿 DANIST</a> on <a href="https://unsplash.com/s/photos/build?utm_source=build&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
