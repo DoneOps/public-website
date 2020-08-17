@@ -4,7 +4,7 @@ title: From their repository to your cluster - part 2
 date: 2020-07-20T15:04:10.000Z
 description: How - the nuts and bolts of building and publishing
 featuredpost: true
-featuredimage: /img/options.jpg
+featuredimage: /img/building.jpg
 tags:
   - devops
   - devsecops
