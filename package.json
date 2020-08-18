@@ -60,7 +60,7 @@
     "url": "https://github.com/DoneOps/public-website/issues"
   },
   "engines": {
-    "node": "^12.16.1",
+    "node": "^12.18.2",
     "yarn": "^1.22.0"
   },
   "devDependencies": {
