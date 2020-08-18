@@ -12,7 +12,10 @@ module.exports = {
   },
   variants: {},
   plugins: [],
-  purge: ['./src/**/*.html', './src/**/*.vue', './src/**/*.jsx'],
+  purge: {
+    enabled: false,
+    content: ['./src/**/*.html', './src/**/*.vue', './src/**/*.jsx'],
+  },
   future: {
     removeDeprecatedGapUtilities: true,
   },
