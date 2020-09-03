@@ -31,17 +31,17 @@ or make it your default context by doing:
 
 ## Application Components
 
-This application requires a configuration file containing a secret (credentials to modify a CloudFlare DNS entry) to run, and the CronJob definition mentioned earlier. A more complex application would use Deployments for long running services, Services to allow components to interact with each other, and Ingress to allow connections to your environment. An example of such an application will be covered in an upcoming post.
+This application requires a configuration file containing a secret (credentials to modify a CloudFlare DNS entry) to run, and the CronJob definition mentioned earlier. A more complex application would use Deployments for long running services, Services to allow components to interact with each other, and Ingress to allow connections to your environment. An example of this kind an application will be covered in an upcoming post.
 
 Let's look at each of the components we're using for this simple example in more detail.
 
 ### Secrets and credentials
 
-The secret in this case is a token that is able to modify a DNS zone in [Cloudflare](https://cloudflare.com) - CloudFlare allows you to create multiple different tokens to ensure fine-grained access to their API, and in this case we've created a token that is allowed to list and read and write DNS entries in our domain.
+The secret in this case is a token that is able to modify a DNS zone in [Cloudflare](https://cloudflare.com) - Cloudflare allows you to create multiple different tokens to ensure fine-grained access to their API, and in this case we've created a token that is allowed to list and read and write DNS entries in our domain.
 
-Secrets are sensitive objects, and much like any other application environment, these must be protected. I strongly recommend you read [Aqua's](https://blog.aquasec.com/managing-kubernetes-secrets#:~:text=Use%20SSL%2FTLS%E2%80%94when%20running,files%2C%20the%20secret%20is%20compromised.) page on this.
+Secrets are sensitive objects, and much like any other application environment, these must be protected. We would encourage you to read [Aqua's](https://blog.aquasec.com/managing-kubernetes-secrets#:~:text=Use%20SSL%2FTLS%E2%80%94when%20running,files%2C%20the%20secret%20is%20compromised.) page on this.
 
-For production credentials, you should ensure that your cloud provider enables you to automatically encrypt the `etcd` storage using one of their services. Alternatively, you could consider a cloud-agnostic solution such as [Hashicorp Vault](https://www.vaultproject.io) or manually integrate with your cloud provider tooling to do this.
+For production credentials, you should ensure that your cloud provider enables you to automatically encrypt the etcd storage using one of their services. Alternatively, you could consider a cloud-agnostic solution such as [HashiCorp Vault](https://www.vaultproject.io) or manually integrate with your cloud provider tooling to do this.
 
 For this example, we'll use etcd.
 
@@ -49,8 +49,7 @@ For this example, we'll use etcd.
 
 So assuming that our Cloudflare token is 'abc1234', we'd encode this with `echo -n 'abc1234' | base64` and copy the resulting string. Our `cloudflare-ddns-client-secret.yaml` file will now be as follows:
 
-```
----
+```---
 apiVersion: v1
 kind: Secret
 metadata:
@@ -64,11 +63,11 @@ It's important to note that this is currently a file in your filesystem that con
 
 ### Configuration files
 
-Kubernets allows you to create a [configmap](https://kubernetes.io/docs/concepts/configuration/configmap/) containing your configuration information, and then mount this so that it is treated like a file in pods. This way you can manage your config data in a way that doesn't require persistent storage across all hosts that pods will run on, but also not have to bake this into your images.
+Kubernetes allows you to create a [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) containing your configuration information, and then mount this so that it is treated like a file in pods. This way you can manage your config data in a way that doesn't require persistent storage across all hosts that pods will run on, but also not have to bake this into your images.
 
 Our `cloudflare-ddns-client-configmap.yaml` will be quite simple as the application doesn't require much complex configuration.
 
-```
+```---
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -87,7 +86,7 @@ Last, but certainly not least is our task definition. In this case it will be a 
 
 For this example, we'll use this content in `cloudflare-ddns-client-cronjob.yaml`
 
-```
+```---
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
@@ -122,10 +121,9 @@ There are a few important things to note here. Firstly, you can see that we refe
 
 #### Secret
 
-The secret is used to set an environment variable at runtime, which the application will then use for authentication. This snippet takes value of the `password` key from the `cloudflare-token` secret and sets it as the `API_TOKEN` environment variable.
+The secret is used to set an environment variable at runtime, which the application will then use for authentication. This snippet takes the value of the `password` key from the `cloudflare-token` secret and sets it as the `API_TOKEN` environment variable.
 
-```
-env:
+```env:
 - name: API_TOKEN
     valueFrom:
     secretKeyRef:
@@ -133,14 +131,13 @@ env:
         key: password
 ```
 
-#### Configmap volume and use
+#### ConfigMap volume and use
 
-The configmap is defined as a [volume](https://kubernetes.io/docs/concepts/storage/volumes/) which can then be mounted into a running pod. There are many different types of volumes available, but this uses configuration data instead of requiring persistent storage shared across all nodes.
+The ConfigMap is defined as a [volume](https://kubernetes.io/docs/concepts/storage/volumes/) which can then be mounted into a running pod. There are many different types of volumes available, but this uses configuration data instead of requiring persistent storage shared across all nodes.
 
 This snippet defines a volume named `config-cloudflare-ddns-client`:
 
-```
-volumes:
+```volumes:
 - name: config-cloudflare-ddns-client
 configMap:
     name: cloudflare-ddns
@@ -148,8 +145,7 @@ configMap:
 
 With the volume defined, we can then include it in our container definition so that the content of the configmap appears in the filesystem where the application expects it to be:
 
-```
-containers:
+```containers:
 - name: cloudflare-ddns-client-cronjob
   image: wtpascoe/cloudflare-ddns-client:2.0
   volumeMounts:
@@ -164,16 +160,15 @@ containers:
 
 We'll now use the 3 files created above to deploy this application and to verify that it's running. I've set my context to `cloudflare-ddns-client` but if you haven't, you should include `--namespace cloudflare-ddns-client` or `kubectl -n cloudflare-ddns-client` in each command. You may prefer this as it's more explicit and makes it clear which namespace you're impacting.
 
-```
-kubectl -n cloudflare-ddns-client create -f cloudflare-ddns-client-secret.yaml
+```kubectl -n cloudflare-ddns-client create -f cloudflare-ddns-client-secret.yaml
 kubectl -n cloudflare-ddns-client create -f cloudflare-ddns-client-configmap.yaml
 kubectl -n cloudflare-ddns-client create -f cloudflare-ddns-client-cronjob.yaml
 ```
 
-If you wanted to apply _all_ files in a folder instead of one at a time as above, you could instead run
+If you wanted to use (apply) _all_ of the files in a folder instead of one at a time as above, you could instead run
 
-```
-kubectl -n cloudflare-ddns-client apply -f
+```kubectl -n cloudflare-ddns-client apply -f
+
 ```
 
 ### Verification
@@ -182,12 +177,11 @@ Once you've done this, you can check the components in the cluster with `kubectl
 
 Immediately after running, my output looks like this:
 
-```
-NAME                                           SCHEDULE      SUSPEND   ACTIVE   LAST SCHEDULE   AGE
+```NAME                                           SCHEDULE      SUSPEND   ACTIVE   LAST SCHEDULE   AGE
 cronjob.batch/cloudflare-ddns-client-cronjob   0 */4 * * *   False     0        <none>          29s
 ```
 
-Wait, what? We're are the pods? Where are the secrets? Where are the config maps? We told kubectl to get _all_. There's a [lengthy discussion](https://github.com/kubernetes/kubectl/issues/151) about this on GitHub, the suffice to say that `get all` does not return all. And there are no pods because the CronJob has not yet run.
+Wait, what? Where are the pods? Where are the secrets? Where are the ConfigMaps? We told kubectl to get _all_. There's a [lengthy discussion](https://github.com/kubernetes/kubectl/issues/151) about this on GitHub, but suffice to say that `get all` does not return _everything_. And there are no pods because the CronJob has not yet run.
 
 We can get specific items with commands like `kubectl -n cloudflare-ddns-client get secret` or `kubectl -n cloudflare-ddns-client get configmap`. More importantly, we can look for actions and failures with `kubectl -n cloudflare-ddns-client get events`.
 
@@ -195,8 +189,7 @@ We can get specific items with commands like `kubectl -n cloudflare-ddns-client 
 
 There won't be much here until we've run for the first time, so let's speed the world up. We can trigger a job to run immediately by creating a job from a CronJob definition. In this example, let's run `kubectl -n cloudflare-ddns-client create job --from=cronjob.batch/cloudflare-ddns-client-cronjob cloudflare-ddns-client-manual-001`. `--from` refers to the job definition we've already created and the last argument is the name of this job - you can see this in the output when you run `kubectl -n cloudflare-ddns-client get all` now.
 
-```
-% kubectl -n cloudflare-ddns-client get all
+```% kubectl -n cloudflare-ddns-client get all
 NAME                                          READY   STATUS      RESTARTS   AGE
 pod/cloudflare-ddns-client-manual-001-zqbbk   0/1     Completed   0          60s
 
