@@ -49,7 +49,8 @@ For this example, we'll use etcd.
 
 So assuming that our Cloudflare token is 'abc1234', we'd encode this with `echo -n 'abc1234' | base64` and copy the resulting string. Our `cloudflare-ddns-client-secret.yaml` file will now be as follows:
 
-```---
+```yaml
+---
 apiVersion: v1
 kind: Secret
 metadata:
@@ -67,7 +68,8 @@ Kubernetes allows you to create a [ConfigMap](https://kubernetes.io/docs/concept
 
 Our `cloudflare-ddns-client-configmap.yaml` will be quite simple as the application doesn't require much complex configuration.
 
-```---
+```yaml
+---
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -86,34 +88,35 @@ Last, but certainly not least is our task definition. In this case it will be a 
 
 For this example, we'll use this content in `cloudflare-ddns-client-cronjob.yaml`
 
-```---
+```yaml
+---
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: cloudflare-ddns-client-cronjob
 spec:
-  schedule: "0 */4 * * *"
+  schedule: '0 */4 * * *'
   jobTemplate:
     spec:
       template:
         spec:
           containers:
-          - name: cloudflare-ddns-client-cronjob
-            image: wtpascoe/cloudflare-ddns-client:2.0
-            volumeMounts:
-            - name: config-cloudflare-ddns-client
-              mountPath: /home/cloudflare-ddns-client/.cloudflare-ddns
-              subPath: ".cloudflare-ddns"
-            env:
-            - name: API_TOKEN
-              valueFrom:
-                secretKeyRef:
-                  name: cloudflare-token
-                  key: password
+            - name: cloudflare-ddns-client-cronjob
+              image: wtpascoe/cloudflare-ddns-client:2.0
+              volumeMounts:
+                - name: config-cloudflare-ddns-client
+                  mountPath: /home/cloudflare-ddns-client/.cloudflare-ddns
+                  subPath: '.cloudflare-ddns'
+              env:
+                - name: API_TOKEN
+                  valueFrom:
+                    secretKeyRef:
+                      name: cloudflare-token
+                      key: password
           volumes:
-          - name: config-cloudflare-ddns-client
-            configMap:
-              name: cloudflare-ddns
+            - name: config-cloudflare-ddns-client
+              configMap:
+                name: cloudflare-ddns
           restartPolicy: Never
 ```
 
@@ -123,7 +126,8 @@ There are a few important things to note here. Firstly, you can see that we refe
 
 The secret is used to set an environment variable at runtime, which the application will then use for authentication. This snippet takes the value of the `password` key from the `cloudflare-token` secret and sets it as the `API_TOKEN` environment variable.
 
-```env:
+```yaml
+env:
 - name: API_TOKEN
     valueFrom:
     secretKeyRef:
@@ -137,21 +141,23 @@ The ConfigMap is defined as a [volume](https://kubernetes.io/docs/concepts/stora
 
 This snippet defines a volume named `config-cloudflare-ddns-client`:
 
-```volumes:
-- name: config-cloudflare-ddns-client
+```yaml
+volumes:
+  - name: config-cloudflare-ddns-client
 configMap:
-    name: cloudflare-ddns
+  name: cloudflare-ddns
 ```
 
 With the volume defined, we can then include it in our container definition so that the content of the configmap appears in the filesystem where the application expects it to be:
 
-```containers:
-- name: cloudflare-ddns-client-cronjob
-  image: wtpascoe/cloudflare-ddns-client:2.0
-  volumeMounts:
-  - name: config-cloudflare-ddns-client
-    mountPath: /home/cloudflare-ddns-client/.cloudflare-ddns
-    subPath: ".cloudflare-ddns"
+```yaml
+containers:
+  - name: cloudflare-ddns-client-cronjob
+    image: wtpascoe/cloudflare-ddns-client:2.0
+    volumeMounts:
+      - name: config-cloudflare-ddns-client
+        mountPath: /home/cloudflare-ddns-client/.cloudflare-ddns
+        subPath: '.cloudflare-ddns'
 ```
 
 ## Putting it all together
@@ -160,15 +166,16 @@ With the volume defined, we can then include it in our container definition so t
 
 We'll now use the 3 files created above to deploy this application and to verify that it's running. I've set my context to `cloudflare-ddns-client` but if you haven't, you should include `--namespace cloudflare-ddns-client` or `kubectl -n cloudflare-ddns-client` in each command. You may prefer this as it's more explicit and makes it clear which namespace you're impacting.
 
-```kubectl -n cloudflare-ddns-client create -f cloudflare-ddns-client-secret.yaml
+```shell
+kubectl -n cloudflare-ddns-client create -f cloudflare-ddns-client-secret.yaml
 kubectl -n cloudflare-ddns-client create -f cloudflare-ddns-client-configmap.yaml
 kubectl -n cloudflare-ddns-client create -f cloudflare-ddns-client-cronjob.yaml
 ```
 
 If you wanted to use (apply) _all_ of the files in a folder instead of one at a time as above, you could instead run
 
-```kubectl -n cloudflare-ddns-client apply -f
-
+```shell
+kubectl -n cloudflare-ddns-client apply -f
 ```
 
 ### Verification
@@ -177,7 +184,8 @@ Once you've done this, you can check the components in the cluster with `kubectl
 
 Immediately after running, my output looks like this:
 
-```NAME                                           SCHEDULE      SUSPEND   ACTIVE   LAST SCHEDULE   AGE
+```shell
+NAME                                           SCHEDULE      SUSPEND   ACTIVE   LAST SCHEDULE   AGE
 cronjob.batch/cloudflare-ddns-client-cronjob   0 */4 * * *   False     0        <none>          29s
 ```
 
@@ -189,7 +197,8 @@ We can get specific items with commands like `kubectl -n cloudflare-ddns-client 
 
 There won't be much here until we've run for the first time, so let's speed the world up. We can trigger a job to run immediately by creating a job from a CronJob definition. In this example, let's run `kubectl -n cloudflare-ddns-client create job --from=cronjob.batch/cloudflare-ddns-client-cronjob cloudflare-ddns-client-manual-001`. `--from` refers to the job definition we've already created and the last argument is the name of this job - you can see this in the output when you run `kubectl -n cloudflare-ddns-client get all` now.
 
-```% kubectl -n cloudflare-ddns-client get all
+```shell
+% kubectl -n cloudflare-ddns-client get all
 NAME                                          READY   STATUS      RESTARTS   AGE
 pod/cloudflare-ddns-client-manual-001-zqbbk   0/1     Completed   0          60s
 
