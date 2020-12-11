@@ -5,7 +5,12 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        indentedSyntax: true,
+      },
+    },
     'gatsby-plugin-netlify-cache',
     {
       resolve: 'gatsby-theme-codebushi',

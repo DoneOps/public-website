@@ -80,6 +80,7 @@ data:
     [Cloudflare DDNS]
     auth_type = token
     domains = myhost.mydomain.com
+
 ```
 
 ### Task definition

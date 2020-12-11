@@ -5,12 +5,12 @@ plugins:
   - import
   - prettier
 extends:
-- airbnb
-- plugin:react/recommended
-- prettier/react
-- plugin:prettier/recommended
+  - airbnb
+  - plugin:react/recommended
+  - prettier/react
+  - plugin:prettier/recommended
 ignorePatterns:
-- "public/*"
+  - 'public/*'
 env:
   browser: true
   commonjs: true
@@ -44,4 +44,4 @@ rules:
 settings:
   react:
     pragma: React
-    version: "16.9.0"
+    version: '16.9.0'
