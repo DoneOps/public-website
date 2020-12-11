@@ -60,14 +60,14 @@
     "url": "https://github.com/DoneOps/public-website/issues"
   },
   "engines": {
-    "node": "^12.16.1",
+    "node": "^14.15.0",
     "yarn": "^1.22.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.0.0",
     "eslint-config-airbnb": "^18.1.0",
-    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
