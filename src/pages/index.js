@@ -45,7 +45,7 @@ export default () => (
       <div className="container mx-auto text-center">
         <h2 className="text-3xl lg:text-5xl font-semibold">What We Do</h2>
         <div className="flex flex-row flex-wrap">
-          {featureData.map(featureSection => (
+          {featureData.map((featureSection) => (
             <div
               key={featureSection.sectionTitle}
               className="flex-auto px-3 lg:w-1/2 md:w-full sm:w-full xs:w-full"
@@ -60,7 +60,7 @@ export default () => (
       <div className="container mx-auto text-center">
         <h2 className="text-3xl lg:text-5xl font-semibold">Meet Your Team</h2>
         <div className="flex flex-row flex-wrap">
-          {teamData.map(teamMember => (
+          {teamData.map((teamMember) => (
             <div
               key={teamMember.teamMemberName}
               className="flex-auto px-3 lg:w-1/2 md:w-full sm:w-full xs:w-full"
