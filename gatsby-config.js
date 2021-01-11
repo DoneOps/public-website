@@ -8,7 +8,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        indentedSyntax: true,
+        sassOptions: {
+          indentedSyntax: true,
+        },
       },
     },
     'gatsby-plugin-netlify-cache',
