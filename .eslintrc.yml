@@ -7,7 +7,7 @@ plugins:
 extends:
   - airbnb
   - plugin:react/recommended
-  - prettier/react
+  - prettier
   - plugin:prettier/recommended
 ignorePatterns:
   - 'public/*'

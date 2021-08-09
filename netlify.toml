@@ -39,4 +39,4 @@
 [build.processing.images]
   compress = true
 [[plugins]]
-  package = "netlify-plugin-gatsby-cache"
+  package = "@netlify/plugin-gatsby"
