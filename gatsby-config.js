@@ -13,7 +13,6 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-netlify-cache',
     {
       resolve: 'gatsby-theme-codebushi',
       options: {
