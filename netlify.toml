@@ -21,10 +21,10 @@
 
 [build]
   publish = "public"
-  command = "npm run build"
+  command = "yarn run build"
 [build.environment]
-  YARN_VERSION = "1.22.0"
-  YARN_FLAGS = "--no-ignore-optional"
+  YARN_VERSION = "3.0.0"
+  # YARN_FLAGS = "--no-ignore-optional"
 
 [build.processing]
   skip_processing = false
