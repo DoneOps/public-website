@@ -20,10 +20,10 @@ export default () => (
       <div className="container mx-auto px-8 lg:flex">
         <div className="text-center lg:text-left lg:w-1/2">
           <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none">
-            Your DevOps? Done!
+            We design, build, and maintain infrastructure so your devs don't have to.
           </h1>
           <p className="text-xl lg:text-2xl mt-6 font-light">
-            Your partners in the journey to sustainable DevOps
+          Let them make features, not servers
           </p>
           <p className="mt-8 md:mt-12">
             <Button size="lg">
@@ -33,7 +33,7 @@ export default () => (
             </Button>
           </p>
           <p className="mt-4 text-gray-600">
-            We put the variable in your Dev&#123;&#123; var &#125;&#125;Ops
+          Your partners in the journey to sustainable DevOps
           </p>
         </div>
         <div className="lg:w-1/2">
@@ -43,7 +43,7 @@ export default () => (
     </section>
     <section id="features" className="py-20 lg:pb-40 lg:pt-48">
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl lg:text-5xl font-semibold">What We Do</h2>
+        <h2 className="text-3xl lg:text-5xl font-semibold">Why DoneOps?</h2>
         <div className="flex flex-row flex-wrap">
           {featureData.map((featureSection) => (
             <div
@@ -56,7 +56,7 @@ export default () => (
         </div>
       </div>
     </section>
-    <section id="yourteam" className="py-20 lg:pb-40 lg:pt-48">
+    {/* <section id="yourteam" className="py-20 lg:pb-40 lg:pt-48">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl lg:text-5xl font-semibold">Meet Your Team</h2>
         <div className="flex flex-row flex-wrap">
@@ -70,7 +70,7 @@ export default () => (
           ))}
         </div>
       </div>
-    </section>
+    </section> */}
     <section
       id="contactus"
       className="container mx-auto my-20 py-20 bg-gray-200 rounded-lg text-center"

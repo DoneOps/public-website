@@ -1,0 +1,9 @@
+package.json
+public/index.html
+CHANGELOG.md
+./gatsby-browser.js
+./gatsby-config.js
+./gatsby-node.js
+./gatsby-ssr.js
+src/semantic/**
+static/**
