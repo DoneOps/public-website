@@ -51,6 +51,14 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     {
+      resolve: 'gatsby-plugin-hubspot',
+      options: {
+        trackingCode: process.env.GATSBY_HUBSPOT_TRACKING_CODE,
+        respectDNT: true,
+        productionOnly: true,
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
@@ -83,14 +91,14 @@ module.exports = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          'G-NRTMT1V3MN', // Google Analytics / GA
+          process.env.GATSBY_GOOGLE_ANALYTICS_ID, // Google Analytics / GA
           // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
           // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
         ],
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds
         gtagConfig: {
-          optimize_id: 'OPT_CONTAINER_ID',
+          optimize_id: 'GATSBY_OPT_CONTAINER_ID',
           anonymize_ip: true,
           cookie_expires: 0,
         },
