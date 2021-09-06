@@ -20,14 +20,14 @@ const Header = () => (
       </div>
       <div className="flex mt-4 sm:mt-0">
         <AnchorLink className="px-4" href="#features">
-          What We Do
+          Why DoneOps?
         </AnchorLink>
       </div>
-      <div className="flex mt-4 sm:mt-0">
+      {/* <div className="flex mt-4 sm:mt-0">
         <AnchorLink className="px-4" href="#yourteam">
           Meet Your Team
         </AnchorLink>
-      </div>
+      </div> */}
       <div className="flex mt-4 sm:mt-0">
         <a href="/blog">Blog</a>
       </div>
@@ -68,11 +68,11 @@ export const SubHeader = () => (
         </a>
       </div>
       <div className="flex mt-4 sm:mt-0">
-        <a href="/#features">What We Do</a>
+        <a href="/#features">Why DoneOps?</a>
       </div>
-      <div className="flex mt-4 sm:mt-0">
+      {/* <div className="flex mt-4 sm:mt-0">
         <a href="/#yourteam">Meet Your Team</a>
-      </div>
+      </div> */}
       <div className="flex mt-4 sm:mt-0">
         <a href="/blog">Blog</a>
       </div>

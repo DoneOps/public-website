@@ -1,30 +1,30 @@
 export default [
   {
-    title: 'Simple Pricing',
+    title: 'We Work in Your Accounts',
     summary:
-      'Our services are a la carte and based on story points. Purchase story point packages and select only the services you need!',
+      "We use your cloud accounts and tools. No vendor lock-in here. All backed by code in your repositories!",
     content:
-      'Our services are a la carte and based on story points. Purchase story point packages and select only the services you need!',
+      "We use your cloud accounts and tools. No vendor lock-in here. All backed by code in your repositories!",
   },
   {
-    title: 'Cancel anytime!',
+    title: 'The speed to keep up with an always changing landscape',
     summary:
-      'Looking to add some flex to your team? Or get the ball rolling while looking to hire dedicated DevOps personnel? No worries, no contracts.',
+      "We live, eat, and breathe cloud infrastructure. We're already spun up on the latest tech and best practices. No learning curve here",
     content:
-      'Looking to add some flex to your team? Or get the ball rolling while looking to hire dedicated DevOps personnel? No worries, no contracts.',
+      "We live, eat, and breathe cloud infrastructure. We're already spun up on the latest tech and best practices. No learning curve here",
   },
   {
-    title: 'BYOE',
+    title: 'Security built in',
     summary:
-      "Bring your own Environment! We use your existing environments and tools. No vendor lock-in here. It's your repositories and Cloud Accounts!",
+      "Proven DevSecOperators building in security from the beginning and throughout. Sleep easy and never get caught off-guard",
     content:
-      "Bring your own Environment! We use your existing environments and tools. No vendor lock-in here. It's your repositories and Cloud Accounts!",
+      "Proven DevSecOperators building in security from the beginning and throughout. Sleep easy and never get caught off-guard",
   },
   {
-    title: 'Consulting Agreements',
+    title: '24 Hour Coverage',
     summary:
-      'Looking for something a bit more customized and tailored to your needs? Contact us for a custom engagement!',
+      "Have coverage like a company 2-5x your size. Let us troubleshoot and support at all hours of the day",
     content:
-      'Looking for something a bit more customized and tailored to your needs? Contact us for a custom engagement!',
+      "Have coverage like a company 2-5x your size. Let us troubleshoot and support at all hours of the day",
   },
 ]
