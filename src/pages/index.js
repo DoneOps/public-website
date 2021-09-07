@@ -8,13 +8,36 @@ import FeatureCard from '../components/FeatureCard'
 import LabelText from '../components/LabelText'
 import Layout from '../components/layout/Layout'
 // import SplitSection from '../components/SplitSection'
-import StatsBox from '../components/StatsBox'
+import ToolsBox from '../components/ToolsBox'
+import CloudBox from '../components/CloudBox'
 import featureData from '../data/features-data'
 import teamData from '../data/team-data'
 import HeroImage from '../svg/HeroImage'
 // import SvgCharts from '../svg/SvgCharts'
+import kubernetes from '../img/kubernetes.svg'
+import terraform from '../img/terraform.svg'
+import istio from '../img/istio.svg'
+import flux from '../img/flux.svg'
+import spinnaker from '../img/argo.svg'
+import argo from '../img/spinnaker.svg'
+import helm from '../img/helm.svg'
 import envoy from '../img/envoy.svg'
-import etcd from '../img/etcd.svg'
+import knative from '../img/knative.svg'
+import jenkins from '../img/jenkins.svg'
+import linkerd from '../img/linkerd.svg'
+import fluentd from '../img/fluentd.svg'
+import jaeger from '../img/jaeger.svg'
+import kiali from '../img/kiali.svg'
+import skaffold from '../img/skaffold.svg'
+import kaniko from '../img/kaniko.svg'
+import docker from '../img/docker-member.svg'
+import buildpacks from '../img/buildpacks.svg'
+import gradle from '../img/gradle-enterprise.svg'
+import containerd from '../img/containerd.svg'
+import aws from '../img/aws.svg'
+import google from '../img/google-cloud.svg'
+import azure from '../img/azure.svg'
+
 
 export default () => (
   <Layout>
@@ -59,20 +82,86 @@ export default () => (
         </div>
       </div>
     </section>
-    <section id="stats" className="py-20 lg:pt-32">
+    <section id="toolkit" className="py-20 lg:pt-32">
       <div className="container mx-auto text-center">
-        <LabelText className="text-gray-600">
-          Our customers get results
-        </LabelText>
+        <LabelText className="text-gray-600">Our Capabilities:</LabelText>
         <div className="flex flex-col sm:flex-row mt-8 lg:px-24">
           <div className="w-full sm:w-1/3">
-            <StatsBox image={etcd} secondaryText="etcd" />
+            <CloudBox image={google} altText="Goolge Cloud Platform"/>
           </div>
           <div className="w-full sm:w-1/3">
-            <StatsBox image={envoy} secondaryText="envoy" />
+            <CloudBox image={aws} altText="Amazon Web Services"/>
           </div>
           <div className="w-full sm:w-1/3">
-            <StatsBox image="+100%" secondaryText="Stats Information" />
+            <CloudBox image={azure} altText="Microsoft Azure"/>
+          </div>
+        </div>
+        <div className="flex flex-col sm:flex-row mt-8 lg:px-24">
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={kubernetes} altText="kubernetes" />
+          </div>
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={terraform} altText="terraform" />
+          </div>
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={istio} altText="istio" />
+          </div>
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={helm} altText="helm" />
+          </div>
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={flux} altText="flux" />
+          </div>
+        </div>
+        <div className="flex flex-col sm:flex-row mt-8 lg:px-24">
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={spinnaker} altText="spinnaker" />
+          </div>
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={argo} altText="argo" />
+          </div>
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={jenkins} altText="jenkins" />
+          </div>
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={envoy} altText="envoy" />
+          </div>
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={knative} altText="knative" />
+          </div>
+        </div>
+        <div className="flex flex-col sm:flex-row mt-8 lg:px-24">
+        <div className="w-full sm:w-1/5">
+            <ToolsBox image={fluentd} altText="fluentd" />
+          </div>
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={linkerd} altText="linkerd" />
+          </div>
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={skaffold} altText="skaffold" />
+          </div>
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={jaeger} altText="jaeger" />
+          </div>
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={kiali} altText="kiali" />
+          </div>
+        </div>
+        <div className="flex flex-col sm:flex-row mt-8 lg:px-24">
+        <div className="w-full sm:w-1/5">
+            <ToolsBox image={kaniko} altText="kaniko" />
+          </div>
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={docker} altText="docker" />
+          </div>
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={buildpacks} altText="buildpacks" />
+          </div>
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={gradle} altText="gradle" />
+          </div>
+          <div className="w-full sm:w-1/5">
+            <ToolsBox image={containerd} altText="containerd" />
           </div>
         </div>
       </div>

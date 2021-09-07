@@ -23,11 +23,11 @@ const Header = () => (
           Why DoneOps?
         </AnchorLink>
       </div>
-      {/* <div className="flex mt-4 sm:mt-0">
-        <AnchorLink className="px-4" href="#yourteam">
-          Meet Your Team
+      <div className="flex mt-4 sm:mt-0">
+        <AnchorLink className="px-4" href="#toolkit">
+          Capabilities
         </AnchorLink>
-      </div> */}
+      </div>
       <div className="flex mt-4 sm:mt-0">
         <a href="/blog">Blog</a>
       </div>
