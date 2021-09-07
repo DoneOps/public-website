@@ -38,7 +38,7 @@ import aws from '../img/aws.svg'
 import google from '../img/google-cloud.svg'
 import azure from '../img/azure.svg'
 
-export default () => (
+const Named = () => (
   <Layout>
     <section className="pt-20 md:pt-40">
       <div className="container mx-auto px-8 lg:flex">
@@ -190,3 +190,4 @@ export default () => (
     </section>
   </Layout>
 )
+export default Named
