@@ -5,14 +5,16 @@ import Button from '../components/Button'
 import Contact from '../components/contact'
 import TeamCard from '../components/teamMemberCard'
 import FeatureCard from '../components/FeatureCard'
-// import LabelText from '../components/LabelText'
+import LabelText from '../components/LabelText'
 import Layout from '../components/layout/Layout'
 // import SplitSection from '../components/SplitSection'
-// import StatsBox from '../components/StatsBox'
+import StatsBox from '../components/StatsBox'
 import featureData from '../data/features-data'
 import teamData from '../data/team-data'
 import HeroImage from '../svg/HeroImage'
 // import SvgCharts from '../svg/SvgCharts'
+import envoy from '../img/envoy.svg'
+import etcd from '../img/etcd.svg'
 
 export default () => (
   <Layout>
@@ -20,10 +22,11 @@ export default () => (
       <div className="container mx-auto px-8 lg:flex">
         <div className="text-center lg:text-left lg:w-1/2">
           <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none">
-            We design, build, and maintain infrastructure so your devs don't have to.
+            We design, build, and maintain infrastructure so your devs don't
+            have to.
           </h1>
           <p className="text-xl lg:text-2xl mt-6 font-light">
-          Let them make features, not servers
+            Let them make features, not servers
           </p>
           <p className="mt-8 md:mt-12">
             <Button size="lg">
@@ -33,7 +36,7 @@ export default () => (
             </Button>
           </p>
           <p className="mt-4 text-gray-600">
-          Your partners in the journey to sustainable DevOps
+            Your partners in the journey to sustainable DevOps
           </p>
         </div>
         <div className="lg:w-1/2">
@@ -53,6 +56,24 @@ export default () => (
               <FeatureCard featureSection={featureSection} />
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+    <section id="stats" className="py-20 lg:pt-32">
+      <div className="container mx-auto text-center">
+        <LabelText className="text-gray-600">
+          Our customers get results
+        </LabelText>
+        <div className="flex flex-col sm:flex-row mt-8 lg:px-24">
+          <div className="w-full sm:w-1/3">
+            <StatsBox image={etcd} secondaryText="etcd" />
+          </div>
+          <div className="w-full sm:w-1/3">
+            <StatsBox image={envoy} secondaryText="envoy" />
+          </div>
+          <div className="w-full sm:w-1/3">
+            <StatsBox image="+100%" secondaryText="Stats Information" />
+          </div>
         </div>
       </div>
     </section>

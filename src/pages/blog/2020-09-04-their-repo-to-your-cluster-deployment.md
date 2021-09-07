@@ -77,10 +77,7 @@ metadata:
   namespace: cloudflare-ddns-client
 data:
   .cloudflare-ddns: |+
-    [Cloudflare DDNS]
-    auth_type = token
-    domains = myhost.mydomain.com
-
+    [Cloudflare DDNS]auth_type = tokendomains = myhost.mydomain.com
 ```
 
 ### Task definition
