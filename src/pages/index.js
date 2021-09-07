@@ -38,7 +38,6 @@ import aws from '../img/aws.svg'
 import google from '../img/google-cloud.svg'
 import azure from '../img/azure.svg'
 
-
 export default () => (
   <Layout>
     <section className="pt-20 md:pt-40">
@@ -84,16 +83,17 @@ export default () => (
     </section>
     <section id="toolkit" className="py-20 lg:pt-32">
       <div className="container mx-auto text-center">
-        <LabelText className="text-gray-600">Our Capabilities:</LabelText>
+        <h2 className="text-3xl lg:text-5xl font-semibold">Our Capabilities</h2>
+        {/* <LabelText className="text-gray-600">Our Capabilities:</LabelText> */}
         <div className="flex flex-col sm:flex-row mt-8 lg:px-24">
           <div className="w-full sm:w-1/3">
-            <CloudBox image={google} altText="Goolge Cloud Platform"/>
+            <CloudBox image={google} altText="Goolge Cloud Platform" />
           </div>
           <div className="w-full sm:w-1/3">
-            <CloudBox image={aws} altText="Amazon Web Services"/>
+            <CloudBox image={aws} altText="Amazon Web Services" />
           </div>
           <div className="w-full sm:w-1/3">
-            <CloudBox image={azure} altText="Microsoft Azure"/>
+            <CloudBox image={azure} altText="Microsoft Azure" />
           </div>
         </div>
         <div className="flex flex-col sm:flex-row mt-8 lg:px-24">
@@ -131,7 +131,7 @@ export default () => (
           </div>
         </div>
         <div className="flex flex-col sm:flex-row mt-8 lg:px-24">
-        <div className="w-full sm:w-1/5">
+          <div className="w-full sm:w-1/5">
             <ToolsBox image={fluentd} altText="fluentd" />
           </div>
           <div className="w-full sm:w-1/5">
@@ -148,7 +148,7 @@ export default () => (
           </div>
         </div>
         <div className="flex flex-col sm:flex-row mt-8 lg:px-24">
-        <div className="w-full sm:w-1/5">
+          <div className="w-full sm:w-1/5">
             <ToolsBox image={kaniko} altText="kaniko" />
           </div>
           <div className="w-full sm:w-1/5">
