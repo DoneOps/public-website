@@ -1,9 +1,4 @@
 import React from 'react'
-// import logo from '../img/logo.svg'
-import facebook from '../../img/social/facebook.svg'
-import instagram from '../../img/social/instagram.svg'
-import twitter from '../../img/social/twitter.svg'
-import youtube from '../../img/social/youtube.svg'
 import github from '../../img/github-icon.svg'
 import linkedin from '../../img/social/linkedin.svg'
 
@@ -51,24 +46,6 @@ const Footer = () => (
           <li>
             <div style={{ float: 'left', width: '10%' }}>
               <img
-                src={youtube}
-                alt="YouTube"
-                style={{ width: '2em', height: '2em' }}
-              />
-            </div>
-            <div style={{ float: 'right', width: '90%' }}>
-              <a
-                title="YouTube"
-                href="https://www.youtube.com/channel/UC0sAsIUdK5fsHnNQlKhLzWQ"
-              >
-                YouTube
-              </a>
-            </div>
-            <div style={{ clear: 'both' }} />
-          </li>
-          <li>
-            <div style={{ float: 'left', width: '10%' }}>
-              <img
                 src={github}
                 alt="GitHub"
                 style={{ width: '2em', height: '2em' }}
@@ -77,51 +54,6 @@ const Footer = () => (
             <div style={{ float: 'right', width: '90%' }}>
               <a title="GitHub" href="https://github.com/doneops">
                 GitHub
-              </a>
-            </div>
-            <div style={{ clear: 'both' }} />
-          </li>
-          <li>
-            <div style={{ float: 'left', width: '10%' }}>
-              <img
-                src={twitter}
-                alt="Twitter"
-                style={{ width: '2em', height: '2em' }}
-              />
-            </div>
-            <div style={{ float: 'right', width: '90%' }}>
-              <a title="Twitter" href="https://twitter.com/doneops">
-                Twitter
-              </a>
-            </div>
-            <div style={{ clear: 'both' }} />
-          </li>
-          <li>
-            <div style={{ float: 'left', width: '10%' }}>
-              <img
-                src={instagram}
-                alt="Instagram"
-                style={{ width: '2em', height: '2em' }}
-              />
-            </div>
-            <div style={{ float: 'right', width: '90%' }}>
-              <a title="Instagram" href="https://instagram.com/doneopstv">
-                Instagram
-              </a>
-            </div>
-            <div style={{ clear: 'both' }} />
-          </li>
-          <li>
-            <div style={{ float: 'left', width: '10%' }}>
-              <img
-                src={facebook}
-                alt="Facebook"
-                style={{ width: '2em', height: '2em' }}
-              />
-            </div>
-            <div style={{ float: 'right', width: '90%' }}>
-              <a title="Facebook" href="https://fb.me/doneopstv">
-                Facebook
               </a>
             </div>
             <div style={{ clear: 'both' }} />
