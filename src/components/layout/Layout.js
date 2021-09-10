@@ -63,7 +63,7 @@ export const LayoutHelmet = ({ children }) => {
 
       <link
         rel="mask-icon"
-        href={`${withPrefix('/')}img/logo-cloud.svg`}
+        href={`${withPrefix('/')}img/logo-cloud.png`}
         color="#ff4400"
       />
       <meta name="theme-color" content="#fff" />

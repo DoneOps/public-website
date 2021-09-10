@@ -1,6 +1,6 @@
 import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import LogoIcon from '../../../static/img/logo-cloud.svg'
+import LogoIcon from '../../../static/img/logo-cloud.png'
 import Button from '../Button'
 
 const Header = () => (
@@ -8,15 +8,14 @@ const Header = () => (
     <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8">
       <div className="flex items-center text-2xl">
         <div className="w-12 mr-3">
+        <a href="/" style={{ color: 'black' }}>
           <img
             src={LogoIcon}
-            alt="DoneOps"
-            style={{ width: '2em', height: '2em' }}
+            alt="DONEOPS"
+            style={{ width: '5em', height: '2em' }}
           />
+          </a>
         </div>
-        <a href="/" style={{ color: 'black' }}>
-          DoneOps
-        </a>
       </div>
       <div className="flex mt-4 sm:mt-0">
         <AnchorLink className="px-4" href="#features">
@@ -59,7 +58,7 @@ export const SubHeader = () => (
         <div className="w-12 mr-3">
           <img
             src={LogoIcon}
-            alt="DoneOps"
+            alt="DONEOPS"
             style={{ width: '2em', height: '2em' }}
           />
         </div>
