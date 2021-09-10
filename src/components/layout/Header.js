@@ -1,34 +1,32 @@
 import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import LogoIcon from '../../../static/img/logo-cloud.png'
+import LogoIcon from '../../../static/img/logo-left.svg'
 import Button from '../Button'
 
 const Header = () => (
   <header className="sticky top-0 bg-white shadow" style={{ zIndex: '50' }}>
     <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8">
-      <div className="flex items-center text-2xl">
-        <div className="w-12 mr-3">
+      <div className="flex items-center">
         <a href="/" style={{ color: 'black' }}>
           <img
             src={LogoIcon}
             alt="DONEOPS"
-            style={{ width: '5em', height: '2em' }}
+            style={{ width: '10em', height: '5em' }}
           />
           </a>
-        </div>
       </div>
       <div className="flex mt-4 sm:mt-0">
-        <AnchorLink className="px-4" href="#features">
+        <AnchorLink className="px-4" href="#features" style={{"font-weight": "bold"}}>
           Why DoneOps?
         </AnchorLink>
       </div>
       <div className="flex mt-4 sm:mt-0">
-        <AnchorLink className="px-4" href="#toolkit">
+        <AnchorLink className="px-4" href="#toolkit" style={{"font-weight": "bold"}}>
           Capabilities
         </AnchorLink>
       </div>
       <div className="flex mt-4 sm:mt-0">
-        <a href="/blog">Blog</a>
+        <a href="/blog" style={{"font-weight": "bold"}}>Blog</a>
       </div>
       <div className="hidden md:block">
         <button
@@ -54,26 +52,27 @@ export default Header
 export const SubHeader = () => (
   <header className="sticky top-0 bg-white shadow" style={{ zIndex: '50' }}>
     <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8">
-      <div className="flex items-center text-2xl">
-        <div className="w-12 mr-3">
+    <div className="flex items-center">
+        <a href="/" style={{ color: 'black' }}>
           <img
             src={LogoIcon}
             alt="DONEOPS"
-            style={{ width: '2em', height: '2em' }}
+            style={{ width: '10em', height: '5em' }}
           />
-        </div>
-        <a href="/" style={{ color: 'black' }}>
-          DoneOps
-        </a>
+          </a>
       </div>
       <div className="flex mt-4 sm:mt-0">
-        <a href="/#features">Why DoneOps?</a>
+        <AnchorLink className="px-4" href="#features" style={{"font-weight": "bold"}}>
+          Why DoneOps?
+        </AnchorLink>
       </div>
-      {/* <div className="flex mt-4 sm:mt-0">
-        <a href="/#yourteam">Meet Your Team</a>
-      </div> */}
       <div className="flex mt-4 sm:mt-0">
-        <a href="/blog">Blog</a>
+        <AnchorLink className="px-4" href="#toolkit" style={{"font-weight": "bold"}}>
+          Capabilities
+        </AnchorLink>
+      </div>
+      <div className="flex mt-4 sm:mt-0">
+        <a href="/blog" style={{"font-weight": "bold"}}>Blog</a>
       </div>
       <div className="hidden md:block">
         <Button className="text-sm">Contact Us</Button>
