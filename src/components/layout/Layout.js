@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
     <div>
       <LayoutHelmet />
       <Header />
-      <main className="text-gray-900">{children}</main>
+      <main className="text-indigo-DEFAULT">{children}</main>
       <Footer />
     </div>
   )
@@ -27,7 +27,7 @@ export const SubLayout = ({ children }) => {
     <div>
       <LayoutHelmet />
       <SubHeader />
-      <main className="text-gray-900">{children}</main>
+      <main className="text-indigo-DEFAULT">{children}</main>
       <Footer />
     </div>
   )
