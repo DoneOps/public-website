@@ -81,7 +81,7 @@ const Named = () => (
         {/* <LabelText className="text-gray-600">Our Capabilities:</LabelText> */}
         <div className="flex flex-col sm:flex-row mt-8 lg:px-24">
           <div className="w-full sm:w-1/3">
-            <CloudBox image={google} altText="Goolge Cloud Platform" />
+            <CloudBox image={google} altText="Google Cloud Platform" />
           </div>
           <div className="w-full sm:w-1/3">
             <CloudBox image={aws} altText="Amazon Web Services" />
