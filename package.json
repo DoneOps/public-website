@@ -5,7 +5,7 @@
   "author": "DoneOps",
   "dependencies": {
     "bulma": "^0.9.3",
-    "gatsby": "^4.1.4",
+    "gatsby": "^4.1.5",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-google-gtag": "^4.1.0",
     "gatsby-plugin-hubspot": "^2.0.0",
