@@ -1,5 +1,10 @@
 module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      serif: ["Cormorant Garamond", "ui-serif", "Georgia"],
+    },
     extend: {
       colors: {
         primary: {
