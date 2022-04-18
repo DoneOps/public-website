@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "author": "DoneOps",
   "dependencies": {
-    "bulma": "^0.9.3",
     "gatsby": "4.7.0",
     "gatsby-cli": "4.7.0",
     "gatsby-image": "^3.11.0",

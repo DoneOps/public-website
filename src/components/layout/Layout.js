@@ -4,7 +4,7 @@ import { withPrefix } from 'gatsby'
 import Footer from './Footer'
 import Header, { SubHeader } from './Header'
 // import SubHeader from './Header'
-import '../all.sass'
+// import '../all.sass'
 import useSiteMetadata from '../SiteMetadata'
 
 const Layout = ({ children }) => {
