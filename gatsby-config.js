@@ -1,7 +1,23 @@
+const getSiteUrl = () => {
+  switch (process.env.CONTEXT) {
+    case "deploy-preview":
+    case "branch-deploy":
+      return process.env.DEPLOY_PRIME_URL;
+    case "production":
+      return process.env.URL;
+    default:
+      return `https://www.doneops.com`;
+  }
+};
+
 module.exports = {
   siteMetadata: {
     title: 'DoneOps. Your Ops, Done!',
     description: 'Your Ops? Done. Your DevOps? Done. Your DevSecOps? Done.',
+    author: {
+      name: "DoneOps",
+    },
+    siteUrl: getSiteUrl(),
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -42,7 +58,8 @@ module.exports = {
       },
     },
     'gatsby-plugin-sharp',
-    `gatsby-plugin-remove-fingerprints`,
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-remove-fingerprints',
     {
       resolve: 'gatsby-plugin-sri',
       options: {
