@@ -1,0 +1,5 @@
+---
+primaryBranch: main
+handleGHRelease: true
+releaseType: node
+packageName: public-website

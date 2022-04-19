@@ -42,6 +42,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-sharp',
+    `gatsby-plugin-remove-fingerprints`,
     {
       resolve: 'gatsby-plugin-sri',
       options: {
