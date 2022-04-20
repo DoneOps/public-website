@@ -42,7 +42,7 @@ const Named = () => (
             have to.
           </h1>
           <p className="text-xl lg:text-2xl mt-6 font-light">
-            Let's them make features, not servers
+            Lets them make features, not servers
           </p>
           <p className="mt-8 md:mt-12">
             <Button size="lg">
