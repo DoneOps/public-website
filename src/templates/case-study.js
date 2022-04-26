@@ -64,7 +64,7 @@ const CaseStudy = ({ data }) => {
         description={post.frontmatter.description}
         helmet={
           <Helmet titleTemplate="%s | DoneOps Cast Studies">
-            <title>FOO</title>
+            <title>{post.frontmatter.title}</title>
             <meta
               name="description"
               content={`${post.frontmatter.title}`}
