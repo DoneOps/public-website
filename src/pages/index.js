@@ -3,6 +3,8 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Button from '../components/Button'
 import Contact from '../components/contact'
 import FeatureCard from '../components/FeatureCard'
+import CustomerCard from '../components/CustomerCard';
+import customerData from '../data/customer-data';
 import Layout from '../components/layout/Layout'
 import ToolsBox from '../components/ToolsBox'
 import CloudBox from '../components/CloudBox'
@@ -76,8 +78,8 @@ const Named = () => (
       </div>
     </section>
     <section id="testimonials" className="py-20 lg:py-40">
-      <div className="container mx-auto">
-        <LabelText className="mb-8 text-gray-600 text-center">What customers are saying</LabelText>
+      <div className="container mx-auto text-center">
+      <h2 className="text-3xl lg:text-5xl font-semibold">What customers are saying</h2>
         <div className="flex flex-col md:flex-row md:-mx-3">
           {customerData.map(customer => (
             <div key={customer.customerName} className="flex-1 px-3">
