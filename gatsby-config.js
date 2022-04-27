@@ -1,23 +1,25 @@
 const getSiteUrl = () => {
   switch (process.env.CONTEXT) {
-    case "deploy-preview":
-    case "branch-deploy":
-      return process.env.DEPLOY_PRIME_URL;
-    case "production":
-      return process.env.URL;
+    case 'deploy-preview':
+    case 'branch-deploy':
+      return process.env.DEPLOY_PRIME_URL
+    case 'production':
+      return process.env.URL
     default:
-      return `https://www.doneops.com`;
+      return 'https://www.doneops.com'
   }
-};
+}
+
+const path = require('path')
 
 module.exports = {
   siteMetadata: {
     title: 'DoneOps. Your Ops, Done!',
     description: 'Your Ops? Done. Your DevOps? Done. Your DevSecOps? Done.',
     author: {
-      name: "DoneOps",
+      name: 'DoneOps'
     },
-    siteUrl: getSiteUrl(),
+    siteUrl: getSiteUrl()
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -25,37 +27,37 @@ module.exports = {
       resolve: 'gatsby-plugin-sass',
       options: {
         sassOptions: {
-          indentedSyntax: true,
-        },
-      },
+          indentedSyntax: true
+        }
+      }
     },
     {
       resolve: 'gatsby-theme-codebushi',
       options: {
-        tailwindConfig: 'tailwind.config.js',
-      },
+        tailwindConfig: 'tailwind.config.js'
+      }
     },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/static/img`,
-        name: 'uploads',
-      },
+        path: path.join(__dirname, 'static/img'),
+        name: 'uploads'
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
+        path: path.join(__dirname, 'src/pages'),
+        name: 'pages'
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/img`,
-        name: 'images',
-      },
+        path: path.join(__dirname, 'src/img'),
+        name: 'images'
+      }
     },
     'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
@@ -64,8 +66,8 @@ module.exports = {
       resolve: 'gatsby-plugin-sri',
       options: {
         hash: 'sha512', // 'sha256', 'sha384' or 'sha512' ('sha512' = default)
-        crossorigin: true,
-      },
+        crossorigin: true
+      }
     },
     'gatsby-transformer-sharp',
     {
@@ -73,8 +75,8 @@ module.exports = {
       options: {
         trackingCode: process.env.GATSBY_HUBSPOT_TRACKING_CODE,
         respectDNT: true,
-        productionOnly: true,
-      },
+        productionOnly: true
+      }
     },
     {
       resolve: 'gatsby-transformer-remark',
@@ -83,8 +85,8 @@ module.exports = {
           {
             resolve: 'gatsby-remark-relative-images',
             options: {
-              name: 'uploads',
-            },
+              name: 'uploads'
+            }
           },
           {
             resolve: 'gatsby-remark-images',
@@ -92,24 +94,24 @@ module.exports = {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
-              maxWidth: 2048,
-            },
+              maxWidth: 2048
+            }
           },
           {
             resolve: 'gatsby-remark-copy-linked-files',
             options: {
-              destinationDir: 'static',
-            },
-          },
-        ],
-      },
+              destinationDir: 'static'
+            }
+          }
+        ]
+      }
     },
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: 'gatsby-plugin-google-gtag',
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          process.env.GATSBY_GOOGLE_ANALYTICS_ID, // Google Analytics / GA
+          process.env.GATSBY_GOOGLE_ANALYTICS_ID // Google Analytics / GA
           // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
           // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
         ],
@@ -118,7 +120,7 @@ module.exports = {
         gtagConfig: {
           optimize_id: 'GATSBY_OPT_CONTAINER_ID',
           anonymize_ip: true,
-          cookie_expires: 0,
+          cookie_expires: 0
         },
         // This object is used for configuration specific to this plugin
         pluginConfig: {
@@ -127,23 +129,23 @@ module.exports = {
           // Setting this parameter is also optional
           respectDNT: true,
           // Avoids sending pageview hits from custom paths
-          exclude: ['/preview/**', '/do-not-track/me/too/'],
-        },
-      },
+          exclude: ['/preview/**', '/do-not-track/me/too/']
+        }
+      }
     },
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
+        modulePath: path.join(__dirname, 'src/cms/cms.js')
+      }
     },
     {
       resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
         develop: true, // Activates purging in npm run develop
-        purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
-      },
+        purgeOnly: ['/all.sass'] // applies purging only on the bulma css file
+      }
     }, // must be after other CSS plugins
-    'gatsby-plugin-netlify', // make sure to keep it last in the array
-  ],
+    'gatsby-plugin-netlify' // make sure to keep it last in the array
+  ]
 }
