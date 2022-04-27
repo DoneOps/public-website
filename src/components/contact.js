@@ -1,6 +1,7 @@
 import React from 'react'
 import { navigate } from 'gatsby'
 import Recaptcha from 'react-google-recaptcha'
+import fetch from 'node-fetch'
 // import Layout from './layout/Layout'
 
 const RECAPTCHA_KEY = '6LdFXNkUAAAAAETK8WJo2LBk8t974hRunbG-lkyR'
@@ -13,13 +14,13 @@ const RECAPTCHA_KEY = '6LdFXNkUAAAAAETK8WJo2LBk8t974hRunbG-lkyR'
 //   `)
 // }
 
-function encode(data) {
+function encode (data) {
   return Object.keys(data)
     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join('&')
 }
 
-export default function Contact() {
+export default function Contact () {
   const [state, setState] = React.useState({})
   const recaptchaRef = React.createRef()
 
@@ -37,57 +38,57 @@ export default function Contact() {
       body: encode({
         'form-name': form.getAttribute('name'),
         'g-recaptcha-response': recaptchaValue,
-        ...state,
-      }),
+        ...state
+      })
     })
       .then(() => navigate(form.getAttribute('action')))
-      .catch((error) => alert(error))
+      .catch((error) => alert(error)) // eslint-disable-line no-undef
   }
 
   return (
     <form
-      name="contact-recaptcha"
-      method="post"
-      action="/success"
-      data-netlify="true"
-      data-netlify-recaptcha="true"
-      data-netlify-honeypot="bot-field"
+      name='contact-recaptcha'
+      method='post'
+      action='/success'
+      data-netlify='true'
+      data-netlify-recaptcha='true'
+      data-netlify-honeypot='bot-field'
       onSubmit={handleSubmit}
     >
       <noscript>
         <p>This form won’t work with Javascript disabled</p>
       </noscript>
-      <p className="hidden">
-        <label htmlFor="bot">
+      <p className='hidden'>
+        <label htmlFor='bot'>
           Don’t fill this out if youre human:{' '}
-          <input type="text" name="bot-field" />
+          <input type='text' name='bot-field' />
         </label>
       </p>
       <p>
-        <label htmlFor="name">
+        <label htmlFor='name'>
           Your name:
           <br />
-          <input type="text" name="name" onChange={handleChange} />
+          <input type='text' name='name' onChange={handleChange} />
         </label>
       </p>
       <p>
-        <label htmlFor="email">
+        <label htmlFor='email'>
           Your email:
           <br />
-          <input type="email" name="email" onChange={handleChange} />
+          <input type='email' name='email' onChange={handleChange} />
         </label>
       </p>
       <p>
-        <label htmlFor="message">
+        <label htmlFor='message'>
           Message:
           <br />
-          <textarea name="message" onChange={handleChange} />
+          <textarea name='message' onChange={handleChange} />
         </label>
       </p>
-      <Recaptcha theme="light" ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
+      <Recaptcha theme='light' ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
       <p>
         <button
-          type="submit"
+          type='submit'
           className={`
             py-4 px-12
             bg-primary
