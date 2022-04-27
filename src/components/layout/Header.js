@@ -3,6 +3,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import LogoIcon from '../../../static/img/logo-left.svg'
 import Button from '../Button'
 
+/* jscpd:ignore-start */
 const Header = () => (
   <header className='sticky top-0 bg-white shadow' style={{ zIndex: '50' }}>
     <div className='container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8'>
@@ -80,5 +81,5 @@ export const SubHeader = () => (
     </div>
   </header>
 )
-
+/* jscpd:ignore-end */
 // export const SubHeader
