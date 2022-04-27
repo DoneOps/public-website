@@ -21,13 +21,13 @@ const Header = () => (
           Why DoneOps?
         </AnchorLink>
       </div>
-      <div className="flex mt-4 sm:mt-0">
-        <AnchorLink className="px-4" href="#testimonials" style={{"font-weight": "bold"}}>
+      <div className='flex mt-4 sm:mt-0'>
+        <AnchorLink className='px-4' href='#testimonials' style={{ 'font-weight': 'bold' }}>
           Customers
         </AnchorLink>
       </div>
-      <div className="flex mt-4 sm:mt-0">
-        <AnchorLink className="px-4" href="#toolkit" style={{"font-weight": "bold"}}>
+      <div className='flex mt-4 sm:mt-0'>
+        <AnchorLink className='px-4' href='#toolkit' style={{ 'font-weight': 'bold' }}>
           Capabilities
         </AnchorLink>
       </div>
