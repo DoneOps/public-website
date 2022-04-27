@@ -23,9 +23,9 @@ const IndexPagePreview = ({ entry, getAsset }) => {
 
 IndexPagePreview.propTypes = {
   entry: PropTypes.shape({
-    getIn: PropTypes.func,
+    getIn: PropTypes.func
   }),
-  getAsset: PropTypes.func,
+  getAsset: PropTypes.func
 }
 
 export default IndexPagePreview
