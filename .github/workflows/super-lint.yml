@@ -37,7 +37,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
-          # Full git history is needed to get a proper list of changed files within `super-linter`
+# Full git history is needed to get a proper list of changed files
           fetch-depth: 0
 
       ################################
@@ -51,3 +51,7 @@ jobs:
           DEFAULT_BRANCH: main
           FILTER_REGEX_EXCLUDE: .yarn.*
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LINTER_RULES_PATH: /
+          MARKDOWN_CONFIG_FILE: .markdownlint.json
+          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.yml
+          CSS_FILE_NAME: .stylelintrc.json
