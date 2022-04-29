@@ -44,4 +44,4 @@ rules:
 settings:
   react:
     pragma: React
-    version: '16.9.0'
+    version: '17.2.0'
