@@ -1,0 +1,5 @@
+{
+    "comment": "rules for doneops public",
+    "default": true,
+    "MD013": false
+}
