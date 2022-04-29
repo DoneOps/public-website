@@ -39,6 +39,7 @@ Understanding what parts of the requirement were duplicated and which parts were
 ## Solutions
 
 ### CI -> artifact creation
+
 The first task was to identify an approach to making code artifacts available to all of these environments. Google's project-approach to service and resource grouping meant that we could create a single project where CI systems transform source code into containers using [Cloud Build](https://cloud.google.com/build), then store these artifacts in the [Artifact Registry](https://cloud.google.com/artifact-registry). Doing this work in a single project meant that we could carry out these tasks once, and make the results available to all other environments. Google's IAM implementation shines here compared to competitors approaches to achieve the same outcome.
 
 DoneOps strongly believes that what you test is what you should run, and by using the above tools alongside Google project permissions, we can make the same images available in development, testing, and production with no duplicate rebuilds between stages.
@@ -72,4 +73,4 @@ In summary, DoneOps familiarity with Google Cloud services, best practices in cl
 
 ## Credits
 
-<span>Photo by <a href="https://unsplash.com/@enginakyurt">Engin Akyurt</a> on <a href="https://unsplash.com/s/photos/options?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+Photo by [Engin Akyurt](https://unsplash.com/@enginakyurt) on [Unsplash](https://unsplash.com/s/photos/options?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
