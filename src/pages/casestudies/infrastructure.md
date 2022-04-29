@@ -11,7 +11,7 @@ tags:
   
 ---
 
-![](/img/infrastructure-tunnel.jpg)
+![Infrastructure](/img/infrastructure-tunnel.jpg)
 
 ## Introduction
 
@@ -23,9 +23,9 @@ This case study examines a DoneOps client with a number of different needs, and 
 
 ## Client and requirements
 
-Foo is an established online learning company. Their technology stack is relatively modern, but has a large number of different use-cases and requires different solutions to serve these.
+The client is an established online learning company. Their technology stack is relatively modern, but has a large number of different use-cases and requires different solutions to serve these.
 
-The key infrastructure needs that Foo had in the earlier stages were:
+The key infrastructure needs that the client had in the earlier stages were:
 
 * Multiple developer environments to allow developers to work on their own components with recent versions of other components
 * A unified staging area to allow QA and previews on upcoming deployments
@@ -55,11 +55,11 @@ The combination of the above approaches allowed DoneOps to provide an Infrastruc
 
 ### And then it changed
 
-As Foo is in the learning industry, over time they identified a need to provide completely different tools and functions to their clients and to their learners. These requirements required completely different infrastructure to their production and development environments, and in an on-prem approach, would have required significant capital expenditure as well as delays related to procurement in a time of chip shortages and other supply chain issues.
+As the client is in the learning industry, over time they identified a need to provide completely different tools and functions to their clients and to their learners. These requirements required completely different infrastructure to their production and development environments, and in an on-prem approach, would have required significant capital expenditure as well as delays related to procurement in a time of chip shortages and other supply chain issues.
 
 For this use-case, the client required multiple different Linux operating system images that could be instantiated on-demand for learners to carry out hands-on lab activities.
 
-Because DoneOps have already integrated Foo with Google Cloud, we were able to meet these requirements in mutliple environments in weeks instead of months.
+Because DoneOps have already onboarded the client to Google Cloud, we were able to meet these requirements in mutliple environments in weeks instead of months.
 
 Again, our expertise of the wider DevOps tooling ecosystem allowed us to quickly select tools like [Hashicorp Packer](https://www.packer.io/) that allowed us to leverage [existing images](https://cloud.google.com/compute/docs/images) in Google Cloud to create custom images for a variety of scenarios. This approach to layered infrastructure means that we can deliver client value without starting from scratch. This benefits the client in faster turnaround, but also knowing that their images are based on well tested and reputable images.
 
