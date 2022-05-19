@@ -4,7 +4,7 @@ title: Infrastructure
 date: 2022-04-26T15:04:10.000Z
 description: Infrastructure in the cloud provides agility if you have the expertise to leverage it
 featuredpost: true
-featuredimage: /img/path.jpg
+featuredimage: /img/infrastructure-tunnel.jpg
 tags:
   - devops
   - infrastructure
