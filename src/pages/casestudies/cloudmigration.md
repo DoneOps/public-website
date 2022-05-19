@@ -42,7 +42,7 @@ DoneOps has learned from working with different clients that there usually are o
 
 ## Solution
 
-Some of the client's existing software was built in a way that made containerizing it relatively simple. Software that can be containerized can immediately benefit from the cloud by removing the need to operate compute resources and is much simpler to make highly available.
+Some of the client's existing software was developed in a way that made containerizing it relatively simple. Software that can be containerized can immediately benefit from the cloud by removing the need to operate compute resources and is much simpler to make highly available.
 
 The client already had parts of their platform that were implemented as multi-step workflows with Google [Cloud Functions](https://cloud.google.com/functions) and  [Pub/Sub](https://cloud.google.com/pubsub)., This worked well by allowing component owners to focus on their problem domain without worrying about the impact of tightly-coupled interfaces. However, developers were finding themselves trying to run the entire app to test new features. With the multiple google services and some legacy on-prem servers, this was nearly impossible for even the most experienced developers.
 
