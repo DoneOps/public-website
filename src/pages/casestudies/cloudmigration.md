@@ -44,7 +44,6 @@ DoneOps has learned from working with different clients that there usually are o
 
 Some of the client's existing software was built in a way that made containerizing it relatively simple. Software that can be containerized can immediately benefit from the cloud by removing the need to operate compute resources and is much simpler to make highly available.
 
-
 The client already had parts of their platform that were implemented as multi-step workflows with Google [Cloud Functions](https://cloud.google.com/functions) and  [Pub/Sub](https://cloud.google.com/pubsub)., This worked well by allowing component owners to focus on their problem domain without worrying about the impact of tightly-coupled interfaces. However, developers were finding themselves trying to run the entire app to test new features. With the multiple google services and some legacy on-prem servers, this was nearly impossible for even the most experienced developers.
 
 This is an example of adopting only part of a cloud-native system. The client went all-in on cloud functions, but did not have the experience of the tools to understand the impact of how developers would code, or how these could be used efficiently to test with other siloed parts of the app that were running on-prem and in different formats.
@@ -55,11 +54,10 @@ DoneOps' expertise was essential in guiding the client through this migration an
 
 ## Summary
 
-DoneOps enabled this client to consolidate many different infrastructure components on a single cloud platform and added value beyond infrastructure. 
+DoneOps enabled this client to consolidate many different infrastructure components on a single cloud platform and added value beyond infrastructure.
 
 Our understanding of modern design patterns helped the customer to scale where needed while managing costs effectively and enabled their developers to simplify their development, testing, and deployment.
 
 ## Credits
 
 Photo by [Jordan Harrison](https://unsplash.com/@jordanharrison) on [Unsplash](https://unsplash.com/s/photos/options?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
