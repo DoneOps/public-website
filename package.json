@@ -19,7 +19,7 @@
     "gatsby-plugin-sitemap": "^5.15.0",
     "gatsby-plugin-sri": "^1.1.0",
     "gatsby-remark-copy-linked-files": "^5.15.0",
-    "gatsby-remark-images": "^6.15.0",
+    "gatsby-remark-images": "^6.16.0",
     "gatsby-remark-relative-images": "^2.0.2",
     "gatsby-source-filesystem": "^4.15.0",
     "gatsby-theme-codebushi": "1.0.0",
