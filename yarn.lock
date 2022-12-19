@@ -8478,6 +8478,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-core-utils@npm:^4.3.1":
+  version: 4.3.1
+  resolution: "gatsby-core-utils@npm:4.3.1"
+  dependencies:
+    "@babel/runtime": ^7.15.4
+    ci-info: 2.0.0
+    configstore: ^5.0.1
+    fastq: ^1.13.0
+    file-type: ^16.5.3
+    fs-extra: ^10.1.0
+    got: ^11.8.5
+    import-from: ^4.0.0
+    lmdb: 2.5.3
+    lock: ^1.1.0
+    node-object-hash: ^2.3.10
+    proper-lockfile: ^4.1.2
+    resolve-from: ^5.0.0
+    tmp: ^0.2.1
+    xdg-basedir: ^4.0.0
+  checksum: caa3d356ea0ccd2549fdec659f0fbbe6353c6845a543fea55ecb3d2a881ebff19bd4fe0a497f89da451b1a1fbbc2c2ca87824024dad85f80f5516b1e4342d3dd
+  languageName: node
+  linkType: hard
+
 "gatsby-graphiql-explorer@npm:^3.0.0":
   version: 3.0.0
   resolution: "gatsby-graphiql-explorer@npm:3.0.0"
@@ -8868,15 +8891,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-remark-images@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "gatsby-remark-images@npm:7.0.0"
+"gatsby-remark-images@npm:^7.3.1":
+  version: 7.3.1
+  resolution: "gatsby-remark-images@npm:7.3.1"
   dependencies:
     "@babel/runtime": ^7.15.4
-    "@gatsbyjs/potrace": ^2.3.0
     chalk: ^4.1.2
     cheerio: ^1.0.0-rc.10
-    gatsby-core-utils: ^4.0.0
+    gatsby-core-utils: ^4.3.1
     is-relative-url: ^3.0.0
     lodash: ^4.17.21
     mdast-util-definitions: ^4.0.0
@@ -8886,7 +8908,7 @@ __metadata:
   peerDependencies:
     gatsby: ^5.0.0-next
     gatsby-plugin-sharp: ^5.0.0-next
-  checksum: 3b66b5b3b44a56e6d8cbaa68f3d73c2d670a9dc2a240b30be143207f900d7bfd9ce56642ff05aecc3542e6ee9183cff021dced4d3dca517ec92fa9c5d4d53d31
+  checksum: ffecedc358192df65e9207e1648d3f2ff1dc0139e37257f49bc4d305455f7d4aa9faf640bcab7dc902244f7ab3b0d2a1d506f67ade368295be7642a016fdadc0
   languageName: node
   linkType: hard
 
@@ -15259,7 +15281,7 @@ __metadata:
     gatsby-plugin-sitemap: ^6.0.0
     gatsby-plugin-sri: ^1.1.0
     gatsby-remark-copy-linked-files: ^6.0.0
-    gatsby-remark-images: ^7.0.0
+    gatsby-remark-images: ^7.3.1
     gatsby-remark-relative-images: ^2.0.2
     gatsby-source-filesystem: ^5.0.0
     gatsby-theme-codebushi: 1.0.0
