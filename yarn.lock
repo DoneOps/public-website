@@ -1425,6 +1425,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.20.7":
+  version: 7.20.7
+  resolution: "@babel/runtime@npm:7.20.7"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 4629ce5c46f06cca9cfb9b7fc00d48003335a809888e2b91ec2069a2dcfbfef738480cff32ba81e0b7c290f8918e5c22ddcf2b710001464ee84ba62c7e32a3a3
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.16.7, @babel/template@npm:^7.18.10":
   version: 7.18.10
   resolution: "@babel/template@npm:7.18.10"
@@ -8478,6 +8487,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-core-utils@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "gatsby-core-utils@npm:4.4.0"
+  dependencies:
+    "@babel/runtime": ^7.20.7
+    ci-info: 2.0.0
+    configstore: ^5.0.1
+    fastq: ^1.13.0
+    file-type: ^16.5.3
+    fs-extra: ^10.1.0
+    got: ^11.8.5
+    import-from: ^4.0.0
+    lmdb: 2.5.3
+    lock: ^1.1.0
+    node-object-hash: ^2.3.10
+    proper-lockfile: ^4.1.2
+    resolve-from: ^5.0.0
+    tmp: ^0.2.1
+    xdg-basedir: ^4.0.0
+  checksum: 4f3634f727e6ed953c62e0500831b46aa974ef1281b03690b893e0f4d6d15891ce1dfe17e59137b1cecbc7726fb3744f96c1fdfdad462bb0ec1af6bb9d79dd17
+  languageName: node
+  linkType: hard
+
 "gatsby-graphiql-explorer@npm:^3.0.0":
   version: 3.0.0
   resolution: "gatsby-graphiql-explorer@npm:3.0.0"
@@ -8868,15 +8900,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-remark-images@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "gatsby-remark-images@npm:7.0.0"
+"gatsby-remark-images@npm:^7.4.0":
+  version: 7.4.0
+  resolution: "gatsby-remark-images@npm:7.4.0"
   dependencies:
-    "@babel/runtime": ^7.15.4
-    "@gatsbyjs/potrace": ^2.3.0
+    "@babel/runtime": ^7.20.7
     chalk: ^4.1.2
     cheerio: ^1.0.0-rc.10
-    gatsby-core-utils: ^4.0.0
+    gatsby-core-utils: ^4.4.0
     is-relative-url: ^3.0.0
     lodash: ^4.17.21
     mdast-util-definitions: ^4.0.0
@@ -8886,7 +8917,7 @@ __metadata:
   peerDependencies:
     gatsby: ^5.0.0-next
     gatsby-plugin-sharp: ^5.0.0-next
-  checksum: 3b66b5b3b44a56e6d8cbaa68f3d73c2d670a9dc2a240b30be143207f900d7bfd9ce56642ff05aecc3542e6ee9183cff021dced4d3dca517ec92fa9c5d4d53d31
+  checksum: a2ddf98d69adc86b4b3bd8f2d475bf394039b389b940bec00a082669631c6c0e3fa28a155719b1801231b91b9995ee91ed7b09c8e6dc9af038612630a22a65bc
   languageName: node
   linkType: hard
 
@@ -15259,7 +15290,7 @@ __metadata:
     gatsby-plugin-sitemap: ^6.0.0
     gatsby-plugin-sri: ^1.1.0
     gatsby-remark-copy-linked-files: ^6.0.0
-    gatsby-remark-images: ^7.0.0
+    gatsby-remark-images: ^7.4.0
     gatsby-remark-relative-images: ^2.0.2
     gatsby-source-filesystem: ^5.0.0
     gatsby-theme-codebushi: 1.0.0
@@ -16316,7 +16347,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.13.10, regenerator-runtime@npm:^0.13.7":
+"regenerator-runtime@npm:^0.13.10, regenerator-runtime@npm:^0.13.11, regenerator-runtime@npm:^0.13.7":
   version: 0.13.11
   resolution: "regenerator-runtime@npm:0.13.11"
   checksum: 27481628d22a1c4e3ff551096a683b424242a216fee44685467307f14d58020af1e19660bf2e26064de946bad7eff28950eae9f8209d55723e2d9351e632bbb4
