@@ -1,0 +1,15 @@
+# See the OWNERS docs at https://go.k8s.io/owners
+
+reviewers:
+- jmymy
+- WTPascoe
+- OldCrowEW
+
+approvers:
+- jmymy
+- WTPascoe
+- OldCrowEW
+# emeritus_approvers:
+# - jmymy
+# labels:
+# - area/config
