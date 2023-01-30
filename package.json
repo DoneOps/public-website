@@ -7,7 +7,7 @@
     "bulma": "^0.9.4",
     "gatsby": "5.4.2",
     "gatsby-image": "^3.11.0",
-    "gatsby-plugin-google-gtag": "^5.4.0",
+    "gatsby-plugin-google-gtag": "^5.5.0",
     "gatsby-plugin-hubspot": "^2.0.0",
     "gatsby-plugin-netlify": "^5.1.0",
     "gatsby-plugin-netlify-cms": "^7.4.0",
