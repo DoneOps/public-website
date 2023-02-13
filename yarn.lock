@@ -1584,7 +1584,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.20.7":
+"@babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.20.7":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
   dependencies:
@@ -8991,17 +8991,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-google-gtag@npm:^5.4.0":
-  version: 5.4.0
-  resolution: "gatsby-plugin-google-gtag@npm:5.4.0"
+"gatsby-plugin-google-gtag@npm:^5.6.0":
+  version: 5.6.0
+  resolution: "gatsby-plugin-google-gtag@npm:5.6.0"
   dependencies:
-    "@babel/runtime": ^7.20.7
+    "@babel/runtime": ^7.20.13
     minimatch: ^3.1.2
   peerDependencies:
     gatsby: ^5.0.0-next
     react: ^18.0.0 || ^0.0.0
     react-dom: ^18.0.0 || ^0.0.0
-  checksum: 801b9d1c234c1e67d827311928a55fde95511571ecaf3322c8f9774b57abff3a6acaa6ddbd138d116281f95e53a9f66f5f082884fc41859c03bfd4a61e1407a4
+  checksum: 3c73082d7eae1ee85244ddd1cf657df95911ecce5901f40c14434174aa10a389cbbe83b8b27e8ca55a45d7600965c52ec59a8d75658934f6de90e7dea8a342eb
   languageName: node
   linkType: hard
 
@@ -15783,7 +15783,7 @@ __metadata:
     gatsby: 5.4.2
     gatsby-cli: 5.4.0
     gatsby-image: ^3.11.0
-    gatsby-plugin-google-gtag: ^5.4.0
+    gatsby-plugin-google-gtag: ^5.6.0
     gatsby-plugin-hubspot: ^2.0.0
     gatsby-plugin-netlify: ^5.1.0
     gatsby-plugin-netlify-cms: ^7.4.0
