@@ -17,17 +17,27 @@ const Header = () => (
         </a>
       </div>
       <div className='flex mt-4 sm:mt-0'>
-        <AnchorLink className='px-4' href='#features' style={{ 'font-weight': 'bold' }}>
+        <AnchorLink
+          className='px-4'
+          href='#features'
+          style={{ 'font-weight': 'bold' }}
+        >
           Why DoneOps?
         </AnchorLink>
       </div>
       <div className='flex mt-4 sm:mt-0'>
-        <AnchorLink className='px-4' href='#toolkit' style={{ 'font-weight': 'bold' }}>
+        <AnchorLink
+          className='px-4'
+          href='#toolkit'
+          style={{ 'font-weight': 'bold' }}
+        >
           Capabilities
         </AnchorLink>
       </div>
       <div className='flex mt-4 sm:mt-0'>
-        <a href='/blog' style={{ 'font-weight': 'bold' }}>Blog</a>
+        <a href='/blog' style={{ 'font-weight': 'bold' }}>
+          Blog
+        </a>
       </div>
       <div className='hidden md:block'>
         <button
@@ -63,17 +73,27 @@ export const SubHeader = () => (
         </a>
       </div>
       <div className='flex mt-4 sm:mt-0'>
-        <AnchorLink className='px-4' href='#features' style={{ 'font-weight': 'bold' }}>
+        <AnchorLink
+          className='px-4'
+          href='#features'
+          style={{ 'font-weight': 'bold' }}
+        >
           Why DoneOps?
         </AnchorLink>
       </div>
       <div className='flex mt-4 sm:mt-0'>
-        <AnchorLink className='px-4' href='#toolkit' style={{ 'font-weight': 'bold' }}>
+        <AnchorLink
+          className='px-4'
+          href='#toolkit'
+          style={{ 'font-weight': 'bold' }}
+        >
           Capabilities
         </AnchorLink>
       </div>
       <div className='flex mt-4 sm:mt-0'>
-        <a href='/blog' style={{ 'font-weight': 'bold' }}>Blog</a>
+        <a href='/blog' style={{ 'font-weight': 'bold' }}>
+          Blog
+        </a>
       </div>
       <div className='hidden md:block'>
         <Button className='text-sm'>Contact Us</Button>
