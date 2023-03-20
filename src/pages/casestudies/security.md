@@ -2,13 +2,12 @@
 templateKey: case-study
 title: Security
 date: 2022-05-27T15:04:10.000Z
-description: 
+description:
 featuredpost: true
 featuredimage: /img/cloudsecurity-locks.jpg
 tags:
   - devops
   - security
-  
 ---
 
 ![Cloud Migrations](/img/cloudsecurity-locks.jpg)
@@ -25,9 +24,9 @@ As with most other aspects of Google's cloud offering, some security implementat
 
 The client is a security focussed online learning platform with a requirement to
 
-* authenticate end-users to the various application components
-* allow internal users to manage content, including performance measurement, user journey insights, etc.
-* provide least privilege access to developers and administrators for deployment and operation of the platform
+- authenticate end-users to the various application components
+- allow internal users to manage content, including performance measurement, user journey insights, etc.
+- provide least privilege access to developers and administrators for deployment and operation of the platform
 
 The nature of the client means that illegitimate users frequently target their services, attempting to gain unauthorized access to their systems.
 
@@ -43,7 +42,7 @@ The development and administration of the platform was the most straightforward 
 
 There is also no need to assume different roles in different projects. Your user email address provides access and permissions as defined at many levels, from a single resource to a project, to a folder, and even at the organization level.
 
-DoneOps believes that developers should not require access to production environments with the correct choices. By implementing an automated CI/CD solution based on [Prow](​​https://github.com/kubernetes/test-infra/tree/master/prow) and [Flux](​​https://fluxcd.io/), developers can release quickly and confidently without needing to access cloud components directly.
+DoneOps believes that developers should not require access to production environments with the correct choices. By implementing an automated CI/CD solution based on [Prow](https://github.com/kubernetes/test-infra/tree/master/prow/) and [Flux](https://fluxcd.io/), developers can release quickly and confidently without needing to access cloud components directly.
 
 The last gap for this client was developers needing credentials or access tokens for development resources such as databases or 3rd party integrations. We chose [Skaffold](https://skaffold.dev/) to allow developers to work directly within GKE clusters. Skaffold and GKE enabled us to manage secrets centrally without sharing them with developers. It also allows the client to rotate these secrets without coordinating with multiple developers and use the same solution for development and production environments.
 

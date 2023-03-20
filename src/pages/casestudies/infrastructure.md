@@ -8,7 +8,6 @@ featuredimage: /img/infrastructure-tunnel.jpg
 tags:
   - devops
   - infrastructure
-  
 ---
 
 ![Infrastructure](/img/infrastructure-tunnel.jpg)
@@ -27,10 +26,10 @@ The client is an established online learning company. Their technology stack is 
 
 The key infrastructure needs that the client had in the earlier stages were:
 
-* Multiple developer environments to allow developers to work on their components with recent versions of other components
-* A unified staging area to allow QA and previews on upcoming deployments
-* Specialised developer environments for groups such as data science
-* A highly available and reliable production environment
+- Multiple developer environments to allow developers to work on their components with recent versions of other components
+- A unified staging area to allow QA and previews on upcoming deployments
+- Specialised developer environments for groups such as data science
+- A highly available and reliable production environment
 
 DoneOps worked with the client to understand their current infrastructure needs, the business needs that were driving infrastructure, and what changes in the business would be coming in the future that may change these. This, combined with our Google Cloud expertise allowed us to provide the client with a solution that used the right tools for each function and allowed extension into the future.
 
@@ -66,10 +65,10 @@ Again, our expertise in the wider DevOps tooling ecosystem allowed us to quickly
 
 In summary, DoneOps's familiarity with Google Cloud services, best practices in cloud infrastructure, and our client's business needs allowed us to
 
-* Select best-of-breed infrastructure that minimised duplication while ensuring re-use of components
-* Create repeatable deployments that are resilient to environment failures
-* Guarantee that production code was the same as the image tested
-* Delivered flexibility in approach to new use-cases
+- Select best-of-breed infrastructure that minimised duplication while ensuring re-use of components
+- Create repeatable deployments that are resilient to environment failures
+- Guarantee that production code was the same as the image tested
+- Delivered flexibility in approach to new use-cases
 
 ## Credits
 

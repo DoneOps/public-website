@@ -73,8 +73,8 @@ export default () => (
     query={graphql`
       query CaseStudiesQuery {
         allMarkdownRemark(
-          sort: {frontmatter: {date: DESC}}
-          filter: {frontmatter: {templateKey: {eq: "case-study"}}}
+          sort: { frontmatter: { date: DESC } }
+          filter: { frontmatter: { templateKey: { eq: "case-study" } } }
         ) {
           edges {
             node {
