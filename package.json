@@ -5,7 +5,7 @@
   "author": "DoneOps",
   "dependencies": {
     "bulma": "^0.9.4",
-    "gatsby": "5.12.5",
+    "gatsby": "5.12.7",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-google-gtag": "^5.9.0",
     "gatsby-plugin-hubspot": "^2.0.0",
@@ -81,7 +81,7 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "gatsby-cli": "5.12.1",
+    "gatsby-cli": "5.12.2",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.0",
     "prettier": "^3.0.0"
