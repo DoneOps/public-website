@@ -71,14 +71,6 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     {
-      resolve: 'gatsby-plugin-hubspot',
-      options: {
-        trackingCode: process.env.GATSBY_HUBSPOT_TRACKING_CODE,
-        respectDNT: true,
-        productionOnly: true
-      }
-    },
-    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
@@ -134,7 +126,7 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-netlify-cms',
+      resolve: 'gatsby-plugin-decap-cms',
       options: {
         modulePath: path.join(__dirname, 'src/cms/cms.js')
       }

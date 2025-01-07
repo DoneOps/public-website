@@ -1,4 +1,6 @@
-@import "~bulma/sass/utilities/initial-variables"
+@use 'bulma/sass/utilities/initial-variables'
+@use 'bulma' as *
+@use 'bulma/sass/utilities/mixins' as *
 
 .content .taglist
   list-style: none
@@ -50,8 +52,6 @@
 .blog-list-item .featured-thumbnail
   flex-basis: 35%
   margin: 0 1.5em 0 0
-
-@import "~bulma"
 
 // responsiveness
 +tablet-only
