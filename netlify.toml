@@ -38,5 +38,3 @@
   pretty_urls = true
 [build.processing.images]
   compress = true
-[[plugins]]
-  package = "@netlify/plugin-gatsby"
