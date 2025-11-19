@@ -76,11 +76,11 @@ module.exports = {
         mergeDefaultDirectives: true,
         directives: {
           'default-src': ["'self'"],
-          'script-src': ["'self'", "'unsafe-inline'", "https://www.google.com", "https://www.gstatic.com"],
+          'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://www.google.com", "https://www.gstatic.com", "https://www.googletagmanager.com", "https://www.google-analytics.com"],
           'style-src': ["'self'", "'unsafe-inline'"],
-          'img-src': ["'self'", "data:", "https:"],
+          'img-src': ["'self'", "data:", "https:", "blob:"],
           'font-src': ["'self'", "data:"],
-          'connect-src': ["'self'", "https://www.google-analytics.com"],
+          'connect-src': ["'self'", "https://www.google-analytics.com", "https://www.googletagmanager.com"],
           'frame-src': ["'self'", "https://www.google.com"],
           'object-src': ["'none'"],
           'base-uri': ["'self'"],
@@ -139,7 +139,6 @@ module.exports = {
           exclude: ['/preview/**', '/do-not-track/me/too/']
         }
       }
-    },
-    'gatsby-plugin-netlify' // make sure to keep it last in the array
+    }
   ]
 }
