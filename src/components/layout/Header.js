@@ -5,99 +5,94 @@ import Button from '../Button'
 
 /* jscpd:ignore-start */
 const Header = () => (
-  <header className='sticky top-0 bg-white shadow' style={{ zIndex: '50' }}>
+  <header className='sticky top-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-md dark:shadow-slate-800/50 border-b border-slate-200 dark:border-slate-800 z-50 transition-colors duration-300'>
     <div className='container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8'>
       <div className='flex items-center'>
-        <a href='/' style={{ color: 'black' }}>
+        <a href='/' className='transition-transform hover:scale-105'>
           <img
             src={LogoIcon}
             alt='DONEOPS'
-            style={{ width: '10em', height: '5em' }}
+            className='w-40 h-20 object-contain'
           />
         </a>
       </div>
-      <div className='flex mt-4 sm:mt-0'>
+      <nav className='flex items-center gap-2 sm:gap-4 mt-4 sm:mt-0'>
         <AnchorLink
-          className='px-4'
+          className='px-4 py-2 font-semibold text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800'
           href='#features'
-          style={{ 'font-weight': 'bold' }}
         >
           Why DoneOps?
         </AnchorLink>
-      </div>
-      <div className='flex mt-4 sm:mt-0'>
         <AnchorLink
-          className='px-4'
+          className='px-4 py-2 font-semibold text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800'
           href='#toolkit'
-          style={{ 'font-weight': 'bold' }}
         >
           Capabilities
         </AnchorLink>
-      </div>
-      <div className='flex mt-4 sm:mt-0'>
-        <a href='/blog' style={{ 'font-weight': 'bold' }}>
+        <a 
+          href='/blog'
+          className='px-4 py-2 font-semibold text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800'
+        >
           Blog
         </a>
-      </div>
-      <div className='hidden md:block'>
-        <button
-          type='button'
-          className={`
-            py-4 px-12
-            bg-primary
-            hover:bg-primary-darker
-            rounded
-            text-white
-        `}
-        >
+        <div className='hidden md:block ml-4'>
           <AnchorLink href='#contactus'>
-            <a style={{ color: 'white' }}>Contact Us</a>
+            <button
+              type='button'
+              className='btn btn-primary text-white px-6 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200'
+            >
+              Contact Us
+            </button>
           </AnchorLink>
-        </button>
-      </div>
+        </div>
+      </nav>
     </div>
   </header>
 )
 export default Header
 
 export const SubHeader = () => (
-  <header className='sticky top-0 bg-white shadow' style={{ zIndex: '50' }}>
+  <header className='sticky top-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-md dark:shadow-slate-800/50 border-b border-slate-200 dark:border-slate-800 z-50 transition-colors duration-300'>
     <div className='container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8'>
       <div className='flex items-center'>
-        <a href='/' style={{ color: 'black' }}>
+        <a href='/' className='transition-transform hover:scale-105'>
           <img
             src={LogoIcon}
             alt='DONEOPS'
-            style={{ width: '10em', height: '5em' }}
+            className='w-40 h-20 object-contain'
           />
         </a>
       </div>
-      <div className='flex mt-4 sm:mt-0'>
-        <AnchorLink
-          className='px-4'
-          href='#features'
-          style={{ 'font-weight': 'bold' }}
+      <nav className='flex items-center gap-2 sm:gap-4 mt-4 sm:mt-0'>
+        <a
+          href='/#features'
+          className='px-4 py-2 font-semibold text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800'
         >
           Why DoneOps?
-        </AnchorLink>
-      </div>
-      <div className='flex mt-4 sm:mt-0'>
-        <AnchorLink
-          className='px-4'
-          href='#toolkit'
-          style={{ 'font-weight': 'bold' }}
+        </a>
+        <a
+          href='/#toolkit'
+          className='px-4 py-2 font-semibold text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800'
         >
           Capabilities
-        </AnchorLink>
-      </div>
-      <div className='flex mt-4 sm:mt-0'>
-        <a href='/blog' style={{ 'font-weight': 'bold' }}>
+        </a>
+        <a 
+          href='/blog'
+          className='px-4 py-2 font-semibold text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800'
+        >
           Blog
         </a>
-      </div>
-      <div className='hidden md:block'>
-        <Button className='text-sm'>Contact Us</Button>
-      </div>
+        <div className='hidden md:block ml-4'>
+          <a href='/#contactus'>
+            <button
+              type='button'
+              className='btn btn-primary text-white px-6 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200'
+            >
+              Contact Us
+            </button>
+          </a>
+        </div>
+      </nav>
     </div>
   </header>
 )

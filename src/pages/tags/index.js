@@ -1,20 +1,16 @@
 import React from 'react'
-import { kebabCase } from 'lodash'
-import { Helmet } from 'react-helmet'
+import { kebabCase } from 'change-case'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/layout/Layout'
+import { Seo } from '../../components/Seo'
 
 const TagsPage = ({
   data: {
-    allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title }
-    }
+    allMarkdownRemark: { group }
   }
 }) => (
   <Layout>
     <section className='section'>
-      <Helmet title={`Tags | ${title}`} />
       <div className='container content'>
         <div className='columns'>
           <div
@@ -39,6 +35,11 @@ const TagsPage = ({
 )
 
 export default TagsPage
+
+export const Head = ({ data }) => {
+  const title = data.site.siteMetadata.title
+  return <Seo title={`Tags | ${title}`} />
+}
 
 export const tagPageQuery = graphql`
   query TagsQuery {
