@@ -1,7 +1,7 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import SubLayout from '../components/layout/Layout'
+import { Seo } from '../components/Seo'
 
 class TagRoute extends React.Component {
   render () {
@@ -14,16 +14,14 @@ class TagRoute extends React.Component {
       </li>
     ))
     const { tag } = this.props.pageContext
-    const { title } = this.props.data.site.siteMetadata
     const { totalCount } = this.props.data.allMarkdownRemark
     const tagHeader = `${totalCount} post${
       totalCount === 1 ? '' : 's'
-    } tagged with “${tag}”`
+    } tagged with "${tag}"`
 
     return (
       <SubLayout>
         <section className='section'>
-          <Helmet title={`${tag} | ${title}`} />
           <div className='container content'>
             <div className='columns text-center'>
               <div
@@ -45,6 +43,12 @@ class TagRoute extends React.Component {
 }
 
 export default TagRoute
+
+export const Head = ({ pageContext, data }) => {
+  const { tag } = pageContext
+  const title = data.site.siteMetadata.title
+  return <Seo title={`${tag} | ${title}`} />
+}
 
 export const tagPageQuery = graphql`
   query TagPage($tag: String) {

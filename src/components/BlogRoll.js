@@ -9,51 +9,47 @@ class BlogRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <div className='columns is-multiline'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
         {posts &&
           posts.map(({ node: post }) => (
-            <div className='is-parent column is-6' key={post.id}>
-              <article
-                className={`blog-list-item tile is-child box notification ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
-                }`}
-              >
-                <header>
-                  {post.frontmatter.featuredimage
-                    ? (
-                      <div className='featured-thumbnail'>
-                        <PreviewCompatibleImage
-                          imageInfo={{
-                            image: post.frontmatter.featuredimage,
-                            alt: `featured image thumbnail for post ${post.frontmatter.title}`
-                          }}
-                        />
-                      </div>
-                      )
-                    : null}
-                  <p className='post-meta'>
-                    <Link
-                      className='title has-text-primary is-size-4'
-                      to={post.fields.slug}
-                    >
-                      {post.frontmatter.title}
-                    </Link>
-                    <span> &nbsp; </span>
-                    <span className='subtitle is-size-5 is-block'>
-                      {post.frontmatter.date}
-                    </span>
+            <article
+              key={post.id}
+              className={`bg-white dark:bg-slate-800 rounded-lg shadow-medium hover:shadow-large transition-all duration-300 overflow-hidden ${
+                post.frontmatter.featuredpost ? 'ring-2 ring-primary-500' : ''
+              }`}
+            >
+              {post.frontmatter.featuredimage && (
+                <div className='h-48 bg-slate-200 dark:bg-slate-700 overflow-hidden'>
+                  <img
+                    src={post.frontmatter.featuredimage}
+                    alt={`featured image thumbnail for post ${post.frontmatter.title}`}
+                    className='w-full h-full object-cover'
+                  />
+                </div>
+              )}
+              <div className='p-6'>
+                <header className='mb-4'>
+                  <Link
+                    className='text-2xl font-bold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors'
+                    to={post.fields.slug}
+                  >
+                    {post.frontmatter.title}
+                  </Link>
+                  <p className='text-sm text-slate-500 dark:text-slate-400 mt-2'>
+                    {post.frontmatter.date}
                   </p>
                 </header>
-                <p>
+                <p className='text-slate-700 dark:text-slate-300 mb-4 line-clamp-4'>
                   {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className='button' to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
                 </p>
-              </article>
-            </div>
+                <Link 
+                  className='inline-block btn btn-primary text-white px-6 py-2 rounded-lg hover:scale-105 transition-transform'
+                  to={post.fields.slug}
+                >
+                  Keep Reading →
+                </Link>
+              </div>
+            </article>
           ))}
       </div>
     )
@@ -88,13 +84,7 @@ export default () => (
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
-                featuredimage {
-                  childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
+                featuredimage
               }
             }
           }

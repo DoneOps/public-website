@@ -1,14 +1,10 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 import Layout from '../components/layout/Layout'
 import Card from '../components/Card'
+import { Seo } from '../components/Seo'
 
 const Success = (props) => (
   <Layout>
-    <Helmet>
-      <title>Success Page</title>
-      <meta name='description' content='Success Page' />
-    </Helmet>
     <section id='features' className='py-20 lg:pb-40 lg:pt-48'>
       <div className='container mx-auto text-center'>
         <h2 className='text-3xl lg:text-5xl font-semibold'>
@@ -30,3 +26,7 @@ const Success = (props) => (
 )
 
 export default Success
+
+export const Head = () => (
+  <Seo title="Success Page" description="Success Page" />
+)

@@ -1,0 +1,11 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin and preview paths
+Disallow: /admin/
+Disallow: /preview/
+
+# Sitemap location
+Sitemap: https://www.doneops.com/sitemap-index.xml
+

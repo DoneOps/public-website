@@ -1,11 +1,11 @@
-const _ = require('lodash')
+const { kebabCase } = require('change-case')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
-  return graphql(`
+  const result = await graphql(`
     {
       allMarkdownRemark(limit: 1000) {
         edges {
@@ -22,64 +22,90 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then((result) => {
-    if (result.errors) {
-      result.errors.forEach((e) => console.error(e.toString()))
-      return Promise.reject(result.errors)
+  `)
+
+  if (result.errors) {
+    reporter.panicOnBuild('Error loading markdown files', result.errors)
+    return
+  }
+
+  const posts = result.data.allMarkdownRemark.edges
+
+  // Create blog post pages
+  posts.forEach((edge) => {
+    const { id } = edge.node
+    const templateKey = edge.node.frontmatter.templateKey
+    const slug = edge.node.fields.slug
+
+    if (!templateKey) {
+      reporter.warn(`No templateKey found for post: ${slug}`)
+      return
     }
 
-    const posts = result.data.allMarkdownRemark.edges
+    reporter.info(`Creating page: ${slug} with template: ${templateKey}`)
 
-    posts.forEach((edge) => {
-      const { id } = edge.node
-      createPage({
-        path: edge.node.fields.slug,
-        tags: edge.node.frontmatter.tags,
-        component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
-        ),
-        // additional data can be passed via context
-        context: {
-          id
-        }
-      })
-    })
-
-    // Tag pages:
-    let tags = []
-    // Iterate through each post, putting all found tags into `tags`
-    posts.forEach((edge) => {
-      if (_.get(edge, 'node.frontmatter.tags')) {
-        tags = tags.concat(edge.node.frontmatter.tags)
+    createPage({
+      path: slug,
+      tags: edge.node.frontmatter.tags,
+      component: path.resolve(`src/templates/${String(templateKey)}.js`),
+      context: {
+        id
       }
     })
-    // Eliminate duplicate tags
-    tags = _.uniq(tags)
+  })
 
-    // Make tag pages
-    tags.forEach((tag) => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`
+  // Tag pages:
+  let tags = []
+  // Iterate through each post, putting all found tags into `tags`
+  posts.forEach((edge) => {
+    if (edge?.node?.frontmatter?.tags) {
+      tags = tags.concat(edge.node.frontmatter.tags)
+    }
+  })
+  // Eliminate duplicate tags
+  tags = [...new Set(tags)]
 
-      createPage({
-        path: tagPath,
-        component: path.resolve('src/templates/tags.js'),
-        context: {
-          tag
-        }
-      })
+  // Make tag pages
+  tags.forEach((tag) => {
+    const tagPath = `/tags/${kebabCase(tag)}/`
+
+    reporter.info(`Creating tag page: ${tagPath}`)
+
+    createPage({
+      path: tagPath,
+      component: path.resolve('src/templates/tags.js'),
+      context: {
+        tag
+      }
     })
   })
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = ({ node, actions, getNode, reporter }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === 'MarkdownRemark') {
     const value = createFilePath({ node, getNode })
+    
+    reporter.info(`Creating slug for node: ${value}`)
+    
     createNodeField({
       name: 'slug',
       node,
       value
     })
   }
+}
+
+// Improve build performance
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        '@components': path.resolve(__dirname, 'src/components'),
+        '@pages': path.resolve(__dirname, 'src/pages'),
+        '@templates': path.resolve(__dirname, 'src/templates'),
+      }
+    }
+  })
 }

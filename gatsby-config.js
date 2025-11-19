@@ -21,21 +21,25 @@ module.exports = {
     },
     siteUrl: getSiteUrl()
   },
+  flags: {
+    DEV_SSR: false,
+    FAST_DEV: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PARALLEL_SOURCING: true,
+  },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-typescript',
     {
-      resolve: 'gatsby-plugin-sass',
+      resolve: 'gatsby-plugin-postcss',
       options: {
-        sassOptions: {
-          indentedSyntax: true
-        }
-      }
-    },
-    {
-      resolve: 'gatsby-theme-codebushi',
-      options: {
-        tailwindConfig: 'tailwind.config.js'
-      }
+        postcssOptions: {
+          plugins: [
+            require('tailwindcss')(require('./tailwind.config.js')),
+            require('autoprefixer'),
+            ...(process.env.NODE_ENV === 'production' ? [require('cssnano')] : []),
+          ],
+        },
+      },
     },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
@@ -60,34 +64,37 @@ module.exports = {
       }
     },
     'gatsby-plugin-sharp',
+    'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-remove-fingerprints',
     {
-      resolve: 'gatsby-plugin-sri',
+      resolve: 'gatsby-plugin-csp',
       options: {
-        hash: 'sha512', // 'sha256', 'sha384' or 'sha512' ('sha512' = default)
-        crossorigin: true
+        disableOnDev: true,
+        reportOnly: false,
+        mergeScriptHashes: true,
+        mergeStyleHashes: true,
+        mergeDefaultDirectives: true,
+        directives: {
+          'default-src': ["'self'"],
+          'script-src': ["'self'", "'unsafe-inline'", "https://www.google.com", "https://www.gstatic.com"],
+          'style-src': ["'self'", "'unsafe-inline'"],
+          'img-src': ["'self'", "data:", "https:"],
+          'font-src': ["'self'", "data:"],
+          'connect-src': ["'self'", "https://www.google-analytics.com"],
+          'frame-src': ["'self'", "https://www.google.com"],
+          'object-src': ["'none'"],
+          'base-uri': ["'self'"],
+          'form-action': ["'self'"],
+          'frame-ancestors': ["'none'"],
+          'upgrade-insecure-requests': []
+        }
       }
     },
     'gatsby-transformer-sharp',
     {
-      resolve: 'gatsby-plugin-hubspot',
-      options: {
-        trackingCode: process.env.GATSBY_HUBSPOT_TRACKING_CODE,
-        respectDNT: true,
-        productionOnly: true
-      }
-    },
-    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          {
-            resolve: 'gatsby-remark-relative-images',
-            options: {
-              name: 'uploads'
-            }
-          },
           {
             resolve: 'gatsby-remark-images',
             options: {
@@ -114,7 +121,7 @@ module.exports = {
           process.env.GATSBY_GOOGLE_ANALYTICS_ID // Google Analytics / GA
           // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
           // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
-        ],
+        ].filter(Boolean),
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds
         gtagConfig: {
@@ -133,19 +140,6 @@ module.exports = {
         }
       }
     },
-    {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: path.join(__dirname, 'src/cms/cms.js')
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
-      options: {
-        develop: true, // Activates purging in npm run develop
-        purgeOnly: ['/all.sass'] // applies purging only on the bulma css file
-      }
-    }, // must be after other CSS plugins
     'gatsby-plugin-netlify' // make sure to keep it last in the array
   ]
 }

@@ -1,20 +1,130 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  content: [
+    './src/**/*.{js,jsx,ts,tsx}',
+    './src/**/*.mdx',
+  ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         primary: {
-          lighter: 'hsl(207, 73%, 52%)',
-          default: 'hsl(207, 73%, 57%)',
-          darker: 'hsl(207, 73%, 44%)'
+          50: 'hsl(207, 73%, 95%)',
+          100: 'hsl(207, 73%, 90%)',
+          200: 'hsl(207, 73%, 80%)',
+          300: 'hsl(207, 73%, 70%)',
+          400: 'hsl(207, 73%, 60%)',
+          500: 'hsl(207, 73%, 57%)',
+          600: 'hsl(207, 73%, 52%)',
+          700: 'hsl(207, 73%, 44%)',
+          800: 'hsl(207, 73%, 35%)',
+          900: 'hsl(207, 73%, 25%)',
         },
         indigo: {
-          light: '#b3bcf5',
-          DEFAULT: 'hsl(240, 100%, 25%)',
-          dark: '#202e78'
-        }
-      }
-    }
+          50: '#f8f9ff',
+          100: '#e8ecff',
+          200: '#d1d9ff',
+          300: '#b3bcf5',
+          400: '#8a94e6',
+          500: 'hsl(240, 100%, 25%)',
+          600: '#4a50c4',
+          700: '#3d4199',
+          800: '#313476',
+          900: '#202e78',
+        },
+        // Modern color palette
+        slate: {
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
+        },
+      },
+      fontFamily: {
+        sans: [
+          'Inter',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          '"Noto Sans"',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
+        mono: [
+          'JetBrains Mono',
+          'ui-monospace',
+          'SFMono-Regular',
+          'Monaco',
+          'Consolas',
+          '"Liberation Mono"',
+          '"Courier New"',
+          'monospace',
+        ],
+      },
+      fontSize: {
+        'xs': ['clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)', { lineHeight: '1rem' }],
+        'sm': ['clamp(0.875rem, 0.8rem + 0.375vw, 1rem)', { lineHeight: '1.25rem' }],
+        'base': ['clamp(1rem, 0.9rem + 0.5vw, 1.125rem)', { lineHeight: '1.5rem' }],
+        'lg': ['clamp(1.125rem, 1rem + 0.625vw, 1.25rem)', { lineHeight: '1.75rem' }],
+        'xl': ['clamp(1.25rem, 1.125rem + 0.625vw, 1.5rem)', { lineHeight: '1.75rem' }],
+        '2xl': ['clamp(1.5rem, 1.35rem + 0.75vw, 1.875rem)', { lineHeight: '2rem' }],
+        '3xl': ['clamp(1.875rem, 1.7rem + 0.875vw, 2.25rem)', { lineHeight: '2.25rem' }],
+        '4xl': ['clamp(2.25rem, 2rem + 1.25vw, 3rem)', { lineHeight: '2.5rem' }],
+        '5xl': ['clamp(3rem, 2.7rem + 1.5vw, 3.75rem)', { lineHeight: '1' }],
+        '6xl': ['clamp(3.75rem, 3.4rem + 1.75vw, 4.5rem)', { lineHeight: '1' }],
+        '7xl': ['clamp(4.5rem, 4.1rem + 2vw, 6rem)', { lineHeight: '1' }],
+        '8xl': ['clamp(6rem, 5.4rem + 3vw, 8rem)', { lineHeight: '1' }],
+        '9xl': ['clamp(8rem, 7.2rem + 4vw, 10rem)', { lineHeight: '1' }],
+      },
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+        '128': '32rem',
+        '144': '36rem',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+        'slide-up': 'slideUp 0.3s ease-out',
+        'bounce-subtle': 'bounceSubtle 2s infinite',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(10px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        bounceSubtle: {
+          '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
+          '40%': { transform: 'translateY(-4px)' },
+          '60%': { transform: 'translateY(-2px)' },
+        },
+      },
+      boxShadow: {
+        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
+        'medium': '0 4px 25px -2px rgba(0, 0, 0, 0.1), 0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+        'large': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+      },
+    },
   },
-  variants: {},
-  plugins: []
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }
