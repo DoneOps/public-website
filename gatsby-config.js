@@ -66,30 +66,6 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
-    {
-      resolve: 'gatsby-plugin-csp',
-      options: {
-        disableOnDev: true,
-        reportOnly: false,
-        mergeScriptHashes: true,
-        mergeStyleHashes: true,
-        mergeDefaultDirectives: true,
-        directives: {
-          'default-src': ["'self'"],
-          'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://www.google.com", "https://www.gstatic.com", "https://www.googletagmanager.com", "https://www.google-analytics.com"],
-          'style-src': ["'self'", "'unsafe-inline'"],
-          'img-src': ["'self'", "data:", "https:", "blob:"],
-          'font-src': ["'self'", "data:"],
-          'connect-src': ["'self'", "https://www.google-analytics.com", "https://www.googletagmanager.com"],
-          'frame-src': ["'self'", "https://www.google.com"],
-          'object-src': ["'none'"],
-          'base-uri': ["'self'"],
-          'form-action': ["'self'"],
-          'frame-ancestors': ["'none'"],
-          'upgrade-insecure-requests': []
-        }
-      }
-    },
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
