@@ -7,7 +7,7 @@ interface ToolsBoxProps {
 }
 
 const ToolsBox: React.FC<ToolsBoxProps> = ({ image, altText, className = '' }) => (
-  <div className={`flex items-center justify-center p-6 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-medium transition-all duration-200 hover:-translate-y-1 ${className}`}>
+  <div className={`flex items-center justify-center p-6 rounded-lg bg-white dark:bg-slate-200 border border-slate-200 dark:border-slate-400 hover:shadow-medium transition-all duration-200 hover:-translate-y-1 ${className}`}>
     <img
       src={image}
       alt={altText}
