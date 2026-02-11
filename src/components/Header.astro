@@ -40,13 +40,11 @@ const { isSubPage = false } = Astro.props;
         Blog
       </a>
       <div class="hidden md:block ml-4">
-        <a href={isSubPage ? "/#contactus" : "#contactus"}>
-          <button
-            type="button"
-            class="btn btn-primary text-white px-6 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200"
-          >
-            Contact Us
-          </button>
+        <a
+          href={isSubPage ? "/#contactus" : "#contactus"}
+          class="btn btn-primary text-white px-6 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 no-underline hover:no-underline hover:text-white"
+        >
+          Contact Us
         </a>
       </div>
     </nav>

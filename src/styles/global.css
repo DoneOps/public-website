@@ -108,12 +108,14 @@
 }
 
 /* Legacy support for existing link styles */
-a {
-  @apply text-primary-500 transition-colors duration-200;
-}
+@layer base {
+  a {
+    @apply text-primary-500 transition-colors duration-200;
+  }
 
-a:hover {
-  @apply text-primary-700;
+  a:hover {
+    @apply text-primary-700;
+  }
 }
 
 /* Contact form specific styles */

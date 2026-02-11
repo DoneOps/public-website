@@ -13,7 +13,7 @@ function encode(data: Record<string, string>) {
 
 export default function ContactForm() {
   const [state, setState] = React.useState<Record<string, string>>({})
-  const recaptchaRef = React.createRef<any>()
+  const recaptchaRef = React.useRef<any>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -32,7 +32,10 @@ export default function ContactForm() {
         ...state
       })
     })
-      .then(() => {
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Form submission failed (${response.status})`)
+        }
         window.location.href = form.getAttribute('action') || '/success'
       })
       .catch((error) => alert(error))
