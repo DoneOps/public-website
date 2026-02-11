@@ -1,0 +1,35 @@
+# DoneOps
+
+> Your Ops, Done. We design, build, secure, and maintain infrastructure so your devs don't have to.
+
+DoneOps is a DevOps consulting firm founded by seasoned DevOps professionals. We work in your cloud accounts and tools with no vendor lock-in, providing 24-hour coverage with a globally distributed team. All work is backed by code in your repositories.
+
+- Founded by experienced DevOps engineers
+- No vendor lock-in -- we work in your accounts
+- Globally distributed team for 24/7 coverage
+- Security built in from the beginning (DevSecOps)
+- Expertise in Kubernetes, Terraform, GitOps, CI/CD
+
+## Services
+
+- Cloud Infrastructure Design & Management (AWS, GCP, Azure)
+- Kubernetes Cluster Management & Orchestration
+- CI/CD Pipeline Design & Implementation
+- GitOps with Flux CD and Argo CD
+- Infrastructure as Code with Terraform
+- DevSecOps & Security Compliance (SOC, ISO)
+- Cloud Migrations (on-prem to cloud, multi-cloud)
+- Service Mesh Implementation (Istio, Linkerd)
+- Container Build & Runtime (Docker, containerd, Kaniko)
+- Observability & Monitoring (Jaeger, Kiali, Fluentd)
+
+## Contact
+
+- Website: https://doneops.com
+- Email: hello@doneops.com
+- LinkedIn: https://www.linkedin.com/company/doneops
+- GitHub: https://github.com/doneops
+
+## Detailed Information
+
+For full site content see [llms-full.txt](https://doneops.com/llms-full.txt).

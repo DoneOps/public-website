@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://doneops.com/sitemap-index.xml
+
+# AI/LLM agent context
+# See https://llmstxt.org
+LLMs-Txt: https://doneops.com/llms.txt

@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const caseStudies = (await getCollection('casestudies')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<BaseLayout title="Case Studies | DoneOps" description="Real-world DevOps and cloud infrastructure case studies from DoneOps.">
+  <Header slot="header" isSubPage={true} />
+
+  <div
+    class="relative h-64 bg-cover bg-center flex items-center justify-center"
+    style="background-image: url('/img/mountainclouds.jpg')"
+  >
+    <h1 class="text-4xl lg:text-5xl font-bold text-black bg-[#a4c1e2] px-8 py-4 rounded-lg shadow-lg">
+      Case Studies
+    </h1>
+  </div>
+
+  <section class="py-20 bg-white dark:bg-slate-900">
+    <div class="container mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {caseStudies.map((study) => (
+          <article
+            class={`bg-white dark:bg-slate-800 rounded-lg shadow-medium hover:shadow-large transition-all duration-300 overflow-hidden ${
+              study.data.featuredpost ? 'ring-2 ring-primary-500' : ''
+            }`}
+          >
+            {study.data.featuredimage && (
+              <div class="h-48 bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                <img
+                  src={study.data.featuredimage}
+                  alt={`featured image for ${study.data.title}`}
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            )}
+            <div class="p-6">
+              <header class="mb-4">
+                <a
+                  class="text-2xl font-bold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+                  href={`/case-studies/${study.id}/`}
+                >
+                  {study.data.title}
+                </a>
+                {study.data.description && (
+                  <p class="text-slate-600 dark:text-slate-400 mt-2 italic">
+                    {study.data.description}
+                  </p>
+                )}
+              </header>
+              <a
+                class="inline-block btn btn-primary text-white px-6 py-2 rounded-lg hover:scale-105 transition-transform no-underline hover:no-underline hover:text-white"
+                href={`/case-studies/${study.id}/`}
+              >
+                Keep Reading &rarr;
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

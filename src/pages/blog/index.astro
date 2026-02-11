@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<BaseLayout title="Latest Stories | DoneOps Blog" description="DevOps, DevSecOps, and cloud infrastructure insights from the DoneOps team.">
+  <Header slot="header" isSubPage={true} />
+
+  <div
+    class="relative h-64 bg-cover bg-center flex items-center justify-center"
+    style="background-image: url('/img/blog.jpg')"
+  >
+    <h1 class="text-4xl lg:text-5xl font-bold text-white bg-primary-600 px-8 py-4 rounded-lg shadow-lg">
+      Latest Stories
+    </h1>
+  </div>
+
+  <section class="py-20 bg-white dark:bg-slate-900">
+    <div class="container mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {posts.map((post) => (
+          <article
+            class={`bg-white dark:bg-slate-800 rounded-lg shadow-medium hover:shadow-large transition-all duration-300 overflow-hidden ${
+              post.data.featuredpost ? 'ring-2 ring-primary-500' : ''
+            }`}
+          >
+            {post.data.featuredimage && (
+              <div class="h-48 bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                <img
+                  src={post.data.featuredimage}
+                  alt={`featured image thumbnail for post ${post.data.title}`}
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            )}
+            <div class="p-6">
+              <header class="mb-4">
+                <a
+                  class="text-2xl font-bold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+                  href={`/blog/${post.id}/`}
+                >
+                  {post.data.title}
+                </a>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">
+                  {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </p>
+              </header>
+              <p class="text-slate-700 dark:text-slate-300 mb-4 line-clamp-4">
+                {post.data.description}
+              </p>
+              <a
+                class="inline-block btn btn-primary text-white px-6 py-2 rounded-lg hover:scale-105 transition-transform no-underline hover:no-underline hover:text-white"
+                href={`/blog/${post.id}/`}
+              >
+                Keep Reading &rarr;
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
