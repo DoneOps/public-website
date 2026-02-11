@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.tsx';
+
+const featureData = [
+  {
+    title: 'We Work in Your Accounts',
+    content: 'We use your cloud accounts and tools. No vendor lock-in here. All backed by code in your repositories!'
+  },
+  {
+    title: 'The speed to keep up with an always changing landscape',
+    content: "We live, eat, and breathe cloud infrastructure. We're already spun up on the latest tech and best practices. No learning curve here"
+  },
+  {
+    title: 'Security built in',
+    content: 'Proven DevSecOperators building in security from the beginning and throughout. Sleep easy and never get caught off-guard'
+  },
+  {
+    title: '24 Hour Coverage',
+    content: 'Have coverage like a company 2-5x your size. Let us troubleshoot and support at all hours of the day'
+  }
+];
+
+const toolCategories = [
+  {
+    title: 'Cloud Platforms',
+    tools: [
+      { image: '/img/tools/google-cloud.svg', alt: 'Google Cloud Platform' },
+      { image: '/img/tools/aws.svg', alt: 'Amazon Web Services' },
+      { image: '/img/tools/azure.svg', alt: 'Microsoft Azure' },
+    ]
+  },
+  {
+    title: 'Container Orchestration & GitOps',
+    tools: [
+      { image: '/img/tools/kubernetes.svg', alt: 'Kubernetes' },
+      { image: '/img/tools/helm.svg', alt: 'Helm' },
+      { image: '/img/tools/flux.svg', alt: 'Flux CD' },
+      { image: '/img/tools/argo.svg', alt: 'Argo CD' },
+      { image: '/img/tools/knative.svg', alt: 'Knative' },
+    ]
+  },
+  {
+    title: 'CI/CD & Infrastructure',
+    tools: [
+      { image: '/img/tools/jenkins.svg', alt: 'Jenkins' },
+      { image: '/img/tools/terraform.svg', alt: 'Terraform' },
+      { image: '/img/tools/spinnaker.svg', alt: 'Spinnaker' },
+      { image: '/img/tools/skaffold.svg', alt: 'Skaffold' },
+    ]
+  },
+  {
+    title: 'Service Mesh & Observability',
+    tools: [
+      { image: '/img/tools/istio.svg', alt: 'Istio' },
+      { image: '/img/tools/linkerd.svg', alt: 'Linkerd' },
+      { image: '/img/tools/envoy.svg', alt: 'Envoy Proxy' },
+      { image: '/img/tools/jaeger.svg', alt: 'Jaeger' },
+      { image: '/img/tools/kiali.svg', alt: 'Kiali' },
+      { image: '/img/tools/fluentd.svg', alt: 'Fluentd' },
+    ]
+  },
+  {
+    title: 'Container Build & Runtime',
+    tools: [
+      { image: '/img/tools/docker.svg', alt: 'Docker' },
+      { image: '/img/tools/containerd.svg', alt: 'containerd' },
+      { image: '/img/tools/buildpacks.svg', alt: 'Cloud Native Buildpacks' },
+      { image: '/img/tools/kaniko.svg', alt: 'Kaniko' },
+      { image: '/img/tools/gradle-enterprise.svg', alt: 'Gradle Enterprise' },
+    ]
+  }
+];
+---
+
+<BaseLayout title="DoneOps. Your Ops, Done!">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://doneops.com/#organization",
+          "name": "DoneOps",
+          "url": "https://doneops.com",
+          "logo": "https://doneops.com/img/logo-cloud.png",
+          "description": "DoneOps designs, builds, secures, and maintains cloud infrastructure so your developers can focus on features.",
+          "sameAs": [
+            "https://www.linkedin.com/company/doneops",
+            "https://github.com/doneops"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "hello@doneops.com"
+          }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://doneops.com/#service",
+          "name": "DoneOps",
+          "url": "https://doneops.com",
+          "description": "DevOps, DevSecOps, and Cloud Infrastructure consulting services. We design, build, secure, and maintain infrastructure.",
+          "provider": { "@id": "https://doneops.com/#organization" },
+          "serviceType": ["DevOps Consulting", "Cloud Infrastructure", "Kubernetes Management", "CI/CD Pipeline", "GitOps", "DevSecOps"],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://doneops.com/#website",
+          "name": "DoneOps",
+          "url": "https://doneops.com",
+          "publisher": { "@id": "https://doneops.com/#organization" }
+        }
+      ]
+    })} />
+  </Fragment>
+
+  <Header slot="header" />
+
+  <section class="pt-20 md:pt-40 pb-20">
+    <div class="container mx-auto px-8 lg:flex">
+      <div class="text-center lg:text-left lg:w-1/2">
+        <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none text-slate-900 dark:text-slate-100 animate-fade-in">
+          We design, build, secure, and maintain infrastructure so your devs don't have to.
+        </h1>
+        <p class="text-xl lg:text-2xl mt-6 font-light text-slate-600 dark:text-slate-300">
+          Let them make features, not servers
+        </p>
+        <p class="mt-8 md:mt-12">
+          <a href="#contactus" class="btn btn-primary text-white py-4 px-12 text-lg rounded-md font-medium no-underline hover:no-underline hover:text-white">
+            Contact Us
+          </a>
+        </p>
+        <p class="mt-4 text-slate-600 dark:text-slate-400">
+          Your partners in the journey to sustainable DevOps
+        </p>
+      </div>
+      <div class="lg:w-1/2">
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="py-20 lg:py-32 bg-slate-50 dark:bg-slate-800/50">
+    <div class="container mx-auto text-center px-8">
+      <h2 class="text-3xl lg:text-5xl font-semibold mb-16 text-slate-900 dark:text-slate-100">Why DoneOps?</h2>
+      <div class="flex flex-row flex-wrap">
+        {featureData.map((feature) => (
+          <div class="flex-auto px-3 lg:w-1/2 md:w-full sm:w-full">
+            <div class="p-12 rounded-lg border border-solid border-gray-200 mb-8" style="box-shadow: 0 10px 28px rgba(0,0,0,.08)">
+              <p class="text-lg font-semibold">{feature.title}</p>
+              <p class="mt-6">{feature.content}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="toolkit" class="py-20 lg:py-32 bg-white dark:bg-slate-900">
+    <div class="container mx-auto text-center px-8">
+      <h2 class="text-3xl lg:text-5xl font-semibold mb-16 text-slate-900 dark:text-slate-100">Our Capabilities</h2>
+      <div class="space-y-12">
+        {toolCategories.map((category) => (
+          <div class="animate-on-scroll">
+            <h3 class="text-2xl font-semibold text-center mb-8 text-slate-900 dark:text-slate-100">
+              {category.title}
+            </h3>
+            <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+              {category.tools.map((tool) => (
+                <div class="flex items-center justify-center p-6 rounded-lg bg-white dark:bg-slate-200 border border-slate-200 dark:border-slate-400 hover:shadow-medium transition-all duration-200 hover:-translate-y-1 w-[140px]">
+                  <img
+                    src={tool.image}
+                    alt={tool.alt}
+                    class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="contactus" class="py-20 lg:py-32 bg-slate-50 dark:bg-slate-800/50">
+    <div class="container mx-auto px-8 text-center animate-on-scroll">
+      <h3 class="text-3xl lg:text-5xl font-semibold mb-16 text-slate-900 dark:text-slate-100">Ready to be done?</h3>
+      <ContactForm client:load />
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

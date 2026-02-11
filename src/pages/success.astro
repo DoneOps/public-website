@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Message Sent | DoneOps" description="Thank you for contacting DoneOps. We'll get back to you within 24 hours.">
+  <Header slot="header" isSubPage={true} />
+
+  <section class="py-20 lg:pb-40 lg:pt-48">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl lg:text-5xl font-semibold text-slate-900 dark:text-slate-100">
+        Thank you for contacting us!
+      </h2>
+      <div class="flex flex-col sm:flex-row sm:-mx-3 mt-12">
+        <div class="flex-1 px-3">
+          <div class="p-12 rounded-lg border border-solid border-gray-200 mb-8" style="box-shadow: 0 10px 28px rgba(0,0,0,.08)">
+            <p class="font-semibold text-xl">
+              Someone will be in touch shortly. If you did not successfully
+              pass the reCAPTCHA, we did not get your message.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

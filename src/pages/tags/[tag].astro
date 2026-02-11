@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+import { kebabCase } from 'change-case';
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog');
+  const caseStudies = await getCollection('casestudies');
+  const allPosts = [...blogPosts, ...caseStudies];
+
+  const tagSet = new Set<string>();
+  allPosts.forEach((post) => {
+    if (post.data.tags) {
+      post.data.tags.forEach((tag: string) => tagSet.add(tag));
+    }
+  });
+
+  return Array.from(tagSet).map((tag) => {
+    const filteredPosts = allPosts.filter(
+      (post) => post.data.tags && post.data.tags.includes(tag)
+    );
+    return {
+      params: { tag: kebabCase(tag) },
+      props: { tag, posts: filteredPosts },
+    };
+  });
+}
+
+interface Props {
+  tag: string;
+  posts: any[];
+}
+
+const { tag, posts } = Astro.props;
+const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const tagHeader = `${posts.length} post${posts.length === 1 ? '' : 's'} tagged with "${tag}"`;
+---
+
+<BaseLayout title={`${tag} | DoneOps`} description={`Posts tagged with "${tag}" on the DoneOps blog.`}>
+  <Header slot="header" isSubPage={true} />
+
+  <section class="py-20">
+    <div class="container mx-auto px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="font-semibold text-xl text-slate-900 dark:text-slate-100 mb-8">{tagHeader}</h1>
+        <ul class="space-y-4 mb-12">
+          {sortedPosts.map((post) => {
+            const collectionPrefix = post.collection === 'blog' ? '/blog' : '/case-studies';
+            return (
+              <li>
+                <a href={`${collectionPrefix}/${post.id}/`} class="text-xl text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">
+                  {post.data.title}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+        <p>
+          <a href="/tags/" class="text-primary-600 dark:text-primary-400">Browse all tags</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,92 @@
+# DoneOps
+
+> Your Ops, Done. We design, build, secure, and maintain infrastructure so your devs don't have to.
+
+DoneOps is a DevOps consulting firm founded by seasoned DevOps professionals. We work in your cloud accounts and tools with no vendor lock-in, providing 24-hour coverage with a globally distributed team. All work is backed by code in your repositories.
+
+## About DoneOps
+
+Software should enable your business, but many companies today find themselves in the IT business regardless of what they started out trying to do. Hiring software developers and creating software is only the first step. Once the software is developed, it needs to be deployed, secured, and accessible to customers.
+
+DoneOps was founded to solve the challenges that companies face with DevOps:
+- Best practices in building, securing, and deploying software are often secondary expertise areas for software developers
+- Tooling choices can create technical debt that costs much more to resolve in the future
+- Small DevOps teams often struggle with burnout from being leanly staffed
+- Vendor lock-in forces companies into suboptimal technology decisions
+
+We believe in being your partners on the journey to sustainable DevOps. Our model allows transitioning from an outsourced partner to an internal team when it makes sense for your business.
+
+## Why DoneOps?
+
+- **We Work in Your Accounts**: We use your cloud accounts and tools. No vendor lock-in. All backed by code in your repositories.
+- **Speed**: We live, eat, and breathe cloud infrastructure. Already spun up on the latest tech and best practices. No learning curve.
+- **Security Built In**: Proven DevSecOperators building in security from the beginning and throughout. Sleep easy and never get caught off-guard.
+- **24 Hour Coverage**: Have coverage like a company 2-5x your size. Let us troubleshoot and support at all hours of the day.
+
+## Services & Capabilities
+
+### Cloud Platforms
+- Google Cloud Platform (GCP)
+- Amazon Web Services (AWS)
+- Microsoft Azure
+
+### Container Orchestration & GitOps
+- Kubernetes
+- Helm
+- Flux CD
+- Argo CD
+- Knative
+
+### CI/CD & Infrastructure
+- Jenkins
+- Terraform
+- Spinnaker
+- Skaffold
+
+### Service Mesh & Observability
+- Istio
+- Linkerd
+- Envoy Proxy
+- Jaeger
+- Kiali
+- Fluentd
+
+### Container Build & Runtime
+- Docker
+- containerd
+- Cloud Native Buildpacks
+- Kaniko
+- Gradle Enterprise
+
+## Case Studies
+
+### Cloud Migrations
+DoneOps helped a supply chain management firm consolidate several different solutions with Google Cloud. The client had existing software deployments across multiple cloud and physical components, leading to a complex deployment pipeline. DoneOps guided the migration to GKE, moving from cloud functions to a unified deployment architecture with CloudRun/GKE. We designed sustainable scaling patterns based on queue depth of Pub/Sub workflows while enforcing cost limits.
+
+### Infrastructure
+DoneOps worked with an established online learning company to create standardized hosting environments. We implemented CI systems using Cloud Build and Artifact Registry, deployed Kubernetes via GKE with Flux for GitOps, and used Skaffold for developer integration. When the client needed new capabilities for hands-on lab environments, we leveraged Hashicorp Packer and Google Cloud compute images to deliver custom OS images in weeks instead of months.
+
+### Security
+DoneOps helped a security-focused online learning platform implement authentication, authorization, and identity management. We leveraged Google Cloud IAM for developer access, implemented CI/CD with Prow and Flux to eliminate direct production access, used Skaffold for centralized secret management, deployed Google Identity-Aware Proxy for internal users, and migrated end-user identity to Google Identity Platform with SAML support for enterprise customers.
+
+## Blog Posts
+
+### Flux CNCF Incubator Graduation (December 2022)
+DoneOps has been deploying Flux into client environments as a core part of our GitOps offering for three years. Flux is a significant part of our modular approach to Dev/Sec/Git/ChatOps, enabling customers to keep devs focused on development while automating the rest of the software development lifecycle.
+
+### From Their Repository to Your Cluster (3-part series, 2020)
+A comprehensive guide on selecting, building, and deploying third-party tools in Kubernetes clusters. Covers tool evaluation criteria, Docker image creation and automated building with Google Cloud Build, and Kubernetes deployment using CronJobs, Secrets, and ConfigMaps.
+
+### Our Path to DoneOps (June 2020)
+The founding story of DoneOps, explaining the pain points and experiences that led to starting the company. Covers the challenges of DevOps burnout, vendor lock-in, security breaches, and the need for sustainable DevOps partnerships.
+
+## Team
+
+DoneOps was founded by experienced DevOps professionals with backgrounds in infrastructure management, CI/CD pipeline development, cloud security, and container orchestration across multiple industries.
+
+## Contact
+
+- Website: https://doneops.com
+- Email: hello@doneops.com
+- LinkedIn: https://www.linkedin.com/company/doneops
+- GitHub: https://github.com/doneops

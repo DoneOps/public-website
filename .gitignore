@@ -1,20 +1,18 @@
 # Project dependencies
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
-.cache/
+
 # Build directory
-public/
-static/admin/*.bundle.*
+dist/
+
+# Astro generated
+.astro/
+
+# OS files
 .DS_Store
+
+# Logs
 yarn-error.log
+npm-debug.log*
 
-# yarn not npm
-package-lock.json
-
-.yarn/*
-!.yarn/cache
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+# Lock file (use npm)
+yarn.lock

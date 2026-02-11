@@ -1,0 +1,101 @@
+---
+import '../styles/global.css';
+import DarkModeToggle from '../components/DarkModeToggle.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = "Your Ops? Done. Your DevOps? Done. Your DevSecOps? Done.",
+  image = "/img/og-image.jpg"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
+    <link rel="mask-icon" href="/img/logo-cloud.png" color="#ff4400" />
+    <meta name="theme-color" content="#fff" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site)} />
+
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- AI/LLM discoverability -->
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM context" />
+    <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM full context" />
+
+    <slot name="head" />
+
+    <!-- Theme initialization (inline to prevent flash of wrong theme) -->
+    <script is:inline>
+      (function() {
+        var theme = localStorage.getItem('theme');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary-600 focus:text-white focus:px-4 focus:py-2 focus:rounded focus:font-semibold focus:no-underline">
+      Skip to content
+    </a>
+    <slot name="header" />
+    <main id="main-content" class="text-slate-900 dark:text-slate-100">
+      <slot />
+    </main>
+    <slot name="footer" />
+    <DarkModeToggle />
+    <script>
+      // Scroll animation observer
+      function initScrollAnimations() {
+        if (!('IntersectionObserver' in window)) return;
+        const elements = document.querySelectorAll('.animate-on-scroll');
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+        );
+        elements.forEach((el) => observer.observe(el));
+      }
+      initScrollAnimations();
+      document.addEventListener('astro:after-swap', initScrollAnimations);
+    </script>
+  </body>
+</html>
