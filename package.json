@@ -5,16 +5,16 @@
   "author": "DoneOps",
   "type": "module",
   "dependencies": {
-    "@astrojs/react": "^4.2.1",
+    "@astrojs/react": "^5.0.0",
     "@astrojs/sitemap": "^3.3.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/typography": "^0.5.15",
     "@tailwindcss/vite": "^4.1.4",
-    "astro": "^5.7.10",
+    "astro": "^6.0.0",
     "change-case": "^5.4.4",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "react-google-recaptcha": "^3.1.0",
     "tailwindcss": "^4.1.4"
   },
@@ -45,8 +45,8 @@
     "node": ">=20.0.0"
   },
   "devDependencies": {
-    "@types/react": "^18.3.1",
-    "@types/react-dom": "^18.3.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "prettier": "^3.8.1",
     "typescript": "^5.7.2"
   }
