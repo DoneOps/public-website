@@ -1,0 +1,9 @@
+/.well-known/*
+  ! Content-Security-Policy
+  ! X-Frame-Options
+  ! X-XSS-Protection
+  ! Permissions-Policy
+  ! X-DNS-Prefetch-Control
+  ! Referrer-Policy
+  ! X-Content-Type-Options
+  Cache-Control: no-cache
