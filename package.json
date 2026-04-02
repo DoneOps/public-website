@@ -32,7 +32,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format": "prettier \"src/**/*.{js,ts,astro}\"",
-    "format:fix": "prettier --write \"src/**/*.{js,ts,astro}\""
+    "format:fix": "prettier --write \"src/**/*.{js,ts,astro}\"",
+    "gsc": "node scripts/gsc-query.mjs",
+    "gsc:deep": "node scripts/gsc-deep-query.mjs"
   },
   "repository": {
     "type": "git",
@@ -48,6 +50,7 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "prettier": "^3.8.1",
+    "googleapis": "^148.0.0",
     "typescript": "^5.7.2"
   }
 }

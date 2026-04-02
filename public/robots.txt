@@ -1,6 +1,26 @@
 User-agent: *
 Allow: /
 
+# AI search/discovery crawlers — allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# CCBot (Common Crawl) — blocked; bulk training data scraping, not search/discovery
+User-agent: CCBot
+Disallow: /
+
 Sitemap: https://doneops.com/sitemap-index.xml
 
 # AI/LLM agent context

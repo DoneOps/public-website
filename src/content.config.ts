@@ -6,10 +6,12 @@ const blog = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
+    dateModified: z.coerce.date().optional(),
     description: z.string().optional().default(''),
     featuredpost: z.boolean().optional().default(false),
     featuredimage: z.string().optional(),
     tags: z.array(z.string()).optional().default([]),
+    author: z.string().optional().default('DoneOps Team'),
   }),
 });
 
@@ -18,10 +20,12 @@ const casestudies = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
+    dateModified: z.coerce.date().optional(),
     description: z.string().optional().default(''),
     featuredpost: z.boolean().optional().default(false),
     featuredimage: z.string().optional(),
     tags: z.array(z.string()).optional().default([]),
+    author: z.string().optional().default('DoneOps Team'),
   }),
 });
 

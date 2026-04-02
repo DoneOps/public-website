@@ -1,0 +1,47 @@
+---
+interface Crumb {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  crumbs: Crumb[];
+}
+
+const { crumbs } = Astro.props;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": crumbs.map((crumb, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": crumb.name,
+    "item": new URL(crumb.url, "https://doneops.com").href,
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+<nav aria-label="Breadcrumb" class="mb-6">
+  <ol class="flex flex-wrap items-center gap-1 text-sm text-slate-500 dark:text-slate-400">
+    {crumbs.map((crumb, index) => (
+      <li class="flex items-center gap-1">
+        {index > 0 && <span aria-hidden="true">/</span>}
+        {index === crumbs.length - 1 ? (
+          <span class="text-slate-700 dark:text-slate-300 font-medium" aria-current="page">
+            {crumb.name}
+          </span>
+        ) : (
+          <a
+            href={crumb.url}
+            class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+          >
+            {crumb.name}
+          </a>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

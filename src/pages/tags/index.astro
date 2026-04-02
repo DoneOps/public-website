@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { getCollection } from 'astro:content';
 import { kebabCase } from 'change-case';
 
@@ -28,6 +29,10 @@ const tags = Object.entries(tagCounts).sort((a, b) => a[0].localeCompare(b[0]));
   <section class="py-20">
     <div class="container mx-auto px-8">
       <div class="max-w-3xl mx-auto text-center">
+        <Breadcrumbs crumbs={[
+          { name: "Home", url: "/" },
+          { name: "Tags", url: "/tags/" },
+        ]} />
         <h1 class="text-4xl font-bold text-slate-900 dark:text-slate-100 mb-12">Tags</h1>
         <ul class="flex flex-wrap justify-center gap-3">
           {tags.map(([tag, count]) => (

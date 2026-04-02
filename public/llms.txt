@@ -2,6 +2,8 @@
 
 > Your Ops, Done. We design, build, secure, and maintain infrastructure so your devs don't have to.
 
+Last updated: 2026-04-02
+
 DoneOps is a DevOps consulting firm founded by seasoned DevOps professionals. We work in your cloud accounts and tools with no vendor lock-in, providing 24-hour coverage with a globally distributed team. All work is backed by code in your repositories.
 
 - Founded by experienced DevOps engineers
@@ -22,6 +24,27 @@ DoneOps is a DevOps consulting firm founded by seasoned DevOps professionals. We
 - Service Mesh Implementation (Istio, Linkerd)
 - Container Build & Runtime (Docker, containerd, Kaniko)
 - Observability & Monitoring (Jaeger, Kiali, Fluentd)
+
+## Key Pages
+
+- [Homepage](https://doneops.com/) -- Company overview, services, and contact form
+- [Blog](https://doneops.com/blog/) -- DevOps, DevSecOps, and cloud infrastructure insights
+- [Case Studies](https://doneops.com/case-studies/) -- Real-world client engagements and outcomes
+- [Cloud Migration Case Study](https://doneops.com/case-studies/cloudmigration/) -- GCP migration for supply chain firm
+- [Infrastructure Case Study](https://doneops.com/case-studies/infrastructure/) -- Standardized hosting for online learning
+- [Security Case Study](https://doneops.com/case-studies/security/) -- Auth and identity management implementation
+- [Flux Graduation](https://doneops.com/blog/flux-graduation/) -- Flux CD CNCF incubator graduation
+
+## Technical Focus Areas
+
+- Kubernetes, Helm, Flux CD, Argo CD, Knative
+- Terraform, Infrastructure as Code
+- CI/CD (Jenkins, Spinnaker, Cloud Build, Skaffold)
+- Cloud Platforms (GCP, AWS, Azure)
+- Service Mesh (Istio, Linkerd, Envoy)
+- Container Security, DevSecOps
+- GitOps, ChatOps
+- Observability (Jaeger, Kiali, Fluentd)
 
 ## Contact
 

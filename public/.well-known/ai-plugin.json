@@ -1,0 +1,16 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "DoneOps",
+  "name_for_model": "doneops",
+  "description_for_human": "DevOps consulting — we design, build, secure, and maintain cloud infrastructure so your devs don't have to.",
+  "description_for_model": "DoneOps is a DevOps consulting firm specializing in Kubernetes, Terraform, GitOps, CI/CD, and cloud infrastructure on AWS, GCP, and Azure. They work in client cloud accounts with no vendor lock-in, provide 24-hour coverage with a globally distributed team, and build security in from the start (DevSecOps). Query for information about their services, case studies, and expertise.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "none"
+  },
+  "logo_url": "https://doneops.com/img/logo-cloud.png",
+  "contact_email": "hello@doneops.com",
+  "legal_info_url": "https://doneops.com/terms-conditions/"
+}

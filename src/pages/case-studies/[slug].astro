@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { getCollection, render } from 'astro:content';
 import { kebabCase } from 'change-case';
 
@@ -22,11 +23,47 @@ const { Content } = await render(study);
   description={study.data.description}
   image={study.data.featuredimage}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": study.data.title,
+      "description": study.data.description,
+      "datePublished": study.data.date.toISOString(),
+      ...(study.data.dateModified ? { "dateModified": study.data.dateModified.toISOString() } : {}),
+      "articleSection": "Case Study",
+      "author": {
+        "@type": "Organization",
+        "name": "DoneOps",
+        "url": "https://doneops.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DoneOps",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://doneops.com/img/logo-cloud.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://doneops.com/case-studies/${study.id}/`
+      },
+      ...(study.data.featuredimage ? { "image": `https://doneops.com${study.data.featuredimage}` } : {}),
+      ...(study.data.tags && study.data.tags.length > 0 ? { "keywords": study.data.tags.join(', ') } : {})
+    })} />
+  </Fragment>
+
   <Header slot="header" isSubPage={true} />
 
   <article class="py-12 lg:py-20 bg-white dark:bg-slate-900">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto">
+        <Breadcrumbs crumbs={[
+          { name: "Home", url: "/" },
+          { name: "Case Studies", url: "/case-studies/" },
+          { name: study.data.title, url: `/case-studies/${study.id}/` },
+        ]} />
         <header class="mb-8 lg:mb-12">
           <div class="inline-block px-4 py-2 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-semibold mb-4">
             Case Study
