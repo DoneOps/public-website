@@ -57,6 +57,19 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <slot name="head" />
 
+    <!-- Google Analytics (GA4) — production only; see /privacy-policy/ for data handling -->
+    {import.meta.env.PROD && (
+      <>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NRTMT1V3MN"></script>
+        <script is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-NRTMT1V3MN');
+        </script>
+      </>
+    )}
+
     <!-- Theme initialization (inline to prevent flash of wrong theme) -->
     <script is:inline>
       (function() {

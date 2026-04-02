@@ -2,14 +2,67 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 ---
 
-<BaseLayout title="Terms and Conditions | DoneOps" description="DoneOps Terms and Conditions">
+<BaseLayout title="Terms and Conditions | DoneOps" description="DoneOps Terms and Conditions for use of our website.">
   <Header slot="header" isSubPage={true} />
 
-  <section class="container mx-auto my-20 py-24 bg-gray-200 rounded-lg text-center">
-    <h1 class="text-5xl font-semibold">Terms and Conditions</h1>
-  </section>
+  <article class="py-12 lg:py-20 bg-white dark:bg-slate-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <Breadcrumbs crumbs={[
+          { name: "Home", url: "/" },
+          { name: "Terms and Conditions", url: "/terms-conditions/" },
+        ]} />
+
+        <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-4">Terms and Conditions</h1>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mb-12">Last updated: April 2, 2026</p>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none
+          prose-headings:text-slate-900 dark:prose-headings:text-slate-100
+          prose-p:text-slate-700 dark:prose-p:text-slate-300
+          prose-a:text-primary-600 dark:prose-a:text-primary-400
+          prose-li:text-slate-700 dark:prose-li:text-slate-300">
+
+          <p>Welcome to DoneOps. By accessing and using our website at <a href="https://doneops.com">doneops.com</a>, you agree to be bound by these Terms and Conditions. If you do not agree, please do not use our website.</p>
+
+          <h2>Use of Website</h2>
+          <p>This website is provided for informational purposes about DoneOps and our services. You agree to use this website only for lawful purposes and in a manner that does not infringe upon the rights of others or restrict their use of the website.</p>
+
+          <h2>Intellectual Property</h2>
+          <p>All content on this website — including text, graphics, logos, images, and software — is the property of DoneOps or its content suppliers and is protected by intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from any content on this website without our prior written consent.</p>
+
+          <h2>Blog and Case Study Content</h2>
+          <p>The articles, case studies, and technical content published on this website are provided for educational and informational purposes. While we strive to ensure accuracy, technical information may become outdated as technologies evolve. We recommend verifying any technical guidance against current documentation before implementation.</p>
+
+          <h2>Contact Form</h2>
+          <p>When submitting information through our contact form, you agree to provide accurate information and consent to our team responding to your inquiry via the email address you provide. Our handling of your personal data is described in our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+
+          <h2>Third-Party Links</h2>
+          <p>Our website may contain links to third-party websites. We are not responsible for the content, privacy practices, or availability of these external sites. Inclusion of a link does not imply endorsement.</p>
+
+          <h2>Disclaimer of Warranties</h2>
+          <p>This website is provided "as is" without warranties of any kind, either express or implied. DoneOps does not warrant that the website will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+
+          <h2>Limitation of Liability</h2>
+          <p>To the fullest extent permitted by law, DoneOps shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of this website or reliance on any information provided herein.</p>
+
+          <h2>Consulting Services</h2>
+          <p>Information about our services on this website does not constitute a binding offer. Consulting engagements are governed by separate service agreements between DoneOps and its clients.</p>
+
+          <h2>Changes to These Terms</h2>
+          <p>We reserve the right to modify these Terms and Conditions at any time. Changes will be effective when posted on this page with an updated revision date. Continued use of the website after changes are posted constitutes acceptance of the modified terms.</p>
+
+          <h2>Governing Law</h2>
+          <p>These Terms and Conditions shall be governed by and construed in accordance with applicable law, without regard to conflict of law principles.</p>
+
+          <h2>Contact Us</h2>
+          <p>If you have questions about these Terms and Conditions, please contact us at <a href="mailto:hello@doneops.com">hello@doneops.com</a>.</p>
+        </div>
+      </div>
+    </div>
+  </article>
 
   <Footer slot="footer" />
 </BaseLayout>
